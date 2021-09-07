@@ -1,0 +1,65 @@
+
+// Contenedor para los iconos
+
+.container-icon {
+
+	&-add {
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-profile {
+		width: rem(24px);
+		height: rem(24px);
+	}
+
+	&-follow {
+		margin-right: rem(8px);
+		width: rem(26px);
+		height: rem(26px);
+
+		@include from(m) {
+			width: rem(32px);
+			height: rem(32px);
+		}
+	}
+
+	&-menu {
+		margin-right: rem(4px);
+		width: rem(32px);
+		height: rem(32px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-nav {
+		width: rem(36px);
+		height: rem(36px);
+	}
+
+	&-logo {
+		margin-right: rem(4px);
+		color: var(--primary-color);
+		width: rem(20px);
+		height: rem(20px);
+	}
+
+	&-arrowBackMenu {
+		width: rem(36px);
+		height: rem(36px);
+
+		@include from(m) {
+			width: rem(44px);
+			height: rem(44px);
+		}
+	}
+
+}

@@ -1,0 +1,87 @@
+
+// Contenido dentro del navbar(sección de letras e iconos)
+.menu-container-logo {
+	display: flex;
+	cursor: pointer;
+	padding: rem(8px) rem(0px);
+
+	& > .content-color {
+		color: var(--content-color);
+		font-weight: bold;
+	}
+
+	@include hideFrom(m)
+
+}
+
+.menu-container-arrow {
+	display: inline-flex;
+	cursor: pointer;
+}
+
+.menu-container {
+
+	@include hideTo(m)
+}
+
+.menu-list {
+
+	display: inline-flex;
+	cursor: pointer;
+	padding: rem(4px) rem(8px);
+
+	&:hover > .content-color,
+	&:hover > .container-icon-menu  {
+		color: var(--primary-color);
+	}
+
+	& > .active {
+		color: var(--primary-color);
+	}
+}
+
+.menu-icons {
+	display: flex;
+}
+
+.menu-item-icon {
+	display: inline-flex;
+	padding: rem(2px) rem(0px);
+	cursor: pointer;
+	margin-right: rem(16px);
+
+	@include from(m) {
+		padding: rem(6px) rem(4px);
+		margin-right: rem(20px);
+	}
+
+	&:hover > .container-icon-nav  {
+		color: var(--primary-color);
+	}
+
+	& > .active {
+		color: var(--primary-color);
+	}
+}
+
+.menu-item-profile {
+	display: inline-flex;
+	cursor: pointer;
+	width: rem(40px);
+	height: rem(40px);
+	border-radius: 50%;
+	border: 1px solid var(--content-color);
+
+	@include from(m) {
+		width: rem(48px);
+		height: rem(48px);
+	}
+
+	& > img {
+		border-radius: 50%;
+	}
+
+	&:hover {
+		border: 2px solid var(--primary-color);
+	}
+}
