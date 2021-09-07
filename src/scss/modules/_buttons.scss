@@ -1,0 +1,62 @@
+
+
+// Botón primario, fantasma(ghost), con icono y para sección seguir
+
+.button {
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	width: max-content;
+	font-family: var(--secondary-font);
+	border-radius: var(--border-radius);
+	transition: transform .05s;
+	border: none;
+
+	&-primary {
+		background: var(--primary-color);
+		padding: rem(6px) rem(12px);
+		color: var(--bg-container);
+		font-size: em(map-get($mobile-fz, content));
+
+		@include from(m) {
+			font-size: em(map-get($web-fz, content));
+		}
+
+		&:hover {
+			background: var(--primary-alt-color);
+		}
+	}
+
+	&-ghost {
+		background: none;
+		padding: rem(5px) rem(11px);
+		font-size: em(map-get($mobile-fz, normal));
+
+		@include from(m) {
+			font-size: em(map-get($web-fz, normal));
+		}
+	}
+
+	&-icon {
+		display: inline-flex;
+		background: var(--primary-color);
+		padding: rem(4px) rem(8px);
+		color: var(--bg-container);
+
+		&:hover {
+			background: var(--primary-alt-color);
+		}
+	}
+
+	&-follow {
+		display: inline-flex;
+		color: var(--bg-container);
+		padding: rem(5px) rem(11px);
+		font-size: em(map-get($mobile-fz, content));
+
+		@include from(m) {
+			font-size: em(map-get($web-fz, content));
+		}
+	}
+
+}

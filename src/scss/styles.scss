@@ -29,7 +29,7 @@ $l-unit: .25rem;		// (4px) Unidad básica de layout(para separaciones verticales
 
 // Estilos modules
 @import "modules/buttons";
-// @import "modules/colors";
+@import "modules/colors";
 @import "modules/icons";
 @import "modules/menu";
 
