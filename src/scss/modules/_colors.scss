@@ -37,7 +37,6 @@
 }
 
 // Colores para fondo de botones para seguidores
-
 .follow {
 
 	&-primary-color {
@@ -68,4 +67,17 @@
 		}
 	}
 
+}
+
+// Colores para los textos e iconos
+.title-color {
+	color: var(--title-color);
+}
+
+.content-color {
+	color: var(--content-color);
+}
+
+.auxiliary-color {
+	color: var(--auxiliary-color);
 }

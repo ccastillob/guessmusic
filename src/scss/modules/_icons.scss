@@ -30,11 +30,11 @@
 	}
 
 	&-menu {
-		margin-right: rem(4px);
 		width: rem(32px);
 		height: rem(32px);
 
 		@include from(m) {
+			margin-right: rem(4px);
 			width: rem(26px);
 			height: rem(26px);
 		}

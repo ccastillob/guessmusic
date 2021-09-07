@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import IconLeft from '../icons/IconLeft';
 
 
@@ -11,7 +11,7 @@ const HeaderMenuSecondary = () => {
 				<div className="s-cross-center">
 					<div className="s-to-left s-cross-center">
 						<div className="menu-container-arrow s-cross-center">
-							<i className="container-icon-arrowBackMenu">
+							<i className="container-icon-arrowBackMenu content-color">
 								<IconLeft />
 							</i>
 						</div>

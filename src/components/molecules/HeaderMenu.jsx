@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import IconCategories from '../icons/IconCategories';
 import IconChat from '../icons/IconChat';
 import IconLogo from '../icons/IconLogo';
@@ -23,40 +23,40 @@ const HeaderMenu = () => {
 						</div>
 						<div className="menu-container">
 							<div to="/" className="menu-list m-mr-2">
-								<i className="container-icon-menu">
+								<i className="container-icon-menu content-color">
 									<IconPlay />
 								</i>
 								<h4 className={`content-color`}>Jugar</h4>
 							</div>
 							<div to="/" className="menu-list m-mr-2">
-								<i className="container-icon-menu">
+								<i className="container-icon-menu content-color">
 									<IconRanking />
 								</i>
 								<h4 className={`content-color`}>Clasificación</h4>
 							</div>
 							<div to="/" className="menu-list m-mr-2">
-								<i className="container-icon-menu">
+								<i className="container-icon-menu content-color">
 									<IconCategories />
 								</i>
 								<h4 className={`content-color`}>Categorias</h4>
 							</div>
 							<div to="/" className="menu-list">
-								<i className="container-icon-menu">
+								<i className="container-icon-menu content-color active">
 									<IconVersus />
 								</i>
-								<h4 className={`content-color`}>Batalla</h4>
+								<h4 className={`content-color active`}>Batalla</h4>
 							</div>
 						</div>
 					</div>
 					<div className="s-to-right s-cross-center">
 						<div className="menu-icons">
 							<div to="/" className="menu-item-icon">
-								<i className="container-icon-nav">
+								<i className="container-icon-nav content-color">
 									<IconNotificationFull/>
 								</i>
 							</div>
 							<div to="/" className="menu-item-icon">
-								<i className="container-icon-nav">
+								<i className="container-icon-nav content-color active">
 									<IconChat/>
 								</i>
 							</div>

@@ -1,0 +1,35 @@
+// Pie de página: Parte inferior
+
+.main-footer {
+	background: var(--bg-container);
+	height: var(--header-height-mobile);
+	position: fixed;
+	z-index: var(--z-fixed);
+	width: 100%;
+	bottom: 0;
+	border-top: 1px solid var(--border-color);
+	overflow: hidden;
+
+	@include hideFrom(m)
+}
+
+.footer-item {
+	flex-direction: column;
+	cursor: pointer;
+
+	&:hover > .container-icon-menu,
+	&:hover > .text-footer-menu {
+		color: var(--primary-alt-color);
+	}
+
+	& > .active {
+		color: var(--primary-color);
+	}
+
+}
+
+.text-footer-menu {
+	font-size: rem(10px);
+	text-align: center;
+	width: 100%;
+}
