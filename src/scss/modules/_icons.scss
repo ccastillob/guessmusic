@@ -62,4 +62,52 @@
 		}
 	}
 
+	&-arrowCategorie {
+		width: rem(16px);
+		height: rem(16px);
+		display: flex;
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-playCategorieCard {
+		width: rem(25px);
+		height: rem(25px);
+		position: absolute;
+		color: var(--bg-container);
+		cursor: pointer;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+
+		@include from(m) {
+			width: rem(28px);
+			height: rem(28px);
+		}
+
+		&:hover {
+			color: var(--primary-alt-color);
+		}
+	}
+
+	&-playSong {
+		width: rem(31px);
+		height: rem(31px);
+		color: var(--bg-container);
+		display: inline-flex;
+		cursor: pointer;
+
+		@include from(m) {
+			width: rem(35px);
+			height: rem(35px);
+		}
+
+		&:hover {
+			color: var(--primary-alt-color);
+		}
+	}
+
 }

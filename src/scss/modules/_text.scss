@@ -1,0 +1,9 @@
+
+// Transformaciones para los textos
+
+.text_line-clamp {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow-y: hidden;
+}
