@@ -1,0 +1,74 @@
+// Contenedor para los carouseles
+
+
+/* Slider */
+
+.carousel-grid {
+  position: relative;
+}
+
+.carousel-arrow {
+  top: calc(50% - 35px);
+	display: flex;
+  position: absolute;
+	cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+	padding: rem(8px);
+	z-index: var(--z-normal);
+	color: var(--bg-container);
+
+	&-right {
+		right: 0;
+		transform: translate(calc(50% - .5rem),-25%);
+		background-color: var(--primary-color);
+	}
+
+	&-left {
+		left: 0;
+		transform: translate(calc(-50% + .5rem),-25%);
+		display: none;
+		background-color: var(--primary-color);
+	}
+
+}
+
+.slick-list {
+  overflow-x: hidden;
+  transition: 0.25s;
+}
+
+.slick-track {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.slick-slide {
+  width: 100% !important;
+}
+
+.contenedor-item {
+  display: grid !important;
+
+	&-text__block {
+		display: inline-block;
+		width: 100%;
+		color: var(--bg-container);
+
+		&:hover {
+			cursor: default;
+		}
+	}
+}
+
+.image-overlay {
+	background: var(--bg-overlay-image);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+	&.active {
+		display: none;
+	}
+}

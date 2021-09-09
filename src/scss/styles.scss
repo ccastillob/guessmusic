@@ -23,6 +23,7 @@ $l-unit: .25rem;		// (4px) Unidad básica de layout(para separaciones verticales
 @import "base/base";
 
 // Estilos layout
+@import "layout/carousel";
 @import "layout/footer";
 @import "layout/header";
 @import "layout/main";
@@ -32,5 +33,7 @@ $l-unit: .25rem;		// (4px) Unidad básica de layout(para separaciones verticales
 @import "modules/colors";
 @import "modules/icons";
 @import "modules/menu";
+@import "modules/text";
 
 // Estilos components
+@import "components/categorie";
