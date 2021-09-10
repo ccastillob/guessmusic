@@ -110,4 +110,12 @@
 		}
 	}
 
+	&-shieldCard {
+		width: rem(19px);
+		height: rem(19px);
+		margin-right: rem(4px);
+		display: inline-flex;
+		cursor: default;
+	}
+
 }

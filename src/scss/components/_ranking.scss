@@ -1,0 +1,64 @@
+
+// Estilos para la pagina de clasificación
+
+.container-card_ranking {
+	padding-right: rem(16px);
+	padding-left: rem(16px);
+	border-radius: var(--border-radius);
+	background: var(--bg-container);
+	box-shadow: var(--box-shadow);
+
+	&:hover {
+		background: var(--conversation-color);
+		cursor: pointer;
+	}
+
+	&.active {
+		background: var(--chat-color);
+	}
+
+	&:last-child {
+		margin-bottom: rem(0px);
+	}
+}
+
+.ranking__data {
+	display: flex;
+}
+
+.data-item__userRanking {
+	display: flex;
+	cursor: default;
+	width: rem(48px);
+	height: rem(48px);
+	border-radius: 50%;
+	border: 1px solid var(--content-color);
+
+	@include from(m) {
+		width: rem(51px);
+		height: rem(51px);
+	}
+
+	& > img {
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+}
+
+.data-item__sectionRanking {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: calc(100% - 56px);
+
+	& > .sectionRanking__user {
+		margin-bottom: rem(6px);
+
+		@include from(m) {
+			margin-bottom: rem(4px);
+			width: calc(100% - 59px);
+		}
+	}
+
+}
