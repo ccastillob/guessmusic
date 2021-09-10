@@ -118,4 +118,15 @@
 		cursor: default;
 	}
 
+	&-arrowLeftRanking,
+	&-arrowRightRanking {
+		width: rem(36px);
+		height: rem(36px);
+
+		@include from(m) {
+			width: rem(40px);
+			height: rem(40px);
+		}
+	}
+
 }
