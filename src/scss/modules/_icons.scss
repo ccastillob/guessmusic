@@ -129,4 +129,17 @@
 		}
 	}
 
+	&-shieldRanking {
+		width: rem(29px);
+		height: rem(29px);
+		margin-right: rem(4px);
+		display: inline-flex;
+		cursor: default;
+
+		@include from(m) {
+			width: rem(32px);
+			height: rem(32px);
+		}
+	}
+
 }

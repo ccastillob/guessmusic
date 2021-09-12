@@ -108,3 +108,22 @@
 .ranking__content-right {
 	justify-content: flex-start;
 }
+
+.container-listDivition {
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	background: var(--bg-container);
+	padding: rem(20px) rem(16px);
+}
+
+.container-item_divition {
+	display: flex;
+	padding: rem(4px) rem(16px);
+	border-bottom: 1px solid var(--primary-color);
+	margin-top: rem(8px);
+
+	&:first-child {
+		margin-top: rem(0px);
+	}
+}
+
