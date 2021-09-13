@@ -3,10 +3,10 @@ import IconShield from '../icons/IconShield'
 
 const CardItemRanking = ({status}) => {
 	return (
-		<div className={`ed-grid s-grid-7 m-gap-2 container-card_ranking s-mb-4 s-py-4 ${status}`} >
+		<div className={`ed-grid s-grid-7 m-gap-4 container-card_ranking s-mb-4 s-py-4 ${status}`} >
 			<h4 className="ranking__number content-color s-cols-1">1.</h4>
 			<div className="ranking__data s-cols-4">
-				<div class="data-item__userRanking s-mr-2">
+				<div class="data-item__userRanking">
 					<img alt="userRanking" src="https://th.bing.com/th/id/R.28885272c4135409b5ada833fa75174f?rik=4XZMGPR6dd05Qg&pid=ImgRaw&r=0" />
 				</div>
 				<div className="data-item__sectionRanking">

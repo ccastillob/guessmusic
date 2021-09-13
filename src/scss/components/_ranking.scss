@@ -28,6 +28,7 @@
 
 .data-item__userRanking {
 	display: flex;
+	flex: 0 0 auto;
 	cursor: default;
 	width: rem(48px);
 	height: rem(48px);
@@ -51,14 +52,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	width: calc(100% - 56px);
+	margin-left: rem(8px);
+	flex: 1 1 auto;
 
 	& > .sectionRanking__user {
 		margin-bottom: rem(6px);
 
 		@include from(m) {
 			margin-bottom: rem(4px);
-			width: calc(100% - 59px);
 		}
 	}
 
