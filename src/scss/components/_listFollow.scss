@@ -1,0 +1,125 @@
+
+// Estilos para la página de seguidos/seguidores
+
+.container-listFollow {
+	padding: rem(16px);
+
+	@include from(s) {
+		grid-column-end: span 12;
+		grid-column-start: 1;
+	}
+
+	// Apartir de 541px hasta 1024px
+	@include fromTo(541px, 1025px) {
+		grid-column-end: span 10;
+		grid-column-start: 2;
+	}
+
+	// Desde 1025px
+	@include from(1025px) {
+		grid-column-end: span 8;
+		grid-column-start: 3;
+	}
+}
+
+.listFollow-allItems {
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	margin-top: rem(16px);
+}
+
+.container-item_follow {
+	display: flex;
+	background: var(--bg-container);
+	padding: rem(16px);
+	border-top: 1px solid var(--primary-color);
+
+
+
+	&__exist {
+		display: flex;
+		background: var(--bg-container);
+		padding: rem(16px);
+		border-top: 1px solid var(--primary-color);
+
+		&:first-child {
+			border-top: none;
+			border-top-left-radius: rem(4px);
+			border-top-right-radius: rem(4px);
+		}
+
+		&:last-child {
+			border-bottom-left-radius: rem(4px);
+			border-bottom-right-radius: rem(4px);
+		}
+	}
+
+	&__empty {
+		margin-top: rem(32px);
+	}
+
+	&:first-child {
+		border-top: none;
+		border-top-left-radius: rem(4px);
+		border-top-right-radius: rem(4px);
+	}
+
+	&:last-child {
+		border-bottom-left-radius: rem(4px);
+		border-bottom-right-radius: rem(4px);
+	}
+}
+
+.group-item_follow {
+	display: flex;
+	flex: 1 1 auto;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.item-follow__profileFollow {
+	display: flex;
+	width: rem(51px);
+	height: rem(51px);
+	border-radius: 50%;
+	border: 1px solid var(--content-color);
+	flex: 0 0 auto;
+
+	@include from(m) {
+		width: rem(60px);
+		height: rem(60px);
+	}
+
+	& > img {
+		border-radius: 50%;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+
+.item-follow__data,
+.item-follow__data-exist {
+	margin-right: rem(16px);
+	margin-left: rem(8px);
+
+	& > .data-name {
+		margin-bottom: rem(4px);
+
+		@include from(m) {
+			margin-bottom: rem(3px);
+		}
+	}
+}
+
+.item-follow__button {
+	display: inline-flex;
+	cursor: pointer;
+	text-decoration: none;
+	width: max-content;
+	height: max-content;
+	border-radius: var(--border-radius);
+	transition: transform .05s;
+	border: none;
+	color: var(--bg-container);
+	padding: rem(4px) rem(8px);
+}

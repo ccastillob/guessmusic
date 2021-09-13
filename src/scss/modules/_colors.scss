@@ -1,6 +1,19 @@
 
 // Nombre de clases para aplicar colores
 
+// Colores para fondo de botones seguidores sin texto
+.normal {
+
+	&-primary-color {
+		background: var(--primary-color);
+
+		&:hover {
+			background: var(--primary-alt-color);
+		}
+	}
+
+}
+
 // Colores para fondo de botones ghost
 .ghost {
 
@@ -36,7 +49,7 @@
 
 }
 
-// Colores para fondo de botones para seguidores
+// Colores para fondo de botones para seguidores con texto
 .follow {
 
 	&-primary-color {

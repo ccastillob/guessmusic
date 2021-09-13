@@ -60,11 +60,7 @@
 
 	&_data {
 		display: flex;
-		width: calc(100% - 39px);
-
-		@include from(m) {
-			width: calc(100% - 43px);
-		}
+		flex: 1 1 auto;
 	}
 
 	&_icon {
@@ -88,6 +84,7 @@
 	height: rem(59px);
 	border-radius: 50%;
 	border: 1px solid var(--content-color);
+	flex: 0 0 auto;
 
 	@include from(m) {
 		width: rem(63px);
@@ -97,17 +94,15 @@
 	& > img {
 		border-radius: 50%;
 		object-fit: cover;
+		width: 100%;
 	}
 
 }
 
 .data-item__section {
-	width: calc(100% - 67px);
-	padding-right: rem(16px);
-
-	@include from(m) {
-		width: calc(100% - 71px);
-	}
+	flex: 1 1 auto;
+	margin-left: rem(8px);
+	margin-right: rem(16px);
 
 	& > .section__artist {
 		font-weight: bold;
