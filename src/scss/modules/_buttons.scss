@@ -7,6 +7,7 @@
 	cursor: pointer;
 	text-decoration: none;
 	width: max-content;
+	height: max-content;
 	font-family: var(--secondary-font);
 	border-radius: var(--border-radius);
 	transition: transform .05s;
@@ -29,6 +30,8 @@
 
 	&-ghost {
 		background: none;
+		display: flex;
+		align-items: center;
 		padding: rem(5px) rem(11px);
 		font-size: em(map-get($mobile-fz, normal));
 
