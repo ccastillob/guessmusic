@@ -141,4 +141,21 @@
 		}
 	}
 
+	&-levelHome {
+		display: inline-flex;
+		width: rem(72px);
+		height: rem(72px);
+	}
+
+	&-blockedHome {
+		display: inline-flex;
+		width: rem(20px);
+		height: rem(20px);
+
+		@include from(m) {
+			width: rem(22px);
+			height: rem(22px);
+		}
+	}
+
 }
