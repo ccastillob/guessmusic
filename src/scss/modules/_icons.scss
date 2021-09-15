@@ -158,4 +158,94 @@
 		}
 	}
 
+	&-editProfile {
+		display: inline-flex;
+		width: rem(14px);
+		height: rem(14px);
+
+		@include from(m) {
+			width: rem(18px);
+			height: rem(18px);
+		}
+	}
+
+	&-dateProfile {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		margin-right: rem(8px);
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-followProfile {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		margin-right: rem(8px);
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-experienceProfile {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-shieldProfile {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-arrowRightFriend {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-achievementProfile {
+		display: inline-flex;
+		width: rem(51px);
+		height: rem(51px);
+
+		@include from(m) {
+			width: rem(55px);
+			height: rem(55px);
+		}
+	}
+
+	&-arrowRightAchievement {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
 }

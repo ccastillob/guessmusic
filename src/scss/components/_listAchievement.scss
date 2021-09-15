@@ -1,0 +1,77 @@
+
+// Estilos para la página lista de logros
+
+.container-listAchievement {
+	padding: rem(16px);
+
+	@include from(s) {
+		grid-column-end: span 12;
+		grid-column-start: 1;
+	}
+
+	// Apartir de 541px hasta 1024px
+	@include fromTo(541px, 1025px) {
+		grid-column-end: span 10;
+		grid-column-start: 2;
+	}
+
+	// Desde 1025px
+	@include from(1025px) {
+		grid-column-end: span 8;
+		grid-column-start: 3;
+	}
+}
+
+.listAchievement-allItems {
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	margin-top: rem(16px);
+}
+
+.container-item_listAchievement {
+	display: flex;
+	padding: rem(16px);
+	background: var(--bg-container);
+	border-top: 1px solid var(--primary-color);
+	height: rem(103px);
+
+	&__complete {
+		display: flex;
+		padding: rem(16px);
+		background: var(--bg-container);
+		align-items: center;
+		border-top: 1px solid var(--primary-color);
+		height: rem(103px);
+
+		&:first-child {
+			border-top: none;
+			border-top-left-radius: rem(4px);
+			border-top-right-radius: rem(4px);
+		}
+
+		&:last-child {
+			border-bottom-left-radius: rem(4px);
+			border-bottom-right-radius: rem(4px);
+		}
+
+		@include from(m) {
+			height: rem(109px);
+		}
+	}
+
+
+	&:first-child {
+		border-top-left-radius: rem(4px);
+		border-top-right-radius: rem(4px);
+		border-top: none;
+	}
+
+	&:last-child {
+		border-bottom-left-radius: rem(4px);
+		border-bottom-right-radius: rem(4px);
+	}
+
+	@include from(m) {
+		height: rem(109px);
+	}
+}
