@@ -9,9 +9,9 @@ import IconPlay from '../icons/IconPlay';
 import IconRanking from '../icons/IconRanking';
 import IconVersus from '../icons/IconVersus';
 
-const HeaderMenu = () => {
+const HeaderMenu = ({status}) => {
 	return (
-		<header className="main-header s-main-center">
+		<header className={`main-header s-main-center ${status}`}>
 			<div className="ed-grid">
 				<div className="s-cross-center">
 					<div className="s-to-left s-cross-center">
@@ -69,6 +69,10 @@ const HeaderMenu = () => {
 			</div>
 		</header>
 	)
+}
+
+HeaderMenu.defaultProps = {
+	status: ""
 }
 
 export default HeaderMenu;

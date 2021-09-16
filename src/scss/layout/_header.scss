@@ -14,3 +14,31 @@
 		height: var(--header-height-web);
 	}
 }
+
+.main-header {
+
+	// Desde 0px hasta 640px
+	@include fromTo(0px, 641px) {
+		&.chatview {
+			display: none;
+		}
+	}
+
+	&.default {
+		display: flex;
+	}
+}
+
+.secondary-header {
+
+	// Desde 641px
+	@include from(641px) {
+		&.chatview {
+			display: none;
+		}
+	}
+
+	&.default {
+		display: none;
+	}
+}

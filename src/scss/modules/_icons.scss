@@ -248,4 +248,38 @@
 		}
 	}
 
+	&-searchFriend {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		margin-left: rem(12px);
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-shieldConversation {
+		display: inline-flex;
+		width: rem(19px);
+		height: rem(19px);
+
+		@include from(m) {
+			width: rem(21px);
+			height: rem(21px);
+		}
+	}
+
+	&-sendMessage {
+		display: inline-flex;
+		width: rem(31px);
+		height: rem(31px);
+
+		@include from(m) {
+			width: rem(34px);
+			height: rem(34px);
+		}
+	}
+
 }

@@ -4,9 +4,9 @@ import React from 'react'
 import IconLeft from '../icons/IconLeft';
 
 
-const HeaderMenuSecondary = () => {
+const HeaderMenuSecondary = ({status}) => {
 	return (
-		<header className="secondary-header s-main-center">
+		<header className={`secondary-header s-main-center ${status}`}>
 			<div className="ed-grid">
 				<div className="s-cross-center">
 					<div className="s-to-left s-cross-center">
@@ -27,6 +27,10 @@ const HeaderMenuSecondary = () => {
 			</div>
 		</header>
 	)
+}
+
+HeaderMenuSecondary.defaultProps = {
+	status: ""
 }
 
 export default HeaderMenuSecondary;
