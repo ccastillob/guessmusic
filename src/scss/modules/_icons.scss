@@ -300,4 +300,60 @@
 		}
 	}
 
+	&-logoLogin {
+		display: inline-flex;
+		width: rem(80px);
+		height: rem(80px);
+
+		// Desde 1024px
+		@include from(lg) {
+			width: rem(100px);
+			height: rem(100px);
+		}
+	}
+
+	&-emailLogin {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+		margin-left: rem(12px);
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-passwordLogin {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+		margin-left: rem(12px);
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-eyesLogin {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		z-index: var(--z-normal);
+		margin-right: rem(12px);
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
 }

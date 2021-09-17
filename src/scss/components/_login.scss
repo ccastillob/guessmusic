@@ -1,0 +1,192 @@
+
+// Estilos para la página de login
+.container-login {
+	height: 100vh;
+	align-items: center;
+}
+
+.login-content {
+	flex: 0 0 auto;
+	background: var(--bg-container);
+	box-shadow: var(--box-shadow);
+	flex-direction: column;
+	padding: rem(24px) rem(16px);
+	align-items: center;
+	border-radius: var(--border-radius);
+	grid-column-end: span 12;
+	grid-column-start: 1;
+
+	& > i {
+		margin-bottom: rem(16px);
+
+		@include from(lg) {
+			margin-bottom: rem(20px);
+		}
+	}
+
+	& > h1 {
+		margin-bottom: rem(24px);
+
+		@include from(1024px) {
+			margin-bottom: rem(32px);
+		}
+	}
+
+	& > h3 {
+		margin-top: rem(24px);
+
+		@include from(1024px) {
+			margin-top: rem(56px);
+		}
+	}
+
+	@include fromTo(541px, m) {
+		grid-column-end: span 8;
+		grid-column-start: 3;
+	}
+
+	@include from(m) {
+		grid-column-end: span 6;
+		grid-column-start: 4;
+		padding: rem(44px) rem(16px);
+	}
+}
+
+.content-logoLogin {
+	display: flex;
+	justify-content: center;
+	margin-bottom: rem(16px);
+
+	@include from(1024px) {
+		margin-bottom: rem(20px);
+	}
+}
+
+.content-inputEmailLogin {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-bottom: rem(16px);
+	height: rem(31px);
+	grid-column-end: span 6;
+	grid-column-start: 1;
+
+	& > input::placeholder {
+		color: var(--content-color);
+		opacity: 1;
+	}
+
+	@include from(m) {
+		height: rem(34px);
+	}
+
+	@include from(461px) {
+		grid-column-end: span 4;
+		grid-column-start: 2;
+	}
+
+	@include from(1024px) {
+		margin-bottom: rem(24px);
+	}
+}
+
+.inputEmailLogin {
+	outline: none;
+	position: absolute;
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	padding-left: rem(43px);
+	padding-right: rem(12px);
+	padding-top: rem(4px);
+	padding-bottom: rem(4px);
+	top: 0;
+	left: 0;
+	background: transparent;
+	font-size: rem(map-get($mobile-fz, normal));
+	height: 100%;
+	width: 100%;
+
+	&:focus {
+		border: 1px dashed var(--primary-alt-color);
+	}
+
+	@include from(m) {
+		padding-left: rem(46px);
+		font-size: rem(map-get($web-fz, normal));
+	}
+}
+
+.content-inputPasswordLogin {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: rem(31px);
+	grid-column-end: span 6;
+	grid-column-start: 1;
+
+	& > input::placeholder {
+		color: var(--content-color);
+		opacity: 1;
+	}
+
+	@include from(m) {
+		height: rem(34px);
+	}
+
+	@include from(461px) {
+		grid-column-end: span 4;
+		grid-column-start: 2;
+	}
+}
+
+.inputPasswordLogin {
+	outline: none;
+	position: absolute;
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	padding-left: rem(43px);
+	padding-right: rem(41px);
+	padding-top: rem(4px);
+	padding-bottom: rem(4px);
+	top: 0;
+	left: 0;
+	background: transparent;
+	font-size: rem(map-get($mobile-fz, normal));
+	height: 100%;
+	width: 100%;
+
+	&:focus {
+		border: 1px dashed var(--primary-alt-color);
+
+	}
+
+	@include from(m) {
+		padding-left: rem(46px);
+		padding-right: rem(44px);
+		font-size: rem(map-get($web-fz, normal));
+	}
+}
+
+.content-button__login {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: rem(32px);
+	grid-column-end: span 6;
+	grid-column-start: 1;
+
+	@include from(461px) {
+		grid-column-end: span 4;
+		grid-column-start: 2;
+	}
+
+	@include from(1024px) {
+		margin-top: rem(48px);
+	}
+}
+
+.span_login {
+	color: var(--secondary-color);
+	text-decoration: underline;
+	cursor: pointer;
+}
