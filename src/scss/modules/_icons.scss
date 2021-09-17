@@ -282,4 +282,22 @@
 		}
 	}
 
+	&-logoScreenGame {
+		display: inline-flex;
+		width: rem(120px);
+		height: rem(120px);
+
+		// Desde 641px hasta 768px
+		@include fromTo(641px, m) {
+			width: rem(152px);
+			height: rem(152px);
+		}
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(212px);
+			height: rem(212px);
+		}
+	}
+
 }
