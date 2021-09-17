@@ -1,0 +1,83 @@
+
+// Estilos para página final del juego
+.container-allSectionScreenFinish {
+	background: var(--bg-container);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+// HEADER
+.container-screenFinish_header {
+	display: flex;
+	flex: 0 0 auto;
+	justify-content: center;
+	padding: rem(32px) rem(0px);
+}
+
+// FIN HEADER
+
+// SECTION
+.container-screenFinish_section {
+	flex: 1 1 auto;
+	padding: rem(32px) rem(0px);
+
+	@include from(641px) {
+		padding: rem(64px) rem(0px);
+	}
+}
+
+.screenFinish-item_correct,
+.screenFinish-item_incorrect,
+.screenFinish-item_experience,
+.screenFinish-item_performance {
+	display: flex;
+	flex: 1 1 auto;
+	padding: rem(16px);
+}
+
+.item_correct__content,
+.item_incorrect__content,
+.item_experience__content,
+.item_performance__content {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--primary-color);
+	justify-content: center;
+	align-items: center;
+
+	// Desde 0px hasta 640px
+	@include fromTo(0px, 641px) {
+
+		& > h2,
+		& > h3 {
+			font-size: rem(16px);
+		}
+	}
+
+	& > h2 {
+		margin-bottom: rem(12px);
+	}
+}
+
+// FIN SECTION
+
+// FOOTER
+.container-screenFinish_footer {
+	flex: 0 0 auto;
+	padding: rem(32px) rem(0px);
+
+	@include from(641px) {
+		padding: rem(64px) rem(0px);
+	}
+}
+
+.content-button__reset,
+.content-button__continue {
+	display: flex;
+	justify-content: center;
+}
+
+// FIN FOOTER
