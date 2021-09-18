@@ -300,7 +300,8 @@
 		}
 	}
 
-	&-logoLogin {
+	&-logoLogin,
+	&-logoRegister {
 		display: inline-flex;
 		width: rem(80px);
 		height: rem(80px);
@@ -312,7 +313,11 @@
 		}
 	}
 
-	&-emailLogin {
+
+	&-usernameRegister,
+	&-lastnameRegister,
+	&-emailLogin,
+	&-emailRegister {
 		display: inline-flex;
 		width: rem(23px);
 		height: rem(23px);
@@ -325,7 +330,9 @@
 		}
 	}
 
-	&-passwordLogin {
+	&-passwordLogin,
+	&-passwordRegister,
+	&-repasswordRegister {
 		display: inline-flex;
 		width: rem(23px);
 		height: rem(23px);
@@ -338,7 +345,8 @@
 		}
 	}
 
-	&-eyesLogin {
+	&-eyesLogin,
+	&-eyesRegister {
 		display: inline-flex;
 		width: rem(21px);
 		height: rem(21px);
