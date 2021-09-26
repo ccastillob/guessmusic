@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const IconButton = ({ otherClass, urlTo, icon, type, event }) => {

@@ -1,21 +1,31 @@
 
-import React from 'react'
-import FollowButton from '../atoms/FollowButton'
-import IconButton from '../atoms/IconButton'
-import IconAddUserFollow from '../icons/IconAddUserFollow'
-import IconDate from '../icons/IconDate'
-import IconExp from '../icons/IconExp'
-import IconFollow from '../icons/IconFollow'
-import IconRight from '../icons/IconRight'
-import IconShield from '../icons/IconShield'
-import IconUserWaiting from '../icons/IconUserWaiting'
-import IconVersus from '../icons/IconVersus'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const ProfileFriendPage = () => {
+import FollowButton from '../atoms/FollowButton';
+import IconButton from '../atoms/IconButton';
+import IconAddUserFollow from '../icons/IconAddUserFollow';
+import IconDate from '../icons/IconDate';
+import IconExp from '../icons/IconExp';
+import IconFollow from '../icons/IconFollow';
+import IconRight from '../icons/IconRight';
+import IconShield from '../icons/IconShield';
+import IconUserSelect from '../icons/IconUserSelect';
+import IconVersus from '../icons/IconVersus';
+import FooterMenu from '../molecules/FooterMenu';
+import HeaderMenu from '../molecules/HeaderMenu';
+
+// NO ESTA SIENDO USADA
+
+const ProfileFriendPage = () => {
+
 	return (
 		<>
-			<div className="ed-grid s-grid-12">
+			<HeaderMenu />
+			<div className="ed-grid s-grid-12 main-container container-profilepage">
+
 				<div className="section-top_profileUser ed-grid s-grid-12 s-cols-12">
+
 					<div className="profileUser-container_left s-cols-12 m-cols-8">
 						<div className="container-left_avatar s-order-2 m-order-1">
 							<img src="https://www.biwi-shop.com/15462-large_default/transformers-super-deformed-bumblebee-10-cm.jpg" alt="avatarProfile" />
@@ -38,14 +48,18 @@ export const ProfileFriendPage = () => {
 							</div>
 						</div>
 					</div>
+
 					<div className="profileUser-container_right s-cols-12 m-cols-4">
 						{/* <FollowButton title="Seguir" icon={<IconAddUserFollow />} otherClass="follow-primary-color"/> */}
-						<FollowButton title="Solicitud enviada" icon={<IconUserWaiting />} otherClass="follow-warning500-color"/>
-						{/* <FollowButton title="Siguiendo" icon={<IconUserSelect />} otherClass="follow-success500-color"/> */}
+						{/* <FollowButton title="Solicitud enviada" icon={<IconUserWaiting />} otherClass="follow-warning500-color"/> */}
+						<FollowButton title="Siguiendo" icon={<IconUserSelect />} otherClass="follow-success500-color"/>
 					</div>
+
 				</div>
+
 				<div className="section-bottom_profileUser ed-grid s-grid-12 s-cols-12">
 					<div className="section__mix s-cols-12 m-cols-7">
+
 						<div className="section-stadistics s-mb-4">
 							<h2 className="title-color s-mb-4">Estadisticas</h2>
 							<div className="stadistics-allItems ed-grid s-grid-2 m-grid-2">
@@ -78,21 +92,23 @@ export const ProfileFriendPage = () => {
 									<h3 className="content-color text-bold">Siguiendo</h3>
 								</div>
 								<div className="friends-allItems">
+
 									<div className="container-item_friend">
-										<div className="group-item_friend">
-											<div class="item-friend__profile">
+										<Link to="/profile/123" className="group-item_friend content-color">
+											<div className="item-friend__profile">
 												<img alt="userprofile" src="https://hotstuff4geeks.com/wp-content/uploads/2020/09/Funko-Pop-Retro-Toys-Transformers-Metallic-Optimus-Prime-2.jpg" />
 											</div>
 											<div className="item-friend__data">
 												<h4 className="data-name text_line-clamp">Optimus</h4>
 												<small className="data-experience text_line-clamp">9500 EXP</small>
 											</div>
-										</div>
+										</Link>
 										<IconButton icon={<IconAddUserFollow />} />
 									</div>
+
 									<div className="container-item_friend__exist">
-										<div className="group-item_friend">
-											<div class="item-friend__profile">
+										<div className="group-item_friend content-color">
+											<div className="item-friend__profile">
 												<img alt="userprofile" src="https://hotstuff4geeks.com/wp-content/uploads/2020/09/Funko-Pop-Retro-Toys-Transformers-Metallic-Optimus-Prime-2.jpg" />
 											</div>
 											<div className="item-friend__data-exist">
@@ -101,9 +117,10 @@ export const ProfileFriendPage = () => {
 											</div>
 										</div>
 									</div>
+
 									<div className="container-item_friend__exist">
-										<div className="group-item_friend">
-											<div class="item-friend__profile">
+										<div className="group-item_friend content-color">
+											<div className="item-friend__profile">
 												<img alt="userprofile" src="https://hotstuff4geeks.com/wp-content/uploads/2020/09/Funko-Pop-Retro-Toys-Transformers-Metallic-Optimus-Prime-2.jpg" />
 											</div>
 											<div className="item-friend__data-exist">
@@ -112,13 +129,16 @@ export const ProfileFriendPage = () => {
 											</div>
 										</div>
 									</div>
+
 								</div>
-								<div className="next-footer__friends ed-grid s-grid-2 s-gap-4">
+
+								<Link to="/profile/121/followings" className="next-footer__friends ed-grid s-grid-2 s-gap-4">
 									<h4 className="content-color text-bold">Ver 9 más</h4>
 									<i className="container-icon-arrowRightFriend primary-color">
 										<IconRight />
 									</i>
-								</div>
+								</Link>
+
 							</div>
 							<div className="friends-followers">
 								<div className="title-header__friends">
@@ -210,12 +230,12 @@ export const ProfileFriendPage = () => {
 								</div>
 
 							</div>
-							<div className="next-footer__achievements ed-grid s-grid-2 s-gap-4">
+							<Link to="/profile/121/achievements" className="next-footer__achievements ed-grid s-grid-2 s-gap-4">
 								<h4 className="content-color text-bold">Ver todos</h4>
 								<i className="container-icon-arrowRightAchievement primary-color">
 									<IconRight />
 								</i>
-							</div>
+							</Link>
 						</div>
 					</div>
 						{/* FRIEND WEB */}
@@ -227,20 +247,20 @@ export const ProfileFriendPage = () => {
 							</div>
 							<div className="friends-allItems">
 								<div className="container-item_friend">
-									<div className="group-item_friend">
-										<div class="item-friend__profile">
+									<Link to="/profile/123" className="group-item_friend content-color">
+										<div className="item-friend__profile">
 											<img alt="userprofile" src="https://hotstuff4geeks.com/wp-content/uploads/2020/09/Funko-Pop-Retro-Toys-Transformers-Metallic-Optimus-Prime-2.jpg" />
 										</div>
 										<div className="item-friend__data">
 											<h4 className="data-name text_line-clamp">Optimus</h4>
 											<small className="data-experience text_line-clamp">9500 EXP</small>
 										</div>
-									</div>
+									</Link>
 									<IconButton icon={<IconAddUserFollow />} />
 								</div>
 								<div className="container-item_friend__exist">
-									<div className="group-item_friend">
-										<div class="item-friend__profile">
+									<div className="group-item_friend content-color">
+										<div className="item-friend__profile">
 											<img alt="userprofile" src="https://hotstuff4geeks.com/wp-content/uploads/2020/09/Funko-Pop-Retro-Toys-Transformers-Metallic-Optimus-Prime-2.jpg" />
 										</div>
 										<div className="item-friend__data-exist">
@@ -250,8 +270,8 @@ export const ProfileFriendPage = () => {
 									</div>
 								</div>
 								<div className="container-item_friend__exist">
-									<div className="group-item_friend">
-										<div class="item-friend__profile">
+									<div className="group-item_friend content-color">
+										<div className="item-friend__profile">
 											<img alt="userprofile" src="https://hotstuff4geeks.com/wp-content/uploads/2020/09/Funko-Pop-Retro-Toys-Transformers-Metallic-Optimus-Prime-2.jpg" />
 										</div>
 										<div className="item-friend__data-exist">
@@ -261,12 +281,12 @@ export const ProfileFriendPage = () => {
 									</div>
 								</div>
 							</div>
-							<div className="next-footer__friends ed-grid s-grid-2 s-gap-4">
+							<Link to="/profile/121/followings" className="next-footer__friends ed-grid s-grid-2 s-gap-4">
 								<h4 className="content-color text-bold">Ver 9 más</h4>
 								<i className="container-icon-arrowRightFriend primary-color">
 									<IconRight />
 								</i>
-							</div>
+							</Link>
 						</div>
 						<div className="friends-followers">
 							<div className="title-header__friends">
@@ -358,16 +378,19 @@ export const ProfileFriendPage = () => {
 							</div>
 
 						</div>
-						<div className="next-footer__achievements ed-grid s-grid-2 s-gap-4">
+						<Link to="/profile/121/achievements" className="next-footer__achievements ed-grid s-grid-2 s-gap-4">
 							<h4 className="content-color text-bold">Ver todos</h4>
 							<i className="container-icon-arrowRightAchievement primary-color">
 								<IconRight />
 							</i>
-						</div>
+						</Link>
 					</div>
 
 				</div>
 			</div>
+			<FooterMenu />
 		</>
 	)
 }
+
+export default ProfileFriendPage;

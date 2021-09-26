@@ -1,6 +1,8 @@
-import React from 'react'
+
+import React from 'react';
 
 const FooterSelectSong = () => {
+
 	return (
 		<footer className="player-footer s-main-center">
 			<div className="ed-grid s-cross-center s-py-2">
@@ -10,4 +12,4 @@ const FooterSelectSong = () => {
 	)
 }
 
-export default FooterSelectSong
+export default FooterSelectSong;

@@ -2,7 +2,6 @@
 // Estilos para página final del juego
 .container-allSectionScreenFinish {
 	background: var(--bg-container);
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -12,7 +11,7 @@
 	display: flex;
 	flex: 0 0 auto;
 	justify-content: center;
-	padding: rem(32px) rem(0px);
+	padding-top: rem(16px);
 }
 
 // FIN HEADER
@@ -21,9 +20,10 @@
 .container-screenFinish_section {
 	flex: 1 1 auto;
 	padding: rem(32px) rem(0px);
+	height: calc(100vh - 47px - 69px);
 
-	@include from(641px) {
-		padding: rem(64px) rem(0px);
+	@include from(m) {
+		height: calc(100vh - 62px - 76px);
 	}
 }
 
@@ -67,11 +67,7 @@
 // FOOTER
 .container-screenFinish_footer {
 	flex: 0 0 auto;
-	padding: rem(32px) rem(0px);
-
-	@include from(641px) {
-		padding: rem(64px) rem(0px);
-	}
+	padding-bottom: rem(32px);
 }
 
 .content-button__reset,

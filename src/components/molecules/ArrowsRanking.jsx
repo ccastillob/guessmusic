@@ -1,8 +1,11 @@
-import React from 'react'
-import IconLeft from '../icons/IconLeft'
-import IconRight from '../icons/IconRight'
+
+import React from 'react';
+
+import IconLeft from '../icons/IconLeft';
+import IconRight from '../icons/IconRight';
 
 const ArrowsRanking = () => {
+
 	return (
 		<div className="ed-grid s-grid-2 m-gap-2 container-arrows_ranking">
 			<div className="ranking__content-left s-cross-center">
@@ -23,4 +26,4 @@ const ArrowsRanking = () => {
 	)
 }
 
-export default ArrowsRanking
+export default ArrowsRanking;

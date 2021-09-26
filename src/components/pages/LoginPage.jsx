@@ -1,12 +1,14 @@
 
-import React from 'react'
-import PrimaryButton from '../atoms/PrimaryButton'
-import IconEmail from '../icons/IconEmail'
-import IconEyeOpen from '../icons/IconEyeOpen'
-import IconLogo from '../icons/IconLogo'
-import IconPassword from '../icons/IconPassword'
+import React from 'react';
+
+import PrimaryButton from '../atoms/PrimaryButton';
+import IconEmail from '../icons/IconEmail';
+import IconEyeOpen from '../icons/IconEyeOpen';
+import IconLogo from '../icons/IconLogo';
+import IconPassword from '../icons/IconPassword';
 
 const LoginPage = () => {
+
 	return (
 		<div className="ed-grid s-grid-12 container-login ">
 			<form type="submit" className="login-content ed-grid s-grid-6">
@@ -40,4 +42,4 @@ const LoginPage = () => {
 	)
 }
 
-export default LoginPage
+export default LoginPage;

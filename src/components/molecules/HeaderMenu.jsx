@@ -1,68 +1,70 @@
 
-import React from 'react'
-// import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import IconCategories from '../icons/IconCategories';
 import IconChat from '../icons/IconChat';
 import IconLogo from '../icons/IconLogo';
 import IconNotificationFull from '../icons/IconNotificationFull';
 import IconPlay from '../icons/IconPlay';
 import IconRanking from '../icons/IconRanking';
-import IconVersus from '../icons/IconVersus';
+// import IconVersus from '../icons/IconVersus';
 
-const HeaderMenu = ({status}) => {
+const HeaderMenu = ({status, active}) => {
+
 	return (
 		<header className={`main-header s-main-center ${status}`}>
 			<div className="ed-grid">
 				<div className="s-cross-center">
 					<div className="s-to-left s-cross-center">
-						<div className="menu-container-logo s-cross-center">
+						<NavLink activeClassName="" to="/" className="menu-container-logo s-cross-center">
 							<i className="container-icon-logo">
 								<IconLogo />
 							</i>
 							<h4 className={`content-color`}>GuessMusic</h4>
-						</div>
+						</NavLink>
 						<div className="menu-container">
-							<div to="/" className="menu-list m-mr-2">
-								<i className="container-icon-menu content-color">
+							<NavLink activeClassName="" to="/" className="menu-list m-mr-2">
+								<i className={`${active === "play" && "active"} container-icon-menu content-color`}>
 									<IconPlay />
 								</i>
-								<h4 className={`content-color`}>Jugar</h4>
-							</div>
-							<div to="/" className="menu-list m-mr-2">
-								<i className="container-icon-menu content-color">
+								<h4 className={`${active === "play" && "active"} content-color`}>Jugar</h4>
+							</NavLink>
+							<NavLink activeClassName="" to="/ranking" className="menu-list m-mr-2">
+								<i className={`${active === "ranking" && "active"} container-icon-menu content-color`}>
 									<IconRanking />
 								</i>
-								<h4 className={`content-color`}>Clasificación</h4>
-							</div>
-							<div to="/" className="menu-list m-mr-2">
-								<i className="container-icon-menu content-color">
+								<h4 className={`${active === "ranking" && "active"} content-color`}>Clasificación</h4>
+							</NavLink>
+							<NavLink activeClassName="" to="/categories" className="menu-list m-mr-2">
+								<i className={`${active === "categories" && "active"} container-icon-menu content-color`}>
 									<IconCategories />
 								</i>
-								<h4 className={`content-color`}>Categorias</h4>
-							</div>
-							<div to="/" className="menu-list">
-								<i className="container-icon-menu content-color active">
+								<h4 className={`${active === "categories" && "active"} content-color`}>Categorias</h4>
+							</NavLink>
+							{/* <NavLink activeClassName="" to="/" className="menu-list">
+								<i className={`${active === "battle" && "active"} container-icon-menu content-color`}>
 									<IconVersus />
 								</i>
-								<h4 className={`content-color active`}>Batalla</h4>
-							</div>
+								<h4 className={`${active === "battle" && "active"} content-color`}>Batalla</h4>
+							</NavLink> */}
 						</div>
 					</div>
 					<div className="s-to-right s-cross-center">
 						<div className="menu-icons">
-							<div to="/" className="menu-item-icon">
-								<i className="container-icon-nav content-color">
+							<NavLink activeClassName="" to="/notifications" className="menu-item-icon">
+								<i className={`${active === "notification" && "active"} container-icon-nav content-color`}>
 									<IconNotificationFull/>
 								</i>
-							</div>
-							<div to="/" className="menu-item-icon">
-								<i className="container-icon-nav content-color active">
+							</NavLink>
+							<NavLink activeClassName="" to="/chat" className="menu-item-icon">
+								<i className={`${active === "chat" && "active"} container-icon-nav content-color`}>
 									<IconChat/>
 								</i>
-							</div>
-							<div class="menu-item-profile">
+							</NavLink>
+							<NavLink activeClassName={`${active === "profile" ? "active" : ""}`} to="/profile/123" className="menu-item-profile">
 								<img alt="profile" src="https://th.bing.com/th/id/OIP.5C7gR_T8k_r45PSdZdR7nAHaHa?pid=ImgDet&rs=1" />
-							</div>
+							</NavLink>
 						</div>
 					</div>
 				</div>
@@ -72,7 +74,8 @@ const HeaderMenu = ({status}) => {
 }
 
 HeaderMenu.defaultProps = {
-	status: ""
+	status: "",
+	active: ""
 }
 
 export default HeaderMenu;

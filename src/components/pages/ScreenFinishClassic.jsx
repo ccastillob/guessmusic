@@ -1,8 +1,11 @@
-import React from 'react'
-import GhostButton from '../atoms/GhostButton'
-import PrimaryButton from '../atoms/PrimaryButton'
+
+import React from 'react';
+
+import GhostButton from '../atoms/GhostButton';
+import PrimaryButton from '../atoms/PrimaryButton';
 
 const ScreenFinishClassic = () => {
+
 	return (
 		<div className="ed-container container-allSectionScreenFinish">
 			<div className="container-screenFinish_header ed-grid">
@@ -48,4 +51,4 @@ const ScreenFinishClassic = () => {
 	)
 }
 
-export default ScreenFinishClassic
+export default ScreenFinishClassic;

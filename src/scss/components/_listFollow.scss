@@ -1,5 +1,10 @@
 
 // Estilos para la página de seguidos/seguidores
+.container-followingpage,
+.container-followerpage {
+	padding-top: rem(44px);
+	padding-bottom: rem(64px);
+}
 
 .container-listFollow {
 	padding: rem(16px);

@@ -88,7 +88,7 @@
 		}
 
 		&:hover {
-			color: var(--primary-alt-color);
+			color: var(--bg-body);
 		}
 	}
 
@@ -294,9 +294,9 @@
 		}
 
 		// Desde 769px
-		@include from(m) {
-			width: rem(212px);
-			height: rem(212px);
+		@include from(lg) {
+			width: rem(180px);
+			height: rem(180px);
 		}
 	}
 

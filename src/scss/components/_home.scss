@@ -1,5 +1,22 @@
 
 // Estilos para la página principal/home
+.container-homepage {
+	padding-top: rem(44px);
+	padding-bottom: rem(120px);
+
+	& > h1 {
+		margin-bottom: rem(20px);
+	}
+
+	& > h3 {
+		margin-bottom: rem(32px);
+	}
+
+	@include from(m) {
+		padding-bottom: rem(64px);
+	}
+}
+
 .container-card_level {
 	background: var(--bg-container);
 	border-radius: var(--border-radius);

@@ -1,9 +1,17 @@
 
 // Estilos para la página de perfil usuario
 
+.container-profilepage {
+	padding-top: rem(44px);
+	padding-bottom: rem(120px);
+
+	@include from(m) {
+		padding-bottom: rem(64px);
+	}
+}
+
 // INICIO SECCION TOP
 .section-top_profileUser {
-	padding-top: rem(44px);
 	padding-bottom: rem(16px);
 	border-bottom: 1px solid var(--border-color);
 

@@ -1,14 +1,16 @@
 
-import React from 'react'
-import PrimaryButton from '../atoms/PrimaryButton'
-import IconEmail from '../icons/IconEmail'
-import IconEyeClose from '../icons/IconEyeClose'
-import IconEyeOpen from '../icons/IconEyeOpen'
-import IconLogo from '../icons/IconLogo'
-import IconPassword from '../icons/IconPassword'
-import IconUser from '../icons/IconUser'
+import React from 'react';
+
+import PrimaryButton from '../atoms/PrimaryButton';
+import IconEmail from '../icons/IconEmail';
+import IconEyeClose from '../icons/IconEyeClose';
+import IconEyeOpen from '../icons/IconEyeOpen';
+import IconLogo from '../icons/IconLogo';
+import IconPassword from '../icons/IconPassword';
+import IconUser from '../icons/IconUser';
 
 const RegisterPage = () => {
+
 	return (
 		<div className="ed-grid s-grid-12 container-register">
 			<form type="submit" className="register-content ed-grid s-grid-6">
@@ -63,4 +65,4 @@ const RegisterPage = () => {
 	)
 }
 
-export default RegisterPage
+export default RegisterPage;

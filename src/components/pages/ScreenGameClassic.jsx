@@ -1,8 +1,11 @@
-import React from 'react'
-import PrimaryButton from '../atoms/PrimaryButton'
-import IconLogo from '../icons/IconLogo'
+
+import React from 'react';
+
+import PrimaryButton from '../atoms/PrimaryButton';
+import IconLogo from '../icons/IconLogo';
 
 const ScreenGameClassic = () => {
+
 	return (
 		<div className="ed-container container-allSectionScreenGame">
 			<div className="container-screenGame_header ed-grid s-grid-3">
@@ -48,4 +51,4 @@ const ScreenGameClassic = () => {
 	)
 }
 
-export default ScreenGameClassic
+export default ScreenGameClassic;

@@ -2,7 +2,6 @@
 // Estilos para página de inicio del juego
 .container-allSectionScreenGame {
 	background: var(--bg-container);
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -11,7 +10,7 @@
 .container-screenGame_header {
 	display: flex;
 	flex: 0 0 auto;
-	padding: rem(32px) rem(0px);
+	padding-top: rem(16px);
 }
 
 .screenGame-item_mode,
@@ -30,27 +29,22 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-}
-
-.screenGame-content_data {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	height: calc(100vh - 76px - 140px);
 
 	& > i {
 		margin-bottom: rem(16px);
-
-		@include from(641px) {
-			margin-bottom: rem(32px);
-		}
 	}
 
 	& > h1 {
 		margin-bottom: rem(8px);
+	}
 
-		@include from(641px) {
-			margin-bottom: rem(16px);
-		}
+	@include fromTo(641px, m) {
+		height: calc(100vh - 76px - 152px);
+	}
+
+	@include from(m) {
+		height: calc(100vh - 98px - 160px);
 	}
 }
 
@@ -61,12 +55,8 @@
 	display: flex;
 	flex: 0 0 auto;
 	flex-direction: column;
-	padding: rem(32px) rem(0px);
+	padding-bottom: rem(32px);
 	align-items: center;
-
-	@include from(641px) {
-		padding: rem(64px) rem(0px);
-	}
 }
 
 .screenGame-content_btnsBottom {

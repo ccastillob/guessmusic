@@ -1,6 +1,31 @@
 
 // Estilos para la pagina de categoria
 
+.container-categoriepage {
+	padding-top: rem(44px);
+	padding-bottom: rem(139px);
+
+	& > h1 {
+		margin-bottom: rem(20px);
+	}
+
+	& > h3 {
+		margin-bottom: rem(32px);
+	}
+
+	@include from(m) {
+		padding-bottom: rem(143px);
+	}
+}
+
+.container-allCards_categorie {
+	margin-bottom: rem(32px);
+
+	&:last-child {
+		margin-bottom: rem(0px);
+	}
+}
+
 .container-categorie_item {
 
 	position: relative;
