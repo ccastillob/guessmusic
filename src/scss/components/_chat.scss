@@ -569,3 +569,37 @@
 	background: transparent;
 }
 // FIN PARTE IZQUIERDA CHAT
+
+// INICIO PARTE SELECTIVA
+.container-chatSelectUser  {
+	height: calc(100vh - var(--header-height-mobile));
+	display: none;
+
+	// Apartir de 641px hasta 899px
+	@include fromTo(641px, 900px) {
+		grid-column-end: span 9;
+		grid-column-start: 4;
+		display: flex;
+	}
+
+	@include from(m) {
+		height: calc(100vh - var(--header-height-web));
+		display: flex;
+	}
+
+	// Desde 900px
+	@include from(900px) {
+		grid-column-end: span 8;
+		grid-column-start: 5;
+	}
+
+}
+
+.chatSelectUser-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+// FIN PARTE SELECTIVA
