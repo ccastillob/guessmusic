@@ -1,16 +1,20 @@
 
 import React from 'react';
 
-const PrimaryButton = ({ otherClass, title, urlTo, event }) => {
+const PrimaryButton = ({ otherClass, title, urlTo, event, btn }) => {
 	return (
-		<div onClick={event} to={urlTo} className={`button button-primary ${otherClass}`} >{ title }</div>
+
+		btn
+		? <button type="submit" className={`button button-primary ${otherClass}`}>{ title }</button>
+		: <div onClick={event} to={urlTo} className={`button button-primary ${otherClass}`} >{ title }</div>
 	)
 }
 
 PrimaryButton.defaultProps = {
 	otherClass: "",
 	title: "",
-	urlTo: "/"
+	urlTo: "/",
+	btn: false
 }
 
 export default PrimaryButton;

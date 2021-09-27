@@ -42,7 +42,7 @@ const CardLevelCategorie = () => {
 
   function SampleNextArrow({ onClick, currentSlide }) {
 
-		arrowRightVisible(currentSlide, btnRight);
+		arrowRightVisible({currentSlide, btnRight});
 
     return (
 			<div ref={btnRight} onClick={ onClick } className="carousel-arrow carousel-arrow-right">
@@ -55,7 +55,7 @@ const CardLevelCategorie = () => {
 
   function SamplePrevArrow({ onClick, currentSlide }) {
 
-		arrowLeftVisible(currentSlide, btnLeft);
+		arrowLeftVisible({currentSlide, btnLeft});
 
     return (
 			<div ref={btnLeft} onClick={ onClick } className="carousel-arrow carousel-arrow-left">

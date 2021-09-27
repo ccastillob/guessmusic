@@ -2,7 +2,7 @@
 // Funciones para visualizar las flechas izq/der en las categorias
 
 // Flecha izquierda
-const arrowLeftVisible = ( currentSlide, btnLeft ) => {
+const arrowLeftVisible = ( {currentSlide, btnLeft} ) => {
 
 	// Si el slider actual es igual a cero entonces no se visualiza
 	if( currentSlide === 0 ) {
@@ -14,7 +14,7 @@ const arrowLeftVisible = ( currentSlide, btnLeft ) => {
 }
 
 // Flecha derecha
-const arrowRightVisible = ( currentSlide, btnRight ) => {
+const arrowRightVisible = ( {currentSlide, btnRight} ) => {
 
 	// Se almacena el valor del ancho viewport a medida que vamos redimensionando la ventana del navegador
 	const bp = window.document.body.getBoundingClientRect().width;
