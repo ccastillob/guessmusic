@@ -1,19 +1,39 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import { useForm } from '../../hooks/useForm';
+import { usePasswordToggle } from '../../hooks/usePasswordToggle';
 import PrimaryButton from '../atoms/PrimaryButton';
 import IconEmail from '../icons/IconEmail';
-import IconEyeClose from '../icons/IconEyeClose';
-import IconEyeOpen from '../icons/IconEyeOpen';
 import IconLogo from '../icons/IconLogo';
 import IconPassword from '../icons/IconPassword';
 import IconUser from '../icons/IconUser';
 
 const RegisterPage = () => {
 
+	const [ formRegisterValues, handleRegisterInputChange ] = useForm({
+		rFirstname: '',
+		rLastname: '',
+		rEmail: '',
+		rPassword: '',
+		rRePassword: ''
+	});
+
+	const { rFirstname, rLastname, rEmail, rPassword, rRePassword } = formRegisterValues;
+
+	const [ passwordInputType, toggleIcon ] = usePasswordToggle();
+	const [ repasswordInputType, toggleReIcon ] = usePasswordToggle();
+
+	const handleRegister = (e) => {
+		e.preventDefault();
+		console.log(rFirstname);
+		console.log(rLastname);
+	}
+
 	return (
 		<div className="ed-grid s-grid-12 container-register">
-			<form type="submit" className="register-content ed-grid s-grid-6">
+			<form onSubmit={ handleRegister } className="register-content ed-grid s-grid-6">
 				<div className="content-logoRegister s-cols-6">
 					<i className="container-icon-logoRegister primary-color">
 						<IconLogo />
@@ -24,42 +44,78 @@ const RegisterPage = () => {
 					<i className="container-icon-usernameRegister content-color">
 						<IconUser />
 					</i>
-					<input type="text" name="username" placeholder="Nombre usuario" className="content-color inputUsernameRegister" autoComplete="off" />
+					<input
+						type="text"
+						name="rFirstname"
+						placeholder="Nombre usuario"
+						className="content-color inputUsernameRegister"
+						autoComplete="off"
+						value={ rFirstname }
+						onChange={ handleRegisterInputChange }
+					/>
 				</div>
 				<div className="content-inputLastnameRegister">
 					<i className="container-icon-lastnameRegister content-color">
 						<IconUser />
 					</i>
-					<input type="text" name="lastname" placeholder="Apellido usuario" className="content-color inputLastnameRegister" autoComplete="off" />
+					<input
+						type="text"
+						name="rLastname"
+						placeholder="Apellido usuario"
+						className="content-color inputLastnameRegister"
+						autoComplete="off"
+						value={ rLastname }
+						onChange={ handleRegisterInputChange }
+					/>
 				</div>
 				<div className="content-inputEmailRegister">
 					<i className="container-icon-emailRegister content-color">
 						<IconEmail />
 					</i>
-					<input type="text" name="email" placeholder="Correo electrónico" className="content-color inputEmailRegister" autoComplete="off" />
+					<input
+						type="text"
+						name="rEmail"
+						placeholder="Correo electrónico"
+						className="content-color inputEmailRegister"
+						autoComplete="off"
+						value={ rEmail }
+						onChange={ handleRegisterInputChange }
+					/>
 				</div>
 				<div className="content-inputPasswordRegister">
 					<i className="container-icon-passwordRegister content-color">
 						<IconPassword />
 					</i>
-					<input type="password" name="password" placeholder="Contraseña" className="content-color inputPasswordRegister"  autoComplete="off" />
-					<i className="container-icon-eyesRegister">
-						<IconEyeOpen />
-					</i>
+					<input
+						type={passwordInputType}
+						name="rPassword"
+						placeholder="Contraseña"
+						className="content-color inputPasswordRegister"
+						autoComplete="off"
+						value={ rPassword }
+						onChange={ handleRegisterInputChange }
+					/>
+					{ toggleIcon }
 				</div>
 				<div className="content-inputRePasswordRegister">
 					<i className="container-icon-repasswordRegister content-color">
 						<IconPassword />
 					</i>
-					<input type="password" name="repassword" placeholder="Repetir contraseña" className="content-color inputRePasswordRegister"  autoComplete="off" />
-					<i className="container-icon-eyesRegister">
-						<IconEyeClose />
-					</i>
+					<input
+						type={repasswordInputType}
+						name="rRePassword"
+						placeholder="Repetir contraseña"
+						className="content-color inputRePasswordRegister"
+						autoComplete="off"
+						value={ rRePassword }
+						onChange={ handleRegisterInputChange }
+					/>
+					{ toggleReIcon }
 				</div>
 				<div className="content-button__register">
-					<PrimaryButton title="Registrarse" />
+					<PrimaryButton title="Registrarse" btn={true} />
 				</div>
-				<h3 className="content-color s-center s-cols-6">¿Ya tienes una cuenta? <span className="span_register text-bold">Inicia sesión</span></h3>
+				<h3 className="content-color s-center s-cols-6">¿Ya tienes una cuenta? <Link to="/guessmusic/login" className="span_register text-bold">Inicia sesión</Link></h3>
 			</form>
 		</div>
 	)
