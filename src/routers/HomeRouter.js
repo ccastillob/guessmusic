@@ -9,10 +9,11 @@ import FollowersPage from '../components/pages/FollowersPage';
 import FollowingsPage from '../components/pages/FollowingsPage';
 import HomePage from '../components/pages/HomePage';
 import NotificationsPage from '../components/pages/NotificationsPage';
-import ProfileUserPage from '../components/pages/ProfileUserPage';
 import RankingPage from '../components/pages/RankingPage';
 import ScreenFinishClassic from '../components/pages/ScreenFinishClassic';
 import ScreenGameClassic from '../components/pages/ScreenGameClassic';
+import SelectProfilePage from '../components/pages/SelectProfilePage';
+import ErrorPage from '../components/pages/ErrorPage';
 
 export const HomeRouter = () => {
 
@@ -45,18 +46,18 @@ export const HomeRouter = () => {
 			/>
 			<Route
 				exact
-				path="/profile/:idUser/followings"
+				path="/profile/:username/followings"
 				component={ FollowingsPage }
 			/>
 			<Route
 				exact
-				path="/profile/:idUser/followers"
+				path="/profile/:username/followers"
 				component={ FollowersPage }
 			/>
 			<Route
 				exact
-				path="/profile/:idUser"
-				component={ ProfileUserPage }
+				path="/profile/:username"
+				component={ SelectProfilePage }
 			/>
 			<Route
 				exact
@@ -67,6 +68,11 @@ export const HomeRouter = () => {
 				exact
 				path="/results/classic"
 				component={ ScreenFinishClassic }
+			/>
+			<Route
+				exact
+				path="/error"
+				component={ ErrorPage }
 			/>
 			<Route
 				exact

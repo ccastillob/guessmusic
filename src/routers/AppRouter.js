@@ -1,10 +1,14 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	BrowserRouter as Router,
 	Switch,
 	Redirect
 } from 'react-router-dom';
+import { startChecking } from '../actions/auth';
+import { startUserData, startUserFollowersByID, startUserFollowingsByID } from '../actions/user';
+
 import { AuthRouter } from './AuthRouter';
 import { HomeRouter } from './HomeRouter';
 import { PrivateRoute } from './PrivateRoute';
@@ -12,18 +16,42 @@ import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {
 
+	const dispatch = useDispatch();
+	const { checking, uid } = useSelector( state => state.auth );
+
+	useEffect(() => {
+
+		dispatch( startChecking() )
+
+	}, [dispatch])
+
+	useEffect(() => {
+
+		if( uid ) {
+			dispatch( startUserData(uid) )
+			dispatch( startUserFollowingsByID(uid) )
+			dispatch( startUserFollowersByID(uid) )
+		}
+
+	}, [dispatch, uid])
+
+	if( checking ) {
+		// TODO: AGREGAR UN LOADING
+		return <h1>Esperando...</h1>
+	}
+
 	return (
 		<Router>
 			<Switch>
 				<PublicRoute
 					path="/guessmusic"
 					component={ AuthRouter }
-					isLoggedIn={ true }
+					isLoggedIn={ !!uid }
 				/>
 				<PrivateRoute
 					path="/"
 					component={ HomeRouter }
-					isLoggedIn={ true }
+					isLoggedIn={ !!uid }
 				/>
 				<Redirect to="/guessmusic/login" />
 			</Switch>
