@@ -1,16 +1,20 @@
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+import CircleChat from '../atoms/CircleChat';
+import CircleNotification from '../atoms/CircleNotification';
 import IconCategories from '../icons/IconCategories';
 import IconChat from '../icons/IconChat';
 import IconLogo from '../icons/IconLogo';
-import IconNotificationFull from '../icons/IconNotificationFull';
+import IconNotification from '../icons/IconNotification';
 import IconPlay from '../icons/IconPlay';
 import IconRanking from '../icons/IconRanking';
-// import IconVersus from '../icons/IconVersus';
 
 const HeaderMenu = ({status, active}) => {
+
+  const { data: user } = useSelector(state => state.user);
 
 	return (
 		<header className={`main-header s-main-center ${status}`}>
@@ -54,16 +58,18 @@ const HeaderMenu = ({status, active}) => {
 						<div className="menu-icons">
 							<NavLink activeClassName="" to="/notifications" className="menu-item-icon">
 								<i className={`${active === "notification" && "active"} container-icon-nav content-color`}>
-									<IconNotificationFull/>
+									<IconNotification />
+									<CircleNotification />
 								</i>
 							</NavLink>
 							<NavLink activeClassName="" to="/chat" className="menu-item-icon">
 								<i className={`${active === "chat" && "active"} container-icon-nav content-color`}>
 									<IconChat/>
+									<CircleChat />
 								</i>
 							</NavLink>
-							<NavLink activeClassName={`${active === "profile" ? "active" : ""}`} to="/profile/123" className="menu-item-profile">
-								<img alt="profile" src="https://th.bing.com/th/id/OIP.5C7gR_T8k_r45PSdZdR7nAHaHa?pid=ImgDet&rs=1" />
+							<NavLink activeClassName={`${active === "profile" ? "active" : ""}`} to={`/profile/${ user?.username }`} className="menu-item-profile">
+								<img alt="profile" src={ user?.imgAvatar } />
 							</NavLink>
 						</div>
 					</div>

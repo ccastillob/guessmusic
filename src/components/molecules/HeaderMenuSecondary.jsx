@@ -1,17 +1,18 @@
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 
 import IconLeft from '../icons/IconLeft';
 
-const HeaderMenuSecondary = ({status, setChatActivo, active}) => {
+const HeaderMenuSecondary = ({status, active}) => {
 
-	let history = useHistory()
+	let history = useHistory();
+	const { data: user } = useSelector(state => state.user);
 
 	const handleGoToBack = (e) => {
 		e.preventDefault();
-		if( status === 'chatview' ) {
-			setChatActivo(false)
+		if( status.includes('chatview')  ) {
 			history.push("/chat")
 		}else {
 			history.goBack();
@@ -32,8 +33,8 @@ const HeaderMenuSecondary = ({status, setChatActivo, active}) => {
 					</div>
 					<div className="s-to-right s-cross-center">
 						<div className="menu-icons">
-							<NavLink activeClassName={`${active === "profile" ? "active" : ""}`} to="/profile/121" className="menu-item-profile">
-								<img alt="profile" src="https://th.bing.com/th/id/OIP.5C7gR_T8k_r45PSdZdR7nAHaHa?pid=ImgDet&rs=1" />
+							<NavLink activeClassName={`${active === "profile" ? "active" : ""}`} to={`/profile/${ user?.username }`} className="menu-item-profile">
+								<img alt="profile" src={ user?.imgAvatar } />
 							</NavLink>
 						</div>
 					</div>

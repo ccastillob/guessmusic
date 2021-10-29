@@ -1,11 +1,13 @@
 
 import React from 'react';
 
-const ItemConfirmNotification = () => {
+const ItemConfirmNotification = ({ notification }) => {
+
+	const { userIDSendsNotification: user } = notification;
 
 	return (
 		<div className="container-item_request__confirm">
-			<h4 className="content-color"><span className="text-bold">Bumblebee</span> fue añadido a tu lista de amigos.</h4>
+			<h4 className="content-color"><span className="text-bold">{ user.name } { user.lastName }</span> fue añadido a tu lista de seguidores.</h4>
 		</div>
 	)
 }
