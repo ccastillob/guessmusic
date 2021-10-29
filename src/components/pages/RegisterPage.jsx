@@ -27,6 +27,7 @@ const RegisterPage = () => {
 
 	const handleRegister = (e) => {
 		e.preventDefault();
+		// TODO: APLICAR FUNCIONALIDAD DE REGISTRO
 		console.log(rFirstname);
 		console.log(rLastname);
 	}

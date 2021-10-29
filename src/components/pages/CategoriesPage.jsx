@@ -15,6 +15,7 @@ const CategoriesPage = () => {
 					<h1 className="title-color s-center">Categoria de canciones</h1>
 					<h3 className="content-color s-center">Visualiza y escucha las canciones que acertaste en cada nivel.</h3>
 					<div className="ed-grid s-grid-12">
+						{/* TODO: APLICAR LAS CARDS PARA LAS CANCIONES */}
 						<CardLevelCategorie />
 						<CardLevelCategorie />
 						<CardLevelCategorie />

@@ -6,7 +6,8 @@ import IconPlay from '../icons/IconPlay';
 const ItemUnlockedSong = ({listen}) => {
 
 	const handlePlay = () => {
-    console.log("click svg");
+		// TODO: FUNCIONALIDAD AL DARLE PLAY
+    // console.log("click svg");
   }
 
 	return (

@@ -7,8 +7,6 @@ import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 
 const ListAchievementsPage = ({match}) => {
 
-	// console.log(match);
-
 	return (
 		<>
 			<HeaderMenuSecondary />
@@ -16,6 +14,7 @@ const ListAchievementsPage = ({match}) => {
 				<div className="container-listAchievement">
 					<h2 className="title-color">Lista de logros { match.params.idUser !== "123" && "- usuario" }</h2>
 					<div className="listAchievement-allItems">
+						{/* TODO: APLICAR LOGROS PARA EL USUARIO */}
 
 						<ItemPendingListAchievement />
 
