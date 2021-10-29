@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { startProfileFollowings } from '../../actions/profile';
 import { SocketContext } from '../../context/SocketContext';
 import { fetchConToken } from '../../helpers/fetch';
+import { getHour } from '../../helpers/getTime';
+import { scrollToBottom } from '../../helpers/scrollToBottom';
 import { types } from '../../types/types';
 import CircleMessageChat from '../atoms/CircleMessageChat';
 import CircleStatusUser from '../atoms/CircleStatusUser';
@@ -34,7 +36,10 @@ const ItemChatUser = ({ friend }) => {
 			payload: body.message
 		})
 
+		scrollToBottom('messages');
+
 		socket.emit( 'load-latest-messages', { uid } );
+
 
 	}
 
@@ -48,8 +53,7 @@ const ItemChatUser = ({ friend }) => {
 			<div className="item-userChat__data">
 				<div className="data-content_top">
 					<h4 className="text-bold text-overflow">{ friend.name }</h4>
-					{/* TODO: FALTA ASIGNAR HORA */}
-					<small className="text-bold">17:56</small>
+					<small className="text-bold">{ getHour( friend?.createdAt ) }</small>
 				</div>
 				<div className="data-content_bottom">
 					<small className="text-overflow">{ friend.userMessage }</small>

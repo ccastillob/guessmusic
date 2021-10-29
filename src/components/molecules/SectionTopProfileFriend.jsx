@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
 import { SocketContext } from '../../context/SocketContext';
+import { getCreatedAt } from '../../helpers/getTime';
 import FollowButton from '../atoms/FollowButton';
 import IconAddUserFollow from '../icons/IconAddUserFollow';
 import IconDate from '../icons/IconDate';
@@ -75,8 +76,7 @@ const SectionTopProfileFriend = () => {
 						<i className="container-icon-dateProfile content-color">
 							<IconDate />
 						</i>
-						{/* TODO: AGREGAR UNA FECHA */}
-						<h4 className="content-color text_line-clamp">Se unió el 04/08/21</h4>
+						<h4 className="content-color text_line-clamp">Se unió el { getCreatedAt( profile?.createdAt ) }</h4>
 					</div>
 					<div className="data-content__friends">
 						<i className="container-icon-followProfile content-color">

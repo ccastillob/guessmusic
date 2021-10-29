@@ -1,13 +1,13 @@
 
 import React from 'react';
+import { getDateMessage } from '../../helpers/getTime';
 
 const OutgoingMessage = ({ msg }) => {
 
 	return (
 		<div className="container-item_conversation send s-cols-10">
 			<h4 className="content-color">{ msg.userMessage }</h4>
-			{/* TODO: FALTA ASIGNAR FECHA */}
-			<small className="auxiliary-color">12/08/21 18:31</small>
+			<small className="auxiliary-color">{ getDateMessage( msg?.createdAt ) }</small>
 		</div>
 	)
 }

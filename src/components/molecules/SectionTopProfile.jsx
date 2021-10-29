@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { startLogout } from '../../actions/auth';
+import { getCreatedAt } from '../../helpers/getTime';
 import GhostButton from '../atoms/GhostButton';
 import PrimaryButton from '../atoms/PrimaryButton';
 import IconDate from '../icons/IconDate';
@@ -47,8 +48,7 @@ const SectionTopProfile = () => {
 							<i className="container-icon-dateProfile content-color">
 								<IconDate />
 							</i>
-							{/* TODO: AGREGAR UNA FECHA */}
-							<h4 className="content-color text_line-clamp">Se unió el 04/08/21</h4>
+							<h4 className="content-color text_line-clamp">Se unió el { getCreatedAt( user?.createdAt ) }</h4>
 						</div>
 						<div className="data-content__friends">
 							<i className="container-icon-followProfile content-color">

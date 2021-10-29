@@ -4,6 +4,7 @@ import { createContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { loadingLastMessageAndUsersChat } from '../actions/subscription';
+import { scrollToBottomAnimated } from '../helpers/scrollToBottom';
 import { useSocket } from '../hooks/useSocket'
 import { types } from '../types/types';
 
@@ -56,7 +57,7 @@ export const SocketProvider = ({ children }) => {
 
 			// Nos aseguramos que los mensajes ya hayan sido almacenados en la BD y luego buscamos los ultimos mensajes
 			await loadingLastMessageAndUsersChat(dispatch);
-
+			scrollToBottomAnimated('messages');
 
 		})
 

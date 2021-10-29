@@ -9,6 +9,7 @@ import {
 import { startChecking } from '../actions/auth';
 import { startUserData, startUserFollowersByID, startUserFollowingsByID } from '../actions/user';
 
+import { ScrollToTop } from '../helpers/scrollToTop';
 import { AuthRouter } from './AuthRouter';
 import { HomeRouter } from './HomeRouter';
 import { PrivateRoute } from './PrivateRoute';
@@ -42,6 +43,7 @@ export const AppRouter = () => {
 
 	return (
 		<Router>
+			<ScrollToTop />
 			<Switch>
 				<PublicRoute
 					path="/guessmusic"
