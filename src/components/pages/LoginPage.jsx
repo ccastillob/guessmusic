@@ -1,6 +1,8 @@
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { startLogin } from '../../actions/auth';
 
 import { useForm } from '../../hooks/useForm';
 import { usePasswordToggle } from '../../hooks/usePasswordToggle';
@@ -11,9 +13,11 @@ import IconPassword from '../icons/IconPassword';
 
 const LoginPage = () => {
 
+	const dispatch = useDispatch()
+
 	const [ formLoginValues, handleLoginInputChange ] = useForm({
-		lEmail: '',
-		lPassword: ''
+		lEmail: 'test01@gmail.com',
+		lPassword: '123456'
 	});
 
 	const { lEmail, lPassword } = formLoginValues;
@@ -26,6 +30,12 @@ const LoginPage = () => {
 		console.log(lEmail);
 		console.log(lPassword);
 
+		dispatch( startLogin( lEmail, lPassword ) )
+
+	}
+
+	const disabledButton = () => {
+		return (lEmail.length > 0 && lPassword.length > 0) ? true : false;
 	}
 
 	return (
@@ -67,7 +77,7 @@ const LoginPage = () => {
 					{ toggleIcon }
 				</div>
 				<div className="content-button__login">
-					<PrimaryButton title="Inicia sesión" btn={true} />
+					<PrimaryButton btnDisabled={ !disabledButton() } title="Inicia sesión" btn={true} />
 				</div>
 				<h3 className="content-color s-center s-cols-6">¿No tienes una cuenta? <Link to="/guessmusic/register" className="span_login text-bold">Registrate</Link></h3>
 			</form>
