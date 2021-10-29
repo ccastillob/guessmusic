@@ -1,6 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { types } from '../../types/types';
 import HeaderMenu from '../molecules/HeaderMenu';
 import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 import ChatSectionLeft from '../organisms/ChatSectionLeft';
@@ -9,28 +11,34 @@ import ChatSelectUser from '../organisms/ChatSelectUser';
 
 const ChatPage = () => {
 
-	const [chatActivo, setChatActivo] = useState(false);
-	// console.log(chatActivo);
+	const dispatch = useDispatch()
+	const { chatActivo } = useSelector(state => state.chat)
 
-	// const handleView = () => {
-	// 	setChatActivo(true);
-	// }
+	useEffect(() => {
+
+		dispatch({
+			type: types.userClearDataProfile
+		})
+
+		dispatch({
+			type: types.clearActiveChat
+		})
+
+	}, [dispatch])
 
 	return (
 		<>
-			<HeaderMenu active="chat" status={`chatview ${ chatActivo ? "" : "default" }`} />
-			<HeaderMenuSecondary status={`chatview${ chatActivo ? "" : " default"}`} setChatActivo={setChatActivo} />
-			{/* <HeaderMenu status="chatview"/>
-			<HeaderMenuSecondary status="chatview"/> */}
+			<HeaderMenu active="chat" status={`chatview ${ !chatActivo && "default" }`} />
+			<HeaderMenuSecondary status={`chatview ${ !chatActivo && "default" }`} />
 
 			<div className="ed-container main-container container-allSectionsChat">
 				<div className="ed-grid s-grid-12 s-gap-0">
 
-					<ChatSectionLeft chatActivo={ chatActivo } setChatActivo={ setChatActivo } />
+					<ChatSectionLeft />
 
 					{
-						(true)
-							? <ChatSectionRight chatActivo={ chatActivo } />
+						( chatActivo )
+							? <ChatSectionRight />
 							: <ChatSelectUser />
 					}
 
