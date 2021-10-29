@@ -62,4 +62,15 @@
 		}
 	}
 
+	&:disabled {
+		cursor: default;
+		color: var(--auxiliary-color);
+		background: rgba(239, 239, 239, 0.3);
+
+		&:hover {
+			color: var(--auxiliary-color);
+			background: rgba(239, 239, 239, 0.3);
+		}
+	}
+
 }

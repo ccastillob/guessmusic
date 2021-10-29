@@ -42,6 +42,7 @@
 	&-nav {
 		width: rem(36px);
 		height: rem(36px);
+		position: relative;
 	}
 
 	&-logo {
@@ -364,4 +365,23 @@
 		}
 	}
 
+}
+
+.circle_chat,
+.circle_notification {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	background: var(--error-500);
+	color: var(--bg-container);
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	line-height: 15.6;
+	font-weight: normal;
+	padding: 2px 3px;
 }

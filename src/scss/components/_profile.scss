@@ -179,10 +179,10 @@
 	&_mobile {
 		padding: rem(16px);
 
-		@include hideFrom(m)
+		// @include hideFrom(m)
 	}
 
-	@include hideTo(m)
+	// @include hideTo(m)
 }
 
 .title-header__friends {
@@ -316,10 +316,10 @@
 		padding: rem(16px);
 		margin-top: rem(16px);
 
-		@include hideFrom(m)
+		// @include hideFrom(m)
 	}
 
-	@include hideTo(m)
+	// @include hideTo(m)
 }
 
 .achievements-allItems {

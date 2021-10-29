@@ -574,6 +574,7 @@
 .container-chatSelectUser  {
 	height: calc(100vh - var(--header-height-mobile));
 	display: none;
+	background: var(--bg-container);
 
 	// Apartir de 641px hasta 899px
 	@include fromTo(641px, 900px) {
@@ -585,6 +586,7 @@
 	@include from(m) {
 		height: calc(100vh - var(--header-height-web));
 		display: flex;
+		background: var(--bg-container);
 	}
 
 	// Desde 900px
