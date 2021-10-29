@@ -1,20 +1,30 @@
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import SectionFollowersProfile from '../molecules/SectionFollowersProfile';
 import SectionFollowingsProfile from '../molecules/SectionFollowingsProfile';
 
-const SectionFriendProfile = ({mobile}) => {
+const SectionFriendProfile = () => {
+
+	const { followings, followers } = useSelector(state => state.otherProfile );
 
 	return (
-		<div className={`section-friends${mobile ? "_mobile" : ""} s-cols-12 m-cols-5 m-x-8`}>
-			<h2 className="title-color s-mb-4">Amigos</h2>
 
-			<SectionFollowingsProfile />
+		( followings !== undefined ) ? (
 
-			<SectionFollowersProfile />
+			<div className="section-friends s-cols-12 m-cols-5 m-x-8">
+				<h2 className="title-color s-mb-4">Amigos</h2>
 
-		</div>
+				<SectionFollowingsProfile followings={ followings } />
+
+				<SectionFollowersProfile followers={ followers } />
+
+			</div>
+		) : (
+			// TODO: AGREGAR UN SKELETON
+			<h1>SKELETON DE AMIGOS</h1>
+		)
 	)
 }
 
