@@ -17,8 +17,8 @@ const ChatSectionRight = () => {
 
 			<ItemProfileChatUser />
 
-			<div id="messages" className="chatSectionRight_sectionConversation">
-				<div  className="sectionConversation-allItems ed-grid s-grid-12 s-gap-4">
+			<div id="messages-chat" className="chatSectionRight_sectionConversation">
+				<div className="sectionConversation-allItems ed-grid s-grid-12 s-gap-4">
 
 					{
 						mensajes.map( msg => (

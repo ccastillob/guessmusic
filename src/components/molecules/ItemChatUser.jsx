@@ -36,7 +36,7 @@ const ItemChatUser = ({ friend }) => {
 			payload: body.message
 		})
 
-		scrollToBottom('messages');
+		scrollToBottom('messages-chat');
 
 		socket.emit( 'load-latest-messages', { uid } );
 

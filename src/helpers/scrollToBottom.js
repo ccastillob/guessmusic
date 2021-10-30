@@ -5,16 +5,17 @@ export const scrollToBottom = ( id ) => {
 
     animateScroll.scrollToBottom({
         containerId: id,
-        duration: 0
+        duration: 0,
     });
 
 }
 
-export const scrollToBottomAnimated = ( id ) => {
+export const scrollToBottomMessages= ( id ) => {
 
-    animateScroll.scrollToBottom({
-        containerId: id,
-        duration: 250
-    });
+		const element = document.getElementById(id);
+
+		if( element !== null ) {
+			element.scrollTop = element?.scrollHeight;
+		}
 
 }
