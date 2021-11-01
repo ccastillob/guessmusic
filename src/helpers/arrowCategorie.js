@@ -1,6 +1,5 @@
 
 // Funciones para visualizar las flechas izq/der en las categorias
-
 // Flecha izquierda
 const arrowLeftVisible = ( {currentSlide, btnLeft} ) => {
 
