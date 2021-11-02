@@ -91,6 +91,7 @@ export const startLogout = () => {
 		dispatch( chatUsersClear() );
 		dispatch( profileClear() );
 		dispatch( notificationClear() );
+		dispatch( categorieClear() );
 
 	}
 
@@ -131,4 +132,8 @@ const profileClear = () => ({
 
 const notificationClear = () => ({
 	type: types.clearNotification
+})
+
+const categorieClear = () => ({
+	type: types.clearCategories
 })

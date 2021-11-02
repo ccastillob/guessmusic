@@ -2,6 +2,7 @@
 // Importamos combineReducers propio de redux
 import { combineReducers } from 'redux';
 import { authReducer } from './authReducer';
+import { categorieReducer } from './categorieReducer';
 import { chatReducer } from './chatReducer';
 import { notificationReducer } from './notificationReducer';
 import { profileReducer } from './profileReducer';
@@ -14,4 +15,5 @@ export const rootReducers = combineReducers({
 	chat: chatReducer,
 	otherProfile: profileReducer,
 	notification: notificationReducer,
+	categorie: categorieReducer,
 })

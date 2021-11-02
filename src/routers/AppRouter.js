@@ -7,6 +7,7 @@ import {
 	Redirect
 } from 'react-router-dom';
 import { startChecking } from '../actions/auth';
+import { loadingCategories } from '../actions/categorie';
 import { startUserData, startUserFollowersByID, startUserFollowingsByID } from '../actions/user';
 
 import { ScrollToTop } from '../helpers/scrollToTop';
@@ -32,6 +33,7 @@ export const AppRouter = () => {
 			dispatch( startUserData(uid) )
 			dispatch( startUserFollowingsByID(uid) )
 			dispatch( startUserFollowersByID(uid) )
+			dispatch( loadingCategories(uid) )
 		}
 
 	}, [dispatch, uid])

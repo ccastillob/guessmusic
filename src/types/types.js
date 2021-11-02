@@ -27,10 +27,13 @@ export const types = {
 
 	loadingNotifications: '[notification] Loading notifications',
 	clearNotification: '[notification] Clear notification',
-
 	newNotification: '[notification] New notification',
 	confirmNotification: '[notification] Confirm state of notification',
 	cancelNotification: '[notification] Cancel state of notification',
+
+	loadingCategories: '[categorie] Loading categories',
+	clearCategories: '[categorie] Clear categories',
+
 
 
 
