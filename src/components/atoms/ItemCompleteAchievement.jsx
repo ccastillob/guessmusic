@@ -3,7 +3,7 @@ import React from 'react';
 
 import IconVersus from '../icons/IconVersus';
 
-const ItemCompleteAchievement = () => {
+const ItemCompleteAchievement = ({ achievement, indice }) => {
 
 	return (
 		<div className="container-item_achievement__complete">
@@ -11,8 +11,8 @@ const ItemCompleteAchievement = () => {
 				<IconVersus />
 			</i>
 			<div className="item-achievement__data__complete">
-				<h4 className="content-color text-bold text-overflow">Nombre del logro</h4>
-				<h6 className="auxiliary-color text-overflow">Completa el nivel 1</h6>
+				<h4 className="content-color text-bold text-overflow">{ achievement.nameAchiev }</h4>
+				<h6 className="auxiliary-color text-overflow">Completaste el nivel { indice + 1 }</h6>
 			</div>
 		</div>
 	)

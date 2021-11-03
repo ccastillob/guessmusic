@@ -1,32 +1,30 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearProfileData, startProfileAchievements, startProfileCategories, startProfileData } from '../../actions/profile';
 
-import ItemCompleteListAchievement from '../atoms/ItemCompleteListAchievement';
-import ItemPendingListAchievement from '../atoms/ItemPendingListAchievement';
+import AllListAchievement from '../molecules/AllListAchievement';
 import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 
 const ListAchievementsPage = ({match}) => {
+
+	const dispatch = useDispatch();
+	const { achievements, categories } = useSelector(state => state.otherProfile );
+
+	useEffect(() => {
+
+		dispatch( clearProfileData() )
+		dispatch( startProfileData( match.params.username ) );
+		dispatch( startProfileAchievements( match.params.username ) );
+		dispatch( startProfileCategories( match.params.username ) );
+
+	}, [ dispatch, match ])
 
 	return (
 		<>
 			<HeaderMenuSecondary />
 			<div className="ed-grid s-grid-12 container-achievementpage main-container">
-				<div className="container-listAchievement">
-					<h2 className="title-color">Lista de logros { match.params.idUser !== "123" && "- usuario" }</h2>
-					<div className="listAchievement-allItems">
-						{/* TODO: APLICAR LOGROS PARA EL USUARIO */}
-
-						<ItemPendingListAchievement />
-
-						<ItemCompleteListAchievement />
-
-						<ItemCompleteListAchievement />
-
-						<ItemPendingListAchievement />
-						<ItemPendingListAchievement />
-
-					</div>
-				</div>
+				<AllListAchievement achievements={ achievements } categories={ categories } />
 			</div>
 		</>
 	)

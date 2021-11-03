@@ -5,12 +5,14 @@ import { useSelector } from 'react-redux';
 
 import ProfileUserPage from './ProfileUserPage';
 import ProfileFriendPage from './ProfileFriendPage';
-import { clearProfileData, startProfileData, startProfileFollowers, startProfileFollowings } from '../../actions/profile';
+import { clearProfileData, startProfileAchievements, startProfileCategories, startProfileData, startProfileFollowers, startProfileFollowings } from '../../actions/profile';
+import { startUserData } from '../../actions/user';
 
 const SelectProfilePage = ({match}) => {
 
 	const dispatch = useDispatch();
 	const { data: user } = useSelector(state => state.user);
+	const { uid } = useSelector(state => state.auth);
 
 	useEffect(() => {
 
@@ -18,8 +20,16 @@ const SelectProfilePage = ({match}) => {
 			dispatch( startProfileData( match.params.username ) );
 			dispatch( startProfileFollowings( match.params.username ) );
 			dispatch( startProfileFollowers( match.params.username ) );
+			dispatch( startProfileAchievements( match.params.username ) );
+			dispatch( startProfileCategories( match.params.username ) );
 
 		}, [ dispatch, match ])
+
+	useEffect(() => {
+
+			dispatch( startUserData(uid) )
+
+		}, [ dispatch, uid ])
 
 	return (
 		<>

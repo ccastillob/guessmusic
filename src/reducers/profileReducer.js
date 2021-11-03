@@ -7,6 +7,8 @@ const initialState = {
 	data: null,
 	followings: undefined,
 	followers: undefined,
+	achievements: undefined,
+	categories: undefined,
 }
 
 // Exportamos y creamos una función donde estableceremos los casos y retornar un estado
@@ -27,6 +29,16 @@ export const profileReducer = ( state = initialState, action ) => {
 			return {
 				...state,
 				followers: [...action.payload]
+			}
+		case types.userAchievementsProfile:
+			return {
+				...state,
+				achievements: [...action.payload]
+			}
+		case types.userCategoriesProfile:
+			return {
+				...state,
+				categories: [...action.payload]
 			}
 		case types.userClearDataProfile:
 			return initialState

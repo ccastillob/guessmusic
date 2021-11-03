@@ -98,6 +98,57 @@ export const startProfileFollowers = ( username ) => {
 
 }
 
+export const startProfileAchievements = ( username ) => {
+
+	return async( dispatch ) => {
+
+		const resp = await fetchConToken( `achievement/username/${ username }` );
+		const body = await resp.json();
+
+		if( body.ok ) {
+
+			const arrUserAchievements = body.achievement.arrAchievements;
+
+
+			return dispatch({
+				type: types.userAchievementsProfile,
+				payload: arrUserAchievements
+			})
+
+		}else {
+			// TODO: REDIRIGIR A PÁGINA DE ERROR
+			window.location.href = "/error"
+		}
+
+	}
+
+}
+
+export const startProfileCategories = ( username ) => {
+
+	return async( dispatch ) => {
+
+		const resp = await fetchConToken( `categorie/username/${ username }` );
+		const body = await resp.json();
+
+		if( body.ok ) {
+
+			const arrUserCategories = body.categorie.arrCategories;
+
+			return dispatch({
+				type: types.userCategoriesProfile,
+				payload: arrUserCategories
+			})
+
+		}else {
+			// TODO: REDIRIGIR A PÁGINA DE ERROR
+			window.location.href = "/error"
+		}
+
+	}
+
+}
+
 export const clearProfileData = () => {
 
 	return async( dispatch ) => {

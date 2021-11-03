@@ -41,7 +41,7 @@ export const HomeRouter = () => {
 			/>
 			<Route
 				exact
-				path="/profile/:idUser/achievements"
+				path="/profile/:username/achievements"
 				component={ ListAchievementsPage }
 			/>
 			<Route

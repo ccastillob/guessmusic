@@ -24,6 +24,8 @@ export const types = {
 	userClearDataProfile: '[profile] User clear data profile',
 	userFollowingsProfile: '[profile] User followings profile loaded',
 	userFollowersProfile: '[profile] User followers profile loaded',
+	userAchievementsProfile: '[profile] User achievements profile loaded',
+	userCategoriesProfile: '[profile] User categories profile loaded',
 
 	loadingNotifications: '[notification] Loading notifications',
 	clearNotification: '[notification] Clear notification',
@@ -33,9 +35,5 @@ export const types = {
 
 	loadingCategories: '[categorie] Loading categories',
 	clearCategories: '[categorie] Clear categories',
-
-
-
-
 
 }
