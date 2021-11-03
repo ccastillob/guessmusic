@@ -87,7 +87,8 @@
 	}
 }
 
-.fzSmall-btn {
+.fzSmall-btn,
+.fzSmall-btn-confirm {
 	font-size: rem(12px);
 	height: 100%;
 	display: flex;
@@ -113,6 +114,22 @@
 	@include from(lg) {
 		font-size: rem(16px);
 		width: 36%;
+	}
+}
+
+.fzSmall-btn-confirm {
+	font-size: rem(16px);
+}
+
+.btn-confirm-screengame {
+	height: rem(140px);
+
+	@include fromTo(641px, m) {
+		height: rem(152px);
+	}
+
+	@include from(m) {
+		height: rem(160px);
 	}
 }
 
