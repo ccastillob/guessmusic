@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { SocketContext } from '../../context/SocketContext';
 import IconAddUserFollow from '../icons/IconAddUserFollow';
@@ -59,7 +61,12 @@ const ItemFollowProfile = ({ friend }) => {
 		<div className="container-item_friend__exist">
 			<Link to={`/profile/${username}`} className="group-item_friend content-color">
 				<div className="item-friend__profile">
-					<img alt="userprofile" src={ imgAvatar } />
+					<LazyLoadImage
+						alt="userprofile"
+						src={ imgAvatar }
+						effect="blur"
+						className="avatar_follow"
+					/>
 				</div>
 				<div className="item-friend__data-exist">
 					<h4 className="data-name text_line-clamp">{ name } { lastName }</h4>

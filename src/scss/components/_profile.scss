@@ -271,6 +271,7 @@
 		height: rem(51px);
 	}
 
+	& > span .avatar_follow,
 	& > img {
 		border-radius: 50%;
 		object-fit: cover;

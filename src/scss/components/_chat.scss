@@ -203,11 +203,13 @@
 		height: rem(53px);
 	}
 
+	& > span .avatar_chat,
 	& > img {
 		border-radius: 50%;
 		object-fit: cover;
 		width: 100%;
 	}
+
 }
 
 .avatar__statusCircle {

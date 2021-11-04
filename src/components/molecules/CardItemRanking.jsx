@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { getDivition } from '../../helpers/getDivition';
 import IconShield from '../icons/IconShield';
@@ -12,7 +14,12 @@ const CardItemRanking = ({ status, user, position, page }) => {
 			<h4 className="ranking__number content-color s-cols-1">{ (5*page +( position + 1)) }.</h4>
 			<div className="ranking__data s-cols-4">
 				<div className="data-item__userRanking">
-					<img alt="imageRanking" src={ user.imgAvatar } />
+					<LazyLoadImage
+						alt="imageRanking"
+						src={ user.imgAvatar }
+						effect="blur"
+						className="avatar_ranking"
+					/>
 				</div>
 				<div className="data-item__sectionRanking">
 					<h4 className="sectionRanking__user content-color text_line-clamp">{ user.name } { user.lastName }</h4>

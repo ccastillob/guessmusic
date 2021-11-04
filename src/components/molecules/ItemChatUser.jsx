@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { startProfileFollowings } from '../../actions/profile';
 import { SocketContext } from '../../context/SocketContext';
@@ -47,7 +49,12 @@ const ItemChatUser = ({ friend }) => {
 
 		<div onClick={ handleView } className={`container-item_userChat ${ (friend.userFor === chatActivo) && "select" }`}>
 			<div className="item-userChat_avatar">
-				<img src={ friend.imgAvatar } alt={ friend.username } />
+				<LazyLoadImage
+					src={ friend.imgAvatar }
+					alt={ friend.username }
+					effect="blur"
+					className="avatar_chat"
+				/>
 				<CircleStatusUser status={friend.online} />
 			</div>
 			<div className="item-userChat__data">

@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import IconPlay from '../icons/IconPlay';
 
@@ -26,7 +28,11 @@ const ItemUnlockedSong = ({ songs, playerSong }) => {
 	return (
 		<div className="ed-grid s-grid-3 contenedor-item">
 			<div className="img-container s-ratio-16-9 s-mb-2 s-cols-3 s-radius-1">
-				<img alt="imagenes" src={ songs.imgSong } />
+				<LazyLoadImage
+					alt="imagenes"
+					src={ songs.imgSong }
+					effect="blur"
+				/>
 
 
 						<div className={`image-overlay`}>

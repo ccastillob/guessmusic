@@ -7,7 +7,6 @@ export const useArrowConfig = () => {
 	const settings = {
     infinite: false,
     speed: 500,
-    lazyLoad: true,
     slidesToShow: 5,
     slidesToScroll: 5,
     nextArrow: <ArrowNext />,

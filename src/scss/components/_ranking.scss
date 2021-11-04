@@ -68,6 +68,7 @@
 		height: rem(51px);
 	}
 
+	& > span .avatar_ranking,
 	& > img {
 		border-radius: 50%;
 		object-fit: cover;
@@ -173,3 +174,8 @@
 	}
 }
 
+.img-container span {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
