@@ -46,7 +46,7 @@ const ChatSectionLeft = () => {
 					? (
 						<>
 							<h3 className="content-color s-center s-mb-4">Aún no tienes amigos</h3>
-							<PrimaryButton title="Busca amigos" otherClass="s-to-center" />
+							<PrimaryButton urlTo="/ranking" title="Busca amigos" otherClass="s-to-center" link={ true } />
 						</>
 					)
 					: (

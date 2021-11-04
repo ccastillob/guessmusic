@@ -31,7 +31,7 @@ const ChatSelectUser = () => {
 							<>
 								<h1 className="title-color s-center s-mb-2">Aún no tienes amigos</h1>
 								<h3 className="content-color s-center s-mb-4">Puedes mandar una solicitud de amistad ingresando a su perfil</h3>
-								<GhostButton title="Busca amigos" otherClass="ghost-primary900-color" />
+								<GhostButton urlTo="/ranking" title="Busca amigos" otherClass="ghost-primary900-color" link={ true } />
 							</>
 						)
 					}
