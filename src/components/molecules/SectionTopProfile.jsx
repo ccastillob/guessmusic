@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 import { startLogout } from '../../actions/auth';
+import { updateUserData } from '../../actions/user';
+import { storage } from '../../firebase/firebase-config';
 import { getCreatedAt } from '../../helpers/getTime';
 import GhostButton from '../atoms/GhostButton';
 import PrimaryButton from '../atoms/PrimaryButton';
@@ -24,6 +27,79 @@ const SectionTopProfile = () => {
 
 	}
 
+	const handleChangeFile = ({ target }) => {
+
+		const file = target.files[0]
+
+		if( file !== undefined ) {
+
+			const pattern = /image-*/;
+
+			if( file.size > 5000000 ) {
+				return Swal.fire( '', 'La imagen debe ser menor a 5Mb', 'error' );
+			}
+
+			if( !file.type.match( pattern ) ) {
+				return Swal.fire( '', 'Formato no válido', 'error' );
+			}
+
+			const metadata = {
+				contentType: 'image/*'
+			}
+
+			const storageRef = storage.ref(`/profileImages/${ user?.uid }/${ file.name }`);
+			const uploadTask = storageRef.put( file, metadata );
+
+			uploadTask.on( 'state_changed', ( snapshot ) => {
+
+				let percentage = ( snapshot.bytesTransferred / snapshot.totalBytes ) * 100;
+
+				if( percentage < 100 ) {
+					Swal.fire({
+						title: 'Subiendo imagen',
+						text: 'Por favor espere...',
+						allowOutsideClick: false,
+						didOpen: () => {
+								Swal.showLoading()
+						}
+					})
+				}else {
+					Swal.close();
+				}
+
+			}, ( error ) => {
+
+				console.log(error);
+
+			}, () => {
+
+				uploadTask.snapshot.ref.getDownloadURL().then( url => {
+
+					const objectUserDataUpdate = {
+						lastName: user?.lastName,
+						name: user?.name,
+						username: user?.username,
+						imgAvatar: url
+					}
+
+					dispatch( updateUserData( user?.uid, objectUserDataUpdate ) );
+
+					Swal.fire({
+						position: 'center',
+						icon: 'success',
+						title: 'Imagen subida',
+						showConfirmButton: false,
+						timer: 1500
+					})
+
+				})
+
+			})
+
+		}
+
+	}
+
 	return (
 		( profileFollowings === undefined ) ? (
 			// TODO: AGREGAR UN SKELETON
@@ -34,12 +110,12 @@ const SectionTopProfile = () => {
 					<div className="container-left_avatar s-order-2 m-order-1">
 
 								<img src={ user?.imgAvatar } alt={ user?.username } />
-								<div className="avatar__editImage">
+								<label htmlFor="editAvatar" className="avatar__editImage">
 									<i className="container-icon-editProfile">
 										<IconEdit />
 									</i>
-								</div>
-
+								</label>
+								<input onChange={ handleChangeFile } type="file" accept=".png, .jpg, .jpeg" style={{ display: 'none' }} name="profile" id="editAvatar"></input>
 					</div>
 					<div className="container-left_data s-order-1 m-order-2">
 						<h3 className="content-color text-bold s-mb-1 text_line-clamp">{ user?.name }</h3>

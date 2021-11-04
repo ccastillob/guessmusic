@@ -93,3 +93,27 @@ export const startUserFollowersByID = ( id ) => {
 	}
 
 }
+
+export const updateUserData = ( id, objectUpdate ) => {
+
+	return async( dispatch ) => {
+
+		const resp = await fetchConToken( `user/update/${ id }`, objectUpdate, 'PUT' );
+		const body = await resp.json();
+
+		if( body.ok ) {
+
+			const { email, updatedAt, ...restObject } = body.userUpdated;
+
+			return dispatch({
+				type: types.userData,
+				payload: restObject
+			})
+
+		}else {
+			console.log('Error en un updateUserData');
+		}
+
+	}
+
+}
