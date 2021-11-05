@@ -22,8 +22,8 @@ const ScreenFinishClassic = ({ scoreFinal, co, total }) => {
 		e.preventDefault()
 
 		Swal.fire({
-				title: 'Redirect to home...',
-				text: 'Please wait...',
+				title: 'Redireccionando al inicio...',
+				text: 'Por favor espere...',
 				allowOutsideClick: false,
 				didOpen: () => {
 						Swal.showLoading()

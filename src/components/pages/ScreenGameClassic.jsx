@@ -44,8 +44,8 @@ const ScreenGameClassic = ({ match }) => {
 	const handleNext = async() => {
 
 		Swal.fire({
-				title: 'Loading results...',
-				text: 'Please wait...',
+				title: 'Cargando resultados...',
+				text: 'Por favor espere...',
 				allowOutsideClick: false,
 				didOpen: () => {
 						Swal.showLoading()
