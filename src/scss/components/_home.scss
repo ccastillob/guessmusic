@@ -97,3 +97,33 @@
 	align-items: center;
 	color: var(--auxiliary-color);
 }
+
+.loadingpage {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - var(--header-height-mobile));
+
+	@include from(m) {
+		min-height: calc(100vh - var(--header-height-web));
+	}
+}
+
+.section-loading {
+	position: relative;
+	padding-top: rem(32px);
+	padding-bottom: rem(88px);
+
+	@include from(m) {
+		padding-top: rem(80px);
+		padding-bottom: rem(80px);
+	}
+}
+
+.content-section_loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}

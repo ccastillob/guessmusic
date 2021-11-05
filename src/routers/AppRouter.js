@@ -9,6 +9,7 @@ import {
 import { startChecking } from '../actions/auth';
 import { loadingCategories } from '../actions/categorie';
 import { startUserData, startUserFollowersByID, startUserFollowingsByID } from '../actions/user';
+import LoadingPage from '../components/pages/LoadingPage';
 
 import { ScrollToTop } from '../helpers/scrollToTop';
 import { AuthRouter } from './AuthRouter';
@@ -40,7 +41,7 @@ export const AppRouter = () => {
 
 	if( checking ) {
 		// TODO: AGREGAR UN LOADING
-		return <h1>Esperando...</h1>
+		return <LoadingPage />
 	}
 
 	return (
