@@ -36,4 +36,7 @@ export const types = {
 	loadingCategories: '[categorie] Loading categories',
 	clearCategories: '[categorie] Clear categories',
 
+	uiOpenEditModal: '[ui] Open edit modal',
+	uiCloseEditModal: '[ui] Close edit modal',
+
 }

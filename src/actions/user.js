@@ -1,9 +1,12 @@
 
+// Importamos libreria para las alertas
+import Swal from "sweetalert2";
 // Importamos los tipos
 import { types } from "../types/types";
 
 // Importamos las funcionalidades para el fetch
 import { fetchConToken } from "../helpers/fetch";
+import { uiCloseEditModal } from "./ui";
 
 // Exportamos y creamos una acción asincrona para cuando el usuario carga sus datos
 // Esta acción se conectará con otra acción sincrona
@@ -94,7 +97,7 @@ export const startUserFollowersByID = ( id ) => {
 
 }
 
-export const updateUserData = ( id, objectUpdate ) => {
+export const updateUserAvatar = ( id, objectUpdate ) => {
 
 	return async( dispatch ) => {
 
@@ -111,7 +114,50 @@ export const updateUserData = ( id, objectUpdate ) => {
 			})
 
 		}else {
-			console.log('Error en un updateUserData');
+			console.log('Error en un updateUserAvatar');
+		}
+
+	}
+
+}
+
+export const updateUserData = ( id, objectUpdate, history ) => {
+
+	return async( dispatch ) => {
+
+		const respUser = await fetchConToken( `user/${id}` );
+		const bodyUser = await respUser.json();
+
+		const { user } = bodyUser;
+
+		const resp = await fetchConToken( `user/update/${ id }`, objectUpdate, 'PUT' );
+		const body = await resp.json();
+
+		if( body.ok ) {
+
+			const { email, updatedAt, ...restObject } = body.userUpdated;
+
+			dispatch( uiCloseEditModal() )
+
+			dispatch({
+				type: types.userData,
+				payload: restObject
+			})
+
+			Swal.fire({
+				position: 'center',
+				icon: 'success',
+				title: 'Datos guardados',
+				showConfirmButton: false,
+				timer: 1500
+			});
+
+			if( user.username !== restObject.username ) {
+				history.push(`/profile/${restObject.username}`)
+			}
+
+		}else {
+			Swal.fire('Error', body.msg, 'error');
 		}
 
 	}

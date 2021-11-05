@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 
 import { startLogout } from '../../actions/auth';
-import { updateUserData } from '../../actions/user';
 import { storage } from '../../firebase/firebase-config';
 import { getCreatedAt } from '../../helpers/getTime';
 import GhostButton from '../atoms/GhostButton';
@@ -12,6 +11,9 @@ import PrimaryButton from '../atoms/PrimaryButton';
 import IconDate from '../icons/IconDate';
 import IconEdit from '../icons/IconEdit';
 import IconFollow from '../icons/IconFollow';
+import ModalEditProfile from '../pages/ModalEditProfile';
+import { uiOpenEditModal } from '../../actions/ui';
+import { updateUserAvatar } from '../../actions/user';
 
 const SectionTopProfile = () => {
 
@@ -82,7 +84,7 @@ const SectionTopProfile = () => {
 						imgAvatar: url
 					}
 
-					dispatch( updateUserData( user?.uid, objectUserDataUpdate ) );
+					dispatch( updateUserAvatar( user?.uid, objectUserDataUpdate ) );
 
 					Swal.fire({
 						position: 'center',
@@ -97,6 +99,12 @@ const SectionTopProfile = () => {
 			})
 
 		}
+
+	}
+
+	const handleEditProfile = () => {
+
+		dispatch( uiOpenEditModal() )
 
 	}
 
@@ -137,10 +145,10 @@ const SectionTopProfile = () => {
 				</div>
 
 				<div className="profileUser-container_right s-cols-12 m-cols-4">
-					<PrimaryButton title="Editar perfil" otherClass="s-mb-2 m-mb-4"/>
+					<PrimaryButton event={ handleEditProfile } title="Editar perfil" otherClass="s-mb-2 m-mb-4"/>
 					<GhostButton event={ handleLogout } title="Cerrar sesión" otherClass="ghost-error300-color" />
 				</div>
-
+				<ModalEditProfile />
 			</div>
 		)
 	)

@@ -6,6 +6,7 @@ import { categorieReducer } from './categorieReducer';
 import { chatReducer } from './chatReducer';
 import { notificationReducer } from './notificationReducer';
 import { profileReducer } from './profileReducer';
+import { uiReducer } from './uiReducer';
 import { userReducer } from './userReducer';
 
 // Mediante el combineReducers vamos a establecer todos los reducers para nuestra aplicación y lo exportamos
@@ -16,4 +17,5 @@ export const rootReducers = combineReducers({
 	otherProfile: profileReducer,
 	notification: notificationReducer,
 	categorie: categorieReducer,
+	ui: uiReducer,
 })
