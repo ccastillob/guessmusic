@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import IconVersus from '../icons/IconVersus';
+import Icon from './Icon';
 
 const ItemPendingListAchievement = ({ achievement, indice, categories }) => {
 
@@ -11,8 +11,8 @@ const ItemPendingListAchievement = ({ achievement, indice, categories }) => {
 
 	return (
 		<div className="container-item_listAchievement">
-			<i className="container-icon-achievementProfile primary-color">
-				<IconVersus />
+			<i className="container-icon-achievementProfile auxiliary-color">
+				<Icon svg={ achievement.iconAchiev } classes="svg-icon-achievement" title={ achievement.iconAchiev } />
 			</i>
 			<div className="item-achievement__data">
 				<div className="data_achievement__description s-mb-2">

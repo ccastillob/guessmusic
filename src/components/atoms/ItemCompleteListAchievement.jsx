@@ -1,14 +1,14 @@
 
 import React from 'react';
 
-import IconVersus from '../icons/IconVersus';
+import Icon from './Icon';
 
 const ItemCompleteListAchievement = ({ achievement, indice }) => {
 
 	return (
 		<div className="container-item_listAchievement__complete">
 			<i className="container-icon-achievementProfile primary-color">
-				<IconVersus />
+				<Icon svg={ achievement.iconAchiev } classes="svg-icon-achievement" title={ achievement.iconAchiev } />
 			</i>
 			<div className="item-achievement__data__complete">
 				<h4 className="content-color text-bold text-overflow">{ achievement.nameAchiev }</h4>

@@ -64,7 +64,7 @@ export const searchSongsAndUpdatedLevelsCompletes = async(indice, total, uid) =>
 
         // Hacemos un filtro que nos devolvera un ARRAY de todos los objetos que incluyen lo asignado
         const resultado = dataAllAchievements.filter( achiev => {
-            return achiev.iconAchiev.includes(`icono 0${indice+1}`)
+            return achiev.currentLevelAchiev.includes(`level 0${indice+1}`)
             // return achiev.descriptionAchiev.includes(`hits`)
             // return achiev.descriptionAchiev.includes(`songs`)
         } )
@@ -73,7 +73,7 @@ export const searchSongsAndUpdatedLevelsCompletes = async(indice, total, uid) =>
         if( resultado[0] !== undefined ){
 
             // Buscamos el indice del logro que se encontraba en el Array anterior por medio de su nombre del logro
-            const dataIndiceAchievShow = dataAllAchievements.findIndex( uniqueAchiev => uniqueAchiev.iconAchiev === resultado[0].iconAchiev )
+            const dataIndiceAchievShow = dataAllAchievements.findIndex( uniqueAchiev => uniqueAchiev.currentLevelAchiev === resultado[0].currentLevelAchiev )
 
             // Realizamos una condicion donde el total de las canciones debe ser igual al total de las canciones con su estado en true
             // Tambien que su estado final sea diferente a true

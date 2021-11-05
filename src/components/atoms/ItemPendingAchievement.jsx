@@ -1,22 +1,18 @@
 
 import React from 'react';
 
-import IconVersus from '../icons/IconVersus';
+import Icon from './Icon';
 
 const ItemPendingAchievement = ({ achievement, indice, categories }) => {
 
-	// console.log('indice');
-	// console.log(indice);
-	// console.log('categorias');
-	// console.log(categories);
 	const totalSongs = categories?.[indice].dataSongs?.length;
 	const numberCorrectSongs = categories?.[indice].dataSongs.filter( song => song.stateSong === true )?.length;
 	const percentage = numberCorrectSongs*10;
 
 	return (
 		<div className="container-item_achievement">
-			<i className="container-icon-achievementProfile primary-color">
-				<IconVersus />
+			<i className="container-icon-achievementProfile auxiliary-color">
+				<Icon svg={ achievement.iconAchiev } classes="svg-icon-achievement" title={ achievement.iconAchiev } />
 			</i>
 			<div className="item-achievement__data">
 				<div className="data_achievement__description s-mb-2">
