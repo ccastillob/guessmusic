@@ -1,6 +1,7 @@
 
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 import { SocketContext } from '../../context/SocketContext';
 import GhostButton from '../atoms/GhostButton';
@@ -20,6 +21,14 @@ const ItemPendingNotification = ({ notification }) => {
 			userActive,
 		})
 
+		Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: `${user.name} fue añadida a tu lista de seguidores`,
+			showConfirmButton: false,
+			timer: 2000
+		})
+
 	}
 
 	const handleCancelNotification = ( userSend, userActive ) => {
@@ -28,6 +37,14 @@ const ItemPendingNotification = ({ notification }) => {
 		socket.emit( 'cancel-notification', {
 			userSend,
 			userActive,
+		})
+
+		Swal.fire({
+			position: 'center',
+			icon: 'info',
+			title: `Solicitud cancelada`,
+			showConfirmButton: false,
+			timer: 1500
 		})
 
 	}

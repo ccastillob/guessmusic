@@ -1,6 +1,7 @@
 
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 import { SocketContext } from '../../context/SocketContext';
 import { getCreatedAt } from '../../helpers/getTime';
@@ -23,27 +24,88 @@ const SectionTopProfileFriend = () => {
 
 	const handleFollowing = ( userSend ) => {
 
-		socket.emit( 'start-following', {
-			userSend,
-			userActive: uid,
+		Swal.fire({
+			title: `¿Deseas enviar una solicitud a ${ profile?.name }?`,
+			showCancelButton: true,
+			confirmButtonColor: '#1739b5',
+			cancelButtonColor: '#dd6482',
+			confirmButtonText: 'Si, enviar.',
+			cancelButtonText: 'No.'
+		}).then((result) => {
+			if (result.isConfirmed) {
+
+				socket.emit( 'start-following', {
+					userSend,
+					userActive: uid,
+				})
+
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'Solicitud enviada',
+					showConfirmButton: false,
+					timer: 1500
+				})
+			}
 		})
 
 	}
 
 	const handleCancelRequest = ( userSend ) => {
 
-		socket.emit( 'cancel-request', {
-			userSend,
-			userActive: uid,
+		Swal.fire({
+			title: `¿Deseas cancelar la solicitud?`,
+			showCancelButton: true,
+			confirmButtonColor: '#1739b5',
+			cancelButtonColor: '#dd6482',
+			confirmButtonText: 'Si, cancelar.',
+			cancelButtonText: 'No.'
+		}).then((result) => {
+			if (result.isConfirmed) {
+
+				socket.emit( 'cancel-request', {
+					userSend,
+					userActive: uid,
+				})
+
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'Solicitud cancelada',
+					showConfirmButton: false,
+					timer: 1500
+				})
+			}
 		})
 
 	}
 
 	const handleNotFollowing = ( userSend ) => {
 
-		socket.emit( 'end-following', {
-			userSend,
-			userActive: uid,
+		Swal.fire({
+			title: `¿Dejar de seguir a ${ profile?.name }?`,
+			text: "*Esta acción tambien eliminará permanentemente los mensajes del chat",
+			showCancelButton: true,
+			confirmButtonColor: '#1739b5',
+			cancelButtonColor: '#dd6482',
+			confirmButtonText: 'Si, dejar de seguir.',
+			cancelButtonText: 'No.'
+		}).then((result) => {
+			if (result.isConfirmed) {
+
+				socket.emit( 'end-following', {
+					userSend,
+					userActive: uid,
+				})
+
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: `Dejaste de seguir a ${ profile?.name }`,
+					showConfirmButton: false,
+					timer: 1500
+				})
+			}
 		})
 
 	}

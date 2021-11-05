@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -19,18 +20,58 @@ const ItemFollowProfile = ({ friend }) => {
 
 	const handleUserWaiting = (id) => {
 
-		socket.emit( 'cancel-request', {
-			userSend: id,
-			userActive: data.uid,
+		Swal.fire({
+			title: `¿Deseas cancelar la solicitud?`,
+			showCancelButton: true,
+			confirmButtonColor: '#1739b5',
+			cancelButtonColor: '#dd6482',
+			confirmButtonText: 'Si, cancelar.',
+			cancelButtonText: 'No.'
+		}).then((result) => {
+			if (result.isConfirmed) {
+
+				socket.emit( 'cancel-request', {
+					userSend: id,
+					userActive: data.uid,
+				})
+
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'Solicitud cancelada',
+					showConfirmButton: false,
+					timer: 1500
+				})
+			}
 		})
 
 	}
 
 	const handleUserAdd = (id) => {
 
-		socket.emit( 'start-following', {
-			userSend: id,
-			userActive: data.uid,
+		Swal.fire({
+			title: `¿Deseas enviar una solicitud a ${ name }?`,
+			showCancelButton: true,
+			confirmButtonColor: '#1739b5',
+			cancelButtonColor: '#dd6482',
+			confirmButtonText: 'Si, enviar.',
+			cancelButtonText: 'No.'
+		}).then((result) => {
+			if (result.isConfirmed) {
+
+				socket.emit( 'start-following', {
+					userSend: id,
+					userActive: data.uid,
+				})
+
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'Solicitud enviada',
+					showConfirmButton: false,
+					timer: 1500
+				})
+			}
 		})
 
 	}
