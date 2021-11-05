@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
+import { getPerformance } from '../../helpers/getPerformance';
 import { scoreUpdated } from '../../helpers/scoreUpdated';
 
 // import GhostButton from '../atoms/GhostButton';
@@ -69,7 +70,7 @@ const ScreenFinishClassic = ({ scoreFinal, co, total }) => {
 				<div className="screenFinish-item_performance">
 						<div className="item_performance__content">
 							<h2 className="title-color">Eficiencia:</h2>
-							<h3 className="content-color">Excelente</h3>
+							<h3 className="content-color">{ getPerformance( correctSongs ) }</h3>
 						</div>
 				</div>
 			</div>

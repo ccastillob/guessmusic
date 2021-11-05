@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 import { myCorrects } from '../../helpers/myCorrects';
 import CounterTimer from '../atoms/CounterTimer';
 import Swal from 'sweetalert2';
+import { ClassicSpinner, WaveSpinner } from 'react-spinners-kit';
 // import map from 'lodash.map';
 
 import PrimaryButton from '../atoms/PrimaryButton';
-import IconLogo from '../icons/IconLogo';
 import PlayerGame from '../molecules/PlayerGame';
 import ScreenFinishClassic from './ScreenFinishClassic';
 import { activeToLevelNext, findAchievementsAndUpdatedConfirm, searchSongsAndUpdatedLevelsCompletes } from '../../helpers/confirmStatistics';
@@ -107,9 +107,7 @@ const ScreenGameClassic = ({ match }) => {
 					</div>
 				</div>
 				<div className="container-screenGame_section ed-grid">
-					<i className="container-icon-logoScreenGame primary-color">
-						<IconLogo />
-					</i>
+					<WaveSpinner color="#1b42d0" size={80} />
 
 					{
 						lista === songs?.length ? (
@@ -136,7 +134,7 @@ const ScreenGameClassic = ({ match }) => {
 								</div>
 						</div>
 					) : (
-						showCounter && (
+						showCounter ? (
 
 							<div className="container-screenGame_footer ed-grid">
 								<div className="screenGame-content_btnsTop ed-grid s-grid-2">
@@ -153,6 +151,15 @@ const ScreenGameClassic = ({ match }) => {
 									</div>
 									<div className="btnsBottom_right">
 										<PrimaryButton event={ handleOption } title={ songs?.[lista]?.optionSong4 } otherClass="s-center fzSmall-btn" />
+									</div>
+								</div>
+							</div>
+
+						) : (
+							<div className="container-screenGame_footer container-spinner ed-grid">
+								<div className="screenGame-content_btnsTop ed-grid s-grid-1">
+									<div className="content-button__continue">
+										<ClassicSpinner color="#1b42d0" size={40} />
 									</div>
 								</div>
 							</div>

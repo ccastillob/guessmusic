@@ -59,6 +59,20 @@
 	align-items: center;
 }
 
+.container-spinner {
+	padding-bottom: rem(0px);
+	justify-content: center;
+	height: 140px;
+
+	@include fromTo(641px, m) {
+		height: 152px;
+	}
+
+	@include from(m) {
+		height: 160px;
+	}
+}
+
 .screenGame-content_btnsBottom {
 	margin-top: rem(8px);
 
