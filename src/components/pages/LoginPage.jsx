@@ -2,8 +2,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { startLogin } from '../../actions/auth';
 
+import { startLogin } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import { usePasswordToggle } from '../../hooks/usePasswordToggle';
 import PrimaryButton from '../atoms/PrimaryButton';
@@ -16,8 +16,8 @@ const LoginPage = () => {
 	const dispatch = useDispatch()
 
 	const [ formLoginValues, handleLoginInputChange ] = useForm({
-		lEmail: 'test01@gmail.com',
-		lPassword: '123456'
+		lEmail: '',
+		lPassword: ''
 	});
 
 	const { lEmail, lPassword } = formLoginValues;
@@ -27,9 +27,6 @@ const LoginPage = () => {
 	const handleLogin = (e) => {
 
 		e.preventDefault();
-		console.log(lEmail);
-		console.log(lPassword);
-
 		dispatch( startLogin( lEmail, lPassword ) )
 
 	}
