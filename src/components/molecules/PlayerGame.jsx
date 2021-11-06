@@ -17,16 +17,11 @@ const PlayerGame = ({ songData, idlist, inicie, setShowCounter }) => {
     }
 
     const musicStart = () => {
-        // referencia.current.seekTo(inicie);
-        // setShowCounter(true)
         setPlaying(true)
-        console.log(referencia.current);
     }
 
     const onBufferEnd = e => {
-        console.log("EN BUFFER");
         setShowCounter(true)
-        console.log("FIN BUFFER");
     }
 
     return (

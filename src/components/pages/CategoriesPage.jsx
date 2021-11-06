@@ -17,7 +17,6 @@ const CategoriesPage = () => {
 
 	// AL inicio el urlSong(en el componente Player) es undefined hasta que apretamos el boton play music
 	const playerSong = (urlSong, imgUnlockedSong, nameSong, authorSong) => {
-		// console.log(songLevel);
 		setSongLevel({url: urlSong, imgSong: imgUnlockedSong, nameSong, authorSong})
 	}
 

@@ -23,7 +23,6 @@ const CounterTimer = ({ setShowCounter, setIncore, incore, total, setLista, list
 			}
 
 			if( ejec === true ){
-					// setSegundos(seconds)
 					const myscore = scoreenviar*seconds
 					setScore(myscore + score)
 					clearInterval(interval)
@@ -40,8 +39,6 @@ const CounterTimer = ({ setShowCounter, setIncore, incore, total, setLista, list
 
 			// Igual que el numero de canciones debe ser esta condición
 			if( lista === total ){
-					// setMywi(false)
-					// console.log('hasta qui llegue');
 					setShowCounter(false)
 					clearInterval(interval)
 			}

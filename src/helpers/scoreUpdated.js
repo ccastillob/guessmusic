@@ -8,10 +8,6 @@ export const scoreUpdated = async( scoreFinal, uid ) => {
     const respDataUniqueUser = await fetchConToken( `user/${ uid }` )
     const userDataResp = await respDataUniqueUser.json()
 
-		console.log('EL SCORE')
-		console.log(userDataResp)
-		console.log(scoreFinal)
-
     // Colocamos una condicion para que cuando el score final sea cero no entre
     if( scoreFinal !== 0 ) {
 
@@ -23,10 +19,6 @@ export const scoreUpdated = async( scoreFinal, uid ) => {
             score: userDataResp.user.score + scoreFinal,
             imgAvatar: userDataResp.user.imgAvatar,
         }
-
-				console.log('aqui')
-				console.log(objUpdateScore)
-				console.log(uid)
 
         // Llamamos a la API para poder actualizar el score del usuario pasando el id del usuario y el objeto que se actualizará
 				// /api/user/update/:id

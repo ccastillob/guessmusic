@@ -29,8 +29,6 @@ const ScreenGameClassic = ({ match }) => {
 	const [cor, setCor] = useState([]);
 	const ref = useRef(songs?.length);
 
-	console.log(indexLevelSong);
-
 	if( songs?.length !== 0 ){
 		ref.current = songs?.length
 	}
@@ -59,7 +57,6 @@ const ScreenGameClassic = ({ match }) => {
 		// await dispatch( showAchievements() )
 		Swal.close()
 		setLista(lista+1)
-		console.log('click');
 	}
 
 	const handleOption = (e) => {
@@ -71,9 +68,7 @@ const ScreenGameClassic = ({ match }) => {
 				setCor(datos)
 				setEjec(true)
 				setLista(lista+1)
-				// console.log('Opcion Correcta');
 		}else{
-				// console.log('Opcion Incorrecta');
 				setLista(lista+1)
 				setIncore(true)
 		}
