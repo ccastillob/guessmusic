@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import ItemEmptyListFollow from '../atoms/ItemEmptyListFollow';
 import ItemFollowProfile from '../atoms/ItemFollowProfile';
+import SkeletonAllListFollow from '../skeletons/SkeletonAllListFollow';
 
 const AllListFollowers = ({followers}) => {
 
@@ -16,12 +17,11 @@ const AllListFollowers = ({followers}) => {
 		( profile !== null ) ? (
 
 			<div className="container-listFollow">
-			<h2 className="title-color">{`Lista de seguidores ${ profile?.username !== data?.username ? `- ${ profile?.name }` : "" }`}</h2>
-			{
+				<h2 className="title-color">{`Lista de seguidores ${ profile?.username !== data?.username ? `- ${ profile?.name }` : "" }`}</h2>
+				{
 
-				( arrTotalMyFollowers?.length !== 0 )
-				? (
-					<>
+					( arrTotalMyFollowers?.length !== 0 )
+					? (
 						<div className="listFollow-allItems">
 							{
 								arrTotalMyFollowers?.map( friend  => (
@@ -31,21 +31,15 @@ const AllListFollowers = ({followers}) => {
 								))
 							}
 						</div>
-					</>
+					) : (
+						<ItemEmptyListFollow text="Aún no tienes seguidores." />
+					)
 
-
-				) : (
-					<ItemEmptyListFollow text="Aún no tienes seguidores." />
-				)
-
-			}
-
-		</div>
+				}
+			</div>
 
 		) : (
-			// TODO: AGREGAR UN SKELETON
-			<h1>Skeleton de lista seguidores</h1>
-
+			<SkeletonAllListFollow />
 		)
 
 	)

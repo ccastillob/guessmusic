@@ -7,6 +7,7 @@ import ProfileUserPage from './ProfileUserPage';
 import ProfileFriendPage from './ProfileFriendPage';
 import { clearProfileData, startProfileAchievements, startProfileCategories, startProfileData, startProfileFollowers, startProfileFollowings } from '../../actions/profile';
 import { startUserData } from '../../actions/user';
+import LoadingPage from './LoadingPage';
 
 const SelectProfilePage = ({match}) => {
 
@@ -33,23 +34,21 @@ const SelectProfilePage = ({match}) => {
 
 	return (
 		<>
-		{
+			{
 
-			( user !== null ) ? (
-				( user?.username === match.params.username )
-				? (
-					<ProfileUserPage />
+				( user !== null ) ? (
+					( user?.username === match.params.username )
+					? (
+						<ProfileUserPage />
+					)
+					: (
+						<ProfileFriendPage />
+					)
+				) :(
+					<LoadingPage />
 				)
-				: (
-					<ProfileFriendPage />
-				)
-			) :(
-				// TODO: AGREGAR SKELETON
-				<h1>SKELETON DE PROFILE</h1>
-			)
 
-
-		}
+			}
 		</>
 	)
 }

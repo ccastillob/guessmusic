@@ -8,6 +8,7 @@ import CardItemRanking from '../molecules/CardItemRanking';
 import FooterMenu from '../molecules/FooterMenu';
 import HeaderMenu from '../molecules/HeaderMenu';
 import ItemDivitionRanking from '../molecules/ItemDivitionRanking';
+import SkeletonRankingPage from '../skeletons/SkeletonRankingPage';
 
 const RankingPage = () => {
 
@@ -24,6 +25,7 @@ const RankingPage = () => {
 
 	return (
 
+		( view !== false && loading !== true ) ? (
 			<>
 				<HeaderMenu active="ranking" />
 				<div className="ed-grid main-container container-rankingpage">
@@ -32,9 +34,6 @@ const RankingPage = () => {
 					<div className="ed-grid s-grid-12">
 
 						{
-
-							( view !== false && loading !== true ) ? (
-
 								<div className="container-sectionCards_ranking s-order-2 m-order-1">
 									<div className="container-allItemCards_ranking">
 										{
@@ -46,11 +45,6 @@ const RankingPage = () => {
 									<ArrowsRanking page={ page } setPage={ setPage } setView={ setView } totalPages={ totalPages } />
 								</div>
 
-							) : (
-								// TODO: AGREGAR SKELETON
-								<h1>Skeleton ranking lista</h1>
-							)
-
 						}
 
 						<ItemDivitionRanking />
@@ -59,7 +53,9 @@ const RankingPage = () => {
 				<FooterMenu active="ranking" />
 			</>
 
-
+		) : (
+			<SkeletonRankingPage />
+		)
 
 	)
 }

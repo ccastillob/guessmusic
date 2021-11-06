@@ -14,6 +14,7 @@ import IconFollow from '../icons/IconFollow';
 import ModalEditProfile from '../pages/ModalEditProfile';
 import { uiOpenEditModal } from '../../actions/ui';
 import { updateUserAvatar } from '../../actions/user';
+import SkeletonTopProfile from '../skeletons/SkeletonTopProfile';
 
 const SectionTopProfile = () => {
 
@@ -110,8 +111,7 @@ const SectionTopProfile = () => {
 
 	return (
 		( profileFollowings === undefined ) ? (
-			// TODO: AGREGAR UN SKELETON
-			<h1>SKELETON DE TOP PROFILE USER</h1>
+			<SkeletonTopProfile />
 		) : (
 			<div className="section-top_profileUser ed-grid s-grid-12 s-cols-12">
 				<div className="profileUser-container_left s-cols-12 m-cols-8">

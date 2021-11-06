@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import SectionFollowersProfile from '../molecules/SectionFollowersProfile';
 import SectionFollowingsProfile from '../molecules/SectionFollowingsProfile';
+import SkeletonSectionFriendProfile from '../skeletons/SkeletonSectionFriendProfile';
 
 const SectionFriendProfile = () => {
 
@@ -22,8 +23,7 @@ const SectionFriendProfile = () => {
 
 			</div>
 		) : (
-			// TODO: AGREGAR UN SKELETON
-			<h1>SKELETON DE AMIGOS</h1>
+			<SkeletonSectionFriendProfile />
 		)
 	)
 }

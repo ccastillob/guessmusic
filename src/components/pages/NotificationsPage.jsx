@@ -1,12 +1,13 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearNotifications, loadingNotifications } from '../../actions/notification';
 
+import { clearNotifications, loadingNotifications } from '../../actions/notification';
 import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 import ItemConfirmNotification from '../molecules/ItemConfirmNotification';
 import ItemEmptyNotification from '../molecules/ItemEmptyNotification';
 import ItemPendingNotification from '../molecules/ItemPendingNotification';
+import SkeletonNotificationsPage from '../skeletons/SkeletonNotificationsPage';
 
 const NotificationsPage = () => {
 
@@ -57,8 +58,7 @@ const NotificationsPage = () => {
 			</>
 
 		) : (
-			// TODO: AGREGAR SKELETON
-			<h1>Skeleton de notificacion general</h1>
+			<SkeletonNotificationsPage />
 		)
 
 	)

@@ -11,14 +11,10 @@ const ChatSelectUser = () => {
 
 	return (
 
-		( usuariosChat === null && myFriendsChat === undefined ) ? (
-			// TODO: AGREGAR UN SKELETON
-			<h1>Skeleton izquierda chat</h1>
-		) : (
+		( !( usuariosChat === null && myFriendsChat === undefined ) ) && (
 
 			<div className="container-chatSelectUser">
 				<div className="chatSelectUser-content">
-
 					{
 						(myFriendsChat?.length > 0 )
 						? (
@@ -35,7 +31,6 @@ const ChatSelectUser = () => {
 							</>
 						)
 					}
-
 				</div>
 			</div>
 

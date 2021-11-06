@@ -1,20 +1,20 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { loadingCategories } from '../../actions/categorie';
 import { startUserData } from '../../actions/user';
-
 import CardLockedLevel from '../molecules/CardLockedLevel';
 import CardUnlockedLevel from '../molecules/CardUnlockedLevel';
 import FooterMenu from '../molecules/FooterMenu';
 import HeaderMenu from '../molecules/HeaderMenu';
+import SkeletonHomePage from '../skeletons/SkeletonHomePage';
 
 const HomePage = () => {
 
 	const dispatch = useDispatch();
 	const { categories } = useSelector(state => state.categorie);
 	const { uid } = useSelector( state => state.auth );
-	console.log(categories);
 
 	useEffect(() => {
 
@@ -33,7 +33,6 @@ const HomePage = () => {
 					<h1 className="title-color s-center">Niveles</h1>
 					<h3 className="content-color s-center">Completa los niveles, gana experiencia y consigue logros.</h3>
 					<div className="ed-grid s-grid-12">
-						{/* TODO: APLICAR NIVELES PARA EL USUARIO */}
 						{
 							categories.map( ( levels, index ) =>
 
@@ -50,9 +49,7 @@ const HomePage = () => {
 			</>
 
 		) : (
-
-			<h1>Skeleton de home general</h1>
-
+			<SkeletonHomePage />
 		)
 
 	)

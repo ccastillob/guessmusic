@@ -1,10 +1,11 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearProfileData, startProfileAchievements, startProfileCategories, startProfileData } from '../../actions/profile';
 
+import { clearProfileData, startProfileAchievements, startProfileCategories, startProfileData } from '../../actions/profile';
 import AllListAchievement from '../molecules/AllListAchievement';
 import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
+import SkeletonListAchievementsPage from '../skeletons/SkeletonListAchievementsPage';
 
 const ListAchievementsPage = ({match}) => {
 
@@ -21,12 +22,17 @@ const ListAchievementsPage = ({match}) => {
 	}, [ dispatch, match ])
 
 	return (
-		<>
-			<HeaderMenuSecondary />
-			<div className="ed-grid s-grid-12 container-achievementpage main-container">
-				<AllListAchievement achievements={ achievements } categories={ categories } />
-			</div>
-		</>
+
+		( achievements !== undefined && categories !== undefined ) ? (
+			<>
+				<HeaderMenuSecondary />
+				<div className="ed-grid s-grid-12 container-achievementpage main-container">
+					<AllListAchievement achievements={ achievements } categories={ categories } />
+				</div>
+			</>
+		) : (
+			<SkeletonListAchievementsPage />
+		)
 	)
 }
 

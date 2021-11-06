@@ -11,6 +11,7 @@ import IconDate from '../icons/IconDate';
 import IconFollow from '../icons/IconFollow';
 import IconUserSelect from '../icons/IconUserSelect';
 import IconUserWaiting from '../icons/IconUserWaiting';
+import SkeletonTopProfileFriend from '../skeletons/SkeletonTopProfileFriend';
 
 const SectionTopProfileFriend = () => {
 
@@ -123,6 +124,7 @@ const SectionTopProfileFriend = () => {
 	const validUserWaiting = indexOfUsersWithStateFalse?.includes(profile?.uid)
 
 	return (
+
 		( profile !== null && userIsMyList !== undefined  && profileFollowers !== undefined ) ? (
 			<div className="section-top_profileUser ed-grid s-grid-12 s-cols-12">
 			<div className="profileUser-container_left s-cols-12 m-cols-8">
@@ -171,8 +173,7 @@ const SectionTopProfileFriend = () => {
 			</div>
 		</div>
 		) : (
-			// TODO: APLICAR UN SKELETON
-			<h1>SKELETON DE TOP FRIEND</h1>
+			<SkeletonTopProfileFriend />
 		)
 	)
 }

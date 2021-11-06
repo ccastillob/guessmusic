@@ -1,12 +1,13 @@
 
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useFetchUserCategorie } from "../../hooks/categorie/useFetchUserCategorie";
 
+import { useFetchUserCategorie } from "../../hooks/categorie/useFetchUserCategorie";
 import FooterPlayingSong from "../molecules/FooterPlayingSong";
 import FooterSelectSong from "../molecules/FooterSelectSong";
 import HeaderMenu from "../molecules/HeaderMenu";
 import CardLevelCategorie from "../organisms/CardLevelCategorie";
+import SkeletonCategoriesPage from "../skeletons/SkeletonCategoriesPage";
 
 const CategoriesPage = () => {
 
@@ -23,7 +24,7 @@ const CategoriesPage = () => {
 	return (
 
 			loading ? (
-				<h1>Skeleton general de categorias</h1>
+				<SkeletonCategoriesPage />
 			) : (
 
 				<>

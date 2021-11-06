@@ -8,11 +8,12 @@ import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 import ChatSectionLeft from '../organisms/ChatSectionLeft';
 import ChatSectionRight from '../organisms/ChatSectionRight';
 import ChatSelectUser from '../organisms/ChatSelectUser';
+import SkeletonChatPage from '../skeletons/SkeletonChatPage';
 
 const ChatPage = () => {
 
 	const dispatch = useDispatch()
-	const { chatActivo } = useSelector(state => state.chat)
+	const { chatActivo, usuariosChat } = useSelector(state => state.chat)
 
 	useEffect(() => {
 
@@ -27,6 +28,12 @@ const ChatPage = () => {
 	}, [dispatch])
 
 	return (
+
+		(usuariosChat === null) ? (
+
+			<SkeletonChatPage />
+
+		) : (
 		<>
 			<HeaderMenu active="chat" status={`chatview ${ !chatActivo && "default" }`} />
 			<HeaderMenuSecondary status={`chatview ${ !chatActivo && "default" }`} />
@@ -45,6 +52,9 @@ const ChatPage = () => {
 				</div>
 			</div>
 		</>
+		)
+
+
 	)
 }
 

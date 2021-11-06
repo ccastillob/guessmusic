@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { getDivition } from '../../helpers/getDivition';
 import IconExp from '../icons/IconExp';
 import IconShield from '../icons/IconShield';
+import SkeletonSectionStadisticsProfile from '../skeletons/SkeletonSectionStadisticsProfile';
 
 const SectionStadisticsProfile = ({ data }) => {
 
@@ -40,7 +41,7 @@ const SectionStadisticsProfile = ({ data }) => {
 		</div>
 
 		) : (
-			<h1>Skeleton de estadisticas</h1>
+			<SkeletonSectionStadisticsProfile />
 		)
 
 

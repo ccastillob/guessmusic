@@ -1,6 +1,7 @@
 
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { ClassicSpinner } from 'react-spinners-kit';
 
 import { SocketContext } from '../../context/SocketContext';
 import IconSend from '../icons/IconSend';
@@ -35,7 +36,6 @@ const SendMessage = () => {
 
 	}
 
-
 	return (
 
 		( profileFollowings !== undefined ) ? (
@@ -67,11 +67,12 @@ const SendMessage = () => {
 			)
 
 		) : (
-			// TODO: AGREGAR UN SKELETON
-			<h1>Skeleton mensaje</h1>
+			<div className="chatSectionRight_footerConversation spinner-chatconversation-message">
+				<ClassicSpinner color="#8e8e8f" size={30} />
+			</div>
 		)
 
 	)
 }
 
-export default SendMessage
+export default SendMessage;

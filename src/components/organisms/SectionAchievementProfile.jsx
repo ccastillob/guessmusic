@@ -5,14 +5,11 @@ import { useSelector } from 'react-redux';
 import ItemCompleteAchievement from '../atoms/ItemCompleteAchievement';
 import ItemPendingAchievement from '../atoms/ItemPendingAchievement';
 import ItemViewMoreAchievement from '../atoms/ItemViewMoreAchievement';
+import SkeletonSectionAchievementProfile from '../skeletons/SkeletonSectionAchievementProfile';
 
 const SectionAchievementProfile = () => {
 
-	// const { achievements } = useSelector(state => state.achievement);
-	// const { categories } = useSelector(state => state.categorie);
 	const { followings, data, achievements, categories } = useSelector(state => state.otherProfile);
-	// console.log(achievements);
-	// console.log(categories);
 	const arrOnlyFiveAchievements = achievements?.slice(0,3);
 
 	return (
@@ -28,15 +25,6 @@ const SectionAchievementProfile = () => {
 						)
 					}
 
-					{/* <ItemPendingAchievement />
-					<ItemPendingAchievement />
-
-					<ItemCompleteAchievement />
-
-					<ItemPendingAchievement />
-
-					<ItemPendingAchievement /> */}
-
 				</div>
 
 				<ItemViewMoreAchievement username={ data.username } />
@@ -44,7 +32,7 @@ const SectionAchievementProfile = () => {
 			</div>
 
 		) : (
-			<h1>Skeleton de logros general</h1>
+			<SkeletonSectionAchievementProfile />
 		)
 	)
 }

@@ -34,10 +34,9 @@ const ChatSectionLeft = () => {
 	}
 
 	return (
-		( usuariosChat === null && myFriendsInChat === undefined ) ? (
-			// TODO: AGREGAR UN SKELETON
-			<h1>Skeleton derecha chat</h1>
-		) : (
+
+		( !( usuariosChat === null && myFriendsInChat === undefined ) ) && (
+
 			<div className={`container-chatSectionLeft ${ chatActivo && "chatview"  }`}>
 				<h2 className="title-color s-center s-py-4">Amigos</h2>
 
