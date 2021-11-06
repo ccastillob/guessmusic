@@ -40,12 +40,12 @@ const ModalEditProfile = () => {
 		}
 
 		if( EUsername.trim().length < 2 ){
-			return Swal.fire('Error', 'El nombre de usuario debe ser mayor a 2 letras', 'info')
+			return Swal.fire('Error', 'El nick de usuario debe ser mayor a 2 letras', 'info')
 		}
 
 		const objectUserDataUpdate = {
-			lastName: EName,
-			name: ELastName,
+			lastName: ELastName,
+			name: EName,
 			username: EUsername,
 		}
 
