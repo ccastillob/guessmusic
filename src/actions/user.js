@@ -24,7 +24,7 @@ export const startUserData = ( uid ) => {
 			})
 
 		}else {
-			console.log('Error en un startUserData');
+			Swal.fire('Error', body.msg, 'error');
 		}
 
 	}
@@ -57,7 +57,7 @@ export const startUserFollowingsByID = ( id ) => {
 			})
 
 		}else {
-			console.log('Error en un startUserFollowingsByID');
+			Swal.fire('Error', body.msg, 'error');
 		}
 
 	}
@@ -90,7 +90,7 @@ export const startUserFollowersByID = ( id ) => {
 			})
 
 		}else {
-			console.log('Error en un startUserFollowersByID');
+			Swal.fire('Error', body.msg, 'error');
 		}
 
 	}
@@ -114,7 +114,7 @@ export const updateUserAvatar = ( id, objectUpdate ) => {
 			})
 
 		}else {
-			console.log('Error en un updateUserAvatar');
+			Swal.fire('Error', body.msg, 'error');
 		}
 
 	}

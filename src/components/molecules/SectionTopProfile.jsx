@@ -72,7 +72,7 @@ const SectionTopProfile = () => {
 
 			}, ( error ) => {
 
-				console.log(error);
+				Swal.fire('Error', error, 'error');
 
 			}, () => {
 
