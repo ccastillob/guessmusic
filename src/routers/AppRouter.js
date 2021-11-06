@@ -6,11 +6,11 @@ import {
 	Switch,
 	Redirect
 } from 'react-router-dom';
+
 import { startChecking } from '../actions/auth';
 import { loadingCategories } from '../actions/categorie';
-import { startUserData, startUserFollowersByID, startUserFollowingsByID } from '../actions/user';
 import LoadingPage from '../components/pages/LoadingPage';
-
+import { startUserData, startUserFollowersByID, startUserFollowingsByID } from '../actions/user';
 import { ScrollToTop } from '../helpers/scrollToTop';
 import { AuthRouter } from './AuthRouter';
 import { HomeRouter } from './HomeRouter';
@@ -40,7 +40,6 @@ export const AppRouter = () => {
 	}, [dispatch, uid])
 
 	if( checking ) {
-		// TODO: AGREGAR UN LOADING
 		return <LoadingPage />
 	}
 
