@@ -1,0 +1,94 @@
+
+// Estilos para los skeletons de las paginas
+
+.skeleton-homepage:hover,
+.skeleton-rankingpage:hover {
+	background: var(--bg-container);
+	cursor: default;
+}
+
+.skeleton-categoriepage {
+	background: var(--bg-container);
+}
+
+.menu-item-profile {
+	position: relative;
+
+	& > span {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: rem(40px);
+		height: rem(40px);
+
+		@include from(m) {
+			width: rem(48px);
+			height: rem(48px);
+		}
+
+	}
+
+}
+
+.data-item__userRanking {
+	position: relative;
+
+	& > span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: rem(48px);
+		height: rem(48px);
+
+		@include from(m) {
+			width: rem(51px);
+			height: rem(51px);
+		}
+	}
+}
+
+.skeleton-noactions {
+	cursor: default;
+	border: none;
+
+	&:hover {
+		cursor: default;
+		border: none;
+	}
+}
+
+.skeleton-nobg {
+	background: none;
+}
+
+.spinner-chatleftpage {
+	display: flex;
+	justify-content: center;
+}
+
+.spinner-chatconversation-message {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.skeleton-topprofile > div {
+	grid-column-end: span 12;
+}
+
+.skeleton-sectionfriendprofile > div {
+	grid-column-end: span 12;
+
+	@include from(m) {
+		grid-column-end: span 5;
+	}
+}
+
+.skeleton-spinner-friend,
+.skeleton-spinner-achievement,
+.skeleton-spinner-request {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
