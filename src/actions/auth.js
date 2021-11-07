@@ -1,4 +1,7 @@
 
+// Importamos la libreria para alertas
+import Swal from "sweetalert2";
+
 // Importamos los tipos
 import { types } from "../types/types";
 
@@ -15,8 +18,8 @@ export const startLogin = ( email, password ) => {
 
 		if( body.ok ) {
 			localStorage.setItem('token', body.token );
-			localStorage.setItem('access', body.accessToken );
-			localStorage.setItem('refresh', body.refreshToken );
+			// localStorage.setItem('access', body.accessToken );
+			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
 				uid: body.uid,
@@ -26,7 +29,46 @@ export const startLogin = ( email, password ) => {
 			dispatch( logged() );
 
 		}else {
-			// TODO: MOSTRAR UN MODAL CON EL ERROR
+			Swal.fire( 'Error', body.msg, 'error' );
+		}
+
+	}
+
+}
+
+// Exportamos y creamos una acción asincrona para cuando el usuario se registra
+// Esta acción se conectará con otra acción sincrona
+export const startRegister = ( name, lastName, email, password ) => {
+
+	return async( dispatch ) => {
+		const resp = await fetchSinToken( 'auth/new', { name, lastName, email, password }, 'POST' )
+		const body = await resp.json();
+
+		if( body.ok ) {
+			localStorage.setItem('token', body.token );
+			// localStorage.setItem('access', body.accessToken );
+			// localStorage.setItem('refresh', body.refreshToken );
+
+			dispatch( login({
+				uid: body.uid,
+			}) )
+
+			dispatch( logged() );
+
+		}else {
+
+			if( body?.errors ) {
+
+				return Swal.fire({
+					position: 'center',
+					icon: 'warning',
+					title: "Formato de correo no válido",
+				});
+
+			}
+
+			return Swal.fire( 'Error', body.msg, 'error' );
+
 		}
 
 	}
@@ -56,12 +98,11 @@ export const startChecking = () => {
 		if( body.ok ) {
 
 			localStorage.setItem( 'token', body.token );
-			localStorage.setItem('access', body.accessToken );
-			localStorage.setItem('refresh', body.refreshToken );
+			// localStorage.setItem('access', body.accessToken );
+			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
 				uid: body.uid,
-
 			}) );
 
 			dispatch( logged() );
@@ -90,6 +131,7 @@ export const startLogout = () => {
 		dispatch( profileClear() );
 		dispatch( notificationClear() );
 		dispatch( categorieClear() );
+		dispatch( uiInitialState() )
 
 	}
 
@@ -134,4 +176,8 @@ const notificationClear = () => ({
 
 const categorieClear = () => ({
 	type: types.clearCategories
+})
+
+const uiInitialState = () => ({
+	type: types.uiCloseEditModal
 })

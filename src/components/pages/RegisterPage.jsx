@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
+import { startRegister } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import { usePasswordToggle } from '../../hooks/usePasswordToggle';
 import PrimaryButton from '../atoms/PrimaryButton';
@@ -11,6 +14,8 @@ import IconPassword from '../icons/IconPassword';
 import IconUser from '../icons/IconUser';
 
 const RegisterPage = () => {
+
+	const dispatch = useDispatch();
 
 	const [ formRegisterValues, handleRegisterInputChange ] = useForm({
 		rFirstname: '',
@@ -28,8 +33,32 @@ const RegisterPage = () => {
 	const handleRegister = (e) => {
 		e.preventDefault();
 		// TODO: APLICAR FUNCIONALIDAD DE REGISTRO
-		console.log(rFirstname);
-		console.log(rLastname);
+		if( rPassword !== rRePassword ) {
+
+			return Swal.fire({
+				position: 'center',
+				icon: 'warning',
+				title: "Las contraseñas deben ser iguales",
+			})
+		}
+
+		Swal.fire({
+			title: 'Registrando datos',
+			text: 'Por favor espere...',
+			allowOutsideClick: false,
+			didOpen: () => {
+					Swal.showLoading()
+			}
+		})
+
+		dispatch( startRegister( rFirstname, rLastname, rEmail, rPassword ) );
+
+		Swal.close();
+
+	}
+
+	const disabledButton = () => {
+		return ( rFirstname.length > 2 && rLastname.length > 2 && rEmail.length > 0 && rPassword.length > 0 && rRePassword.length > 0 ) ? true : false;
 	}
 
 	return (
@@ -51,6 +80,7 @@ const RegisterPage = () => {
 						placeholder="Nombre usuario"
 						className="content-color inputUsernameRegister"
 						autoComplete="off"
+						maxLength= "12"
 						value={ rFirstname }
 						onChange={ handleRegisterInputChange }
 					/>
@@ -65,6 +95,7 @@ const RegisterPage = () => {
 						placeholder="Apellido usuario"
 						className="content-color inputLastnameRegister"
 						autoComplete="off"
+						maxLength= "12"
 						value={ rLastname }
 						onChange={ handleRegisterInputChange }
 					/>
@@ -114,7 +145,7 @@ const RegisterPage = () => {
 					{ toggleReIcon }
 				</div>
 				<div className="content-button__register">
-					<PrimaryButton title="Registrarse" btn={true} />
+					<PrimaryButton btnDisabled={ !disabledButton() } title="Registrarse" btn={true} />
 				</div>
 				<h3 className="content-color s-center s-cols-6">¿Ya tienes una cuenta? <Link to="/guessmusic/login" className="span_register text-bold">Inicia sesión</Link></h3>
 			</form>
