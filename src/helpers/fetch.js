@@ -1,6 +1,6 @@
 
 // Creamos una constante que almacenará el ENDPOINT base de nuestra api
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = process.env.REACT_APP_GUESSMUSIC_API_URL;
 
 // Creamos una función que nos retorne una promesa de un fetch donde no necesitaremos el token
 const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
