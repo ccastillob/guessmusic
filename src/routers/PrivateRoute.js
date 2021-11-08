@@ -14,7 +14,7 @@ export const PrivateRoute = ({
 			component= { (props) => (
 					( isLoggedIn )
 					? ( <Component {...props} /> )
-					: ( <Redirect to="/guessmusic/login" /> )
+					: ( <Redirect to="/guessmusic" /> )
 			)}
 		/>
 	)

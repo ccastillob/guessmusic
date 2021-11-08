@@ -57,7 +57,7 @@ export const AppRouter = () => {
 					component={ HomeRouter }
 					isLoggedIn={ !!uid }
 				/>
-				<Redirect to="/guessmusic/login" />
+				<Redirect to="/" />
 			</Switch>
 		</Router>
 	)
