@@ -10,13 +10,11 @@ import { types } from '../types/types';
 
 export const SocketContext = createContext();
 
-
 export const SocketProvider = ({ children }) => {
 
-	const dispatch = useDispatch()
-	const { socket, online, conectarSocket, desconectarSocket } = useSocket('http://localhost:8080');
-	const { logged, uid } = useSelector(state => state.auth)
-
+	const dispatch = useDispatch();
+	const { socket, online, conectarSocket, desconectarSocket } = useSocket('https://app-guessmusic.herokuapp.com');
+	const { logged, uid } = useSelector(state => state.auth);
 	useEffect(() => {
 
 			if( logged ) {
@@ -57,8 +55,7 @@ export const SocketProvider = ({ children }) => {
 
 			// Nos aseguramos que los mensajes ya hayan sido almacenados en la BD y luego buscamos los ultimos mensajes
 			await loadingLastMessageAndUsersChat(dispatch);
-			scrollToBottomMessages('messages-chat')
-
+			scrollToBottomMessages('messages-chat');
 
 		})
 
