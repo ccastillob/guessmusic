@@ -3,12 +3,12 @@ import firebase from 'firebase/compat/app';
 import "firebase/compat/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDYafI-4tHA3CQ_t7eDRZhQOCrdljQ-cN0",
-  authDomain: "appguessmusic.firebaseapp.com",
-  projectId: "appguessmusic",
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
   storageBucket: "appguessmusic.appspot.com",
-  messagingSenderId: "145764241535",
-  appId: "1:145764241535:web:708b1cfd0e585443632f4a"
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID
 };
 
 firebase.initializeApp(firebaseConfig);
