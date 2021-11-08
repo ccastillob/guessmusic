@@ -1,0 +1,52 @@
+
+// Colores variables tema claro
+$light-color: (
+    body: hsla(0, 0%, 95%, 1),
+    container: hsla(265, 46%, 99%, 1),
+    title: hsla(220, 7%, 16%, 1),
+    content: hsla(222, 7%, 29%, 1),
+    auxiliary: hsla(222, 7%, 65%, 1),
+    chat: hsla(227, 100%, 95%, 1),
+    conversation: hsla(56, 48%, 90%, 1)
+);
+
+// Colores variables para botones
+$button-color: (
+    primary: hsla(227, 77%, 46%, 1),
+    primary-alt: hsla(227, 77%, 40%, 1),
+    secondary: hsla(56, 94%, 42%, 1),
+    ternary: hsla(227, 77%, 73%, 1),
+    ternary-alt: hsla(227, 77%, 66%, 1)
+);
+
+// Colores variables para acentuar eventos
+$accent-color: (
+    success-300: hsla(128, 85%, 58%, 1),
+    success-500: hsla(128, 85%, 44%, 1),
+    success-700: hsla(128, 85%, 39%, 1),
+    warning-300: hsla(44, 95%, 56%, 1),
+    warning-500: hsla(44, 94%, 42%, 1),
+    warning-700: hsla(44, 94%, 32%, 1),
+    error-300: hsla(345, 64%, 63%, 1),
+    error-500: hsla(345, 64%, 50%, 1),
+    error-700: hsla(345, 64%, 37%, 1),
+);
+
+//  Colores variables para imagen, fondo y borde
+$util-color: (
+    bg-overlay-image: hsla(0, 0%, 0%, .45),
+    bg-battle: hsla(227, 76%, 23%, 1),
+    border: hsla(222, 7%, 65%, 1)
+);
+
+// Colores variables para divisiones
+$divition-color: (
+    heraldo: hsla(87, 50%, 40%, 1),
+    guardian: hsla(32, 21%, 46%, 1),
+    cruzado: hsla(173, 43%, 46%, 1),
+    arconte: hsla(148, 24%, 46%, 1),
+    leyenda: hsla(41, 10%, 56%, 1),
+    ancestral: hsla(284, 35%, 43%, 1),
+    divino: hsla(227, 40%, 58%, 1)
+);
+

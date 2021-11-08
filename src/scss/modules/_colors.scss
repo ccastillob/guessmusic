@@ -1,0 +1,134 @@
+
+// Nombre de clases para aplicar colores
+
+// Colores para fondo de botones seguidores sin texto
+.normal {
+
+	&-primary-color {
+		background: var(--primary-color);
+
+		&:hover {
+			background: var(--primary-alt-color);
+		}
+	}
+
+}
+
+// Colores para fondo de botones ghost
+.ghost {
+
+	&-secondary-color {
+		color: var(--secondary-color);
+		border: 1px solid var(--secondary-color);
+
+		&:hover {
+			color: var(--bg-container);
+			background: var(--secondary-color);
+		}
+	}
+
+	&-error300-color {
+		color: var(--error-300);
+		border: 1px solid var(--error-300);
+
+		&:hover {
+			color: var(--bg-container);
+			background: var(--error-300);
+		}
+	}
+
+	&-primary900-color {
+		color: var(--bg-battle);
+		border: 1px solid var(--bg-battle);
+
+		&:hover {
+			color: var(--bg-container);
+			background: var(--bg-battle);
+		}
+	}
+
+}
+
+// Colores para fondo de botones para seguidores con texto
+.follow {
+
+	&-primary-color {
+		background: var(--primary-color);
+		border: 1px solid var(--ternary-alt-color);
+
+		&:hover {
+			background: var(--primary-alt-color);
+		}
+	}
+
+	&-warning500-color {
+		background: var(--warning-500);
+		border: 1px solid var(--warning-300);
+
+		&:hover {
+			background: var(--warning-700);
+		}
+	}
+
+
+	&-success500-color {
+		background: var(--success-500);
+		border: 1px solid var(--success-300);
+
+		&:hover {
+			background: var(--success-700);
+		}
+	}
+
+}
+
+// Colores para los textos e iconos
+.title-color {
+	color: var(--title-color);
+}
+
+.content-color {
+	color: var(--content-color);
+}
+
+.auxiliary-color {
+	color: var(--auxiliary-color);
+}
+
+// Colores basicos
+.primary-color {
+	color: var(--primary-color);
+}
+
+.secondary-color {
+	color: var(--secondary-color);
+}
+
+// Colores para las divisiones
+.heraldo-divition {
+	color: var(--heraldo);
+}
+
+.guardian-divition {
+	color: var(--guardian);
+}
+
+.cruzado-divition {
+	color: var(--cruzado);
+}
+
+.arconte-divition {
+	color: var(--arconte);
+}
+
+.leyenda-divition {
+	color: var(--leyenda);
+}
+
+.ancestral-divition {
+	color: var(--ancestral);
+}
+
+.divino-divition {
+	color: var(--divino);
+}

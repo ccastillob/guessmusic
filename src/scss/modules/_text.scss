@@ -1,0 +1,23 @@
+
+// Transformaciones para los textos
+
+.text_line-clamp {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow-y: hidden;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.text-overflow {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}

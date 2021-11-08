@@ -1,0 +1,29 @@
+
+// Importar tipografia(Roboto y Open Sans)
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+// Tipos de fuente
+$type-font: (
+	main-font: ('Roboto', sans-serif),
+	secondary-font: ('Open Sans', sans-serif),
+);
+
+// font-size variables para web > 768
+$web-fz: (
+	title: 36px,
+	subtitle: 28px,
+	content: 20px,
+	normal: 16px,
+	small: 14px,
+	smaller: 13px
+);
+
+// font-size variables para mobile <= 768
+$mobile-fz: (
+	title: 24px,
+	subtitle: 20px,
+	content: 16px,
+	normal: 14px,
+	small: 13px,
+	smaller: 12px
+);

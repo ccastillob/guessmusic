@@ -1,0 +1,82 @@
+
+// Estilos para la página de notificaciones o solicitudes
+.container-notificationpage {
+	padding-top: rem(44px);
+	padding-bottom: rem(64px);
+}
+
+
+.container-listRequest {
+	padding: rem(16px);
+
+	@include from(s) {
+		grid-column-end: span 12;
+		grid-column-start: 1;
+	}
+
+	// Apartir de 541px hasta 1024px
+	@include fromTo(541px, 1025px) {
+		grid-column-end: span 10;
+		grid-column-start: 2;
+	}
+
+	// Desde 1025px
+	@include from(1025px) {
+		grid-column-end: span 8;
+		grid-column-start: 3;
+	}
+}
+
+.listRequestFriend-allItems {
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	margin-top: rem(16px);
+}
+
+.container-item_request {
+	flex-direction: column;
+	background: var(--bg-container);
+	padding: rem(16px);
+	border-top: 1px solid var(--primary-color);
+
+
+	&__confirm {
+		background: var(--bg-container);
+		padding: rem(32px) rem(16px);
+		border-top: 1px solid var(--primary-color);
+
+		&:first-child {
+			border-top: none;
+			border-top-left-radius: rem(4px);
+			border-top-right-radius: rem(4px);
+		}
+
+		&:last-child {
+			border-bottom-left-radius: rem(4px);
+			border-bottom-right-radius: rem(4px);
+		}
+	}
+
+	&__empty {
+		margin-top: rem(32px);
+	}
+
+	&:first-child {
+		border-top: none;
+		border-top-left-radius: rem(4px);
+		border-top-right-radius: rem(4px);
+	}
+
+	&:last-child {
+		border-bottom-left-radius: rem(4px);
+		border-bottom-right-radius: rem(4px);
+	}
+}
+
+.container-buttons__request {
+	width: 100%;
+	display: inline-flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: rem(8px);
+}

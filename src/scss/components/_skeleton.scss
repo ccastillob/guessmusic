@@ -1,0 +1,72 @@
+
+// Estilos para los skeletons de las paginas
+
+.skeleton-homepage:hover,
+.skeleton-rankingpage:hover {
+	background: var(--bg-container);
+	cursor: default;
+}
+
+.skeleton-categoriepage {
+	background: var(--bg-container);
+}
+
+.menu-item-profile,
+.data-item__userRanking,
+.item-friend__profile {
+	position: relative;
+
+	& > .lazy-load-image-background {
+
+		display: inline-flex !important;
+		top: 0;
+		left: 0;
+
+	}
+
+}
+
+.skeleton-noactions {
+	cursor: default;
+	border: none;
+
+	&:hover {
+		cursor: default;
+		border: none;
+	}
+}
+
+.skeleton-nobg {
+	background: none;
+}
+
+.spinner-chatleftpage {
+	display: flex;
+	justify-content: center;
+}
+
+.spinner-chatconversation-message {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.skeleton-topprofile > div {
+	grid-column-end: span 12;
+}
+
+.skeleton-sectionfriendprofile > div {
+	grid-column-end: span 12;
+
+	@include from(m) {
+		grid-column-end: span 5;
+	}
+}
+
+.skeleton-spinner-friend,
+.skeleton-spinner-achievement,
+.skeleton-spinner-request {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

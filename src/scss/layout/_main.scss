@@ -1,0 +1,9 @@
+
+// Estilos para el contenedor principal
+.main-container {
+	margin-top: var(--header-height-mobile);
+
+	@include from(m) {
+		margin-top: var(--header-height-web);
+	}
+}

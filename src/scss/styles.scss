@@ -1,0 +1,53 @@
+
+// Aqui se hacen configuraciones iniciales e importaciones de los componentes del proyecto
+
+// Breakpoints
+$breakpoints: (
+	s: 0,
+	m: 769px,
+	lg: 1024px,
+	xl: 1440px
+);
+
+$prototype: true;		// Activa los estilos de prototipado
+$max-width: 1200px;	// Ancho máximo de los contenedores ed-container y ed-grid
+$l-unit: .25rem;		// (4px) Unidad básica de layout(para separaciones verticales, margin y padding)
+
+// Importación de la libreria
+@import "~ed-grid/ed-grid";
+
+// Variables de tipografía y colores
+@import "config";
+
+// Estilos base
+@import "base/base";
+
+// Estilos layout
+@import "layout/carousel";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/main";
+
+// Estilos modules
+@import "modules/buttons";
+@import "modules/colors";
+@import "modules/icons";
+@import "modules/menu";
+@import "modules/text";
+
+// Estilos components
+@import "components/categorie";
+@import "components/chat";
+@import "components/home";
+@import "components/listAchievement";
+@import "components/listFollow";
+@import "components/login";
+@import "components/modal";
+@import "components/notifications";
+@import "components/profile";
+@import "components/ranking";
+@import "components/register";
+@import "components/screenFinish";
+@import "components/screenGame";
+@import "components/skeleton";
+

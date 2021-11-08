@@ -1,0 +1,150 @@
+
+// Estilos para página de inicio del juego
+.container-allSectionScreenGame {
+	background: var(--bg-container);
+	display: flex;
+	flex-direction: column;
+}
+
+// HEADER
+.container-screenGame_header {
+	display: flex;
+	flex: 0 0 auto;
+	padding-top: rem(16px);
+}
+
+.screenGame-item_mode,
+.screenGame-item_time,
+.screenGame-item_score {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+// FIN HEADER
+
+// SECTION
+.container-screenGame_section {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 76px - 140px);
+
+	& > i {
+		margin-bottom: rem(16px);
+	}
+
+	& > h1 {
+		margin-bottom: rem(8px);
+	}
+
+	@include fromTo(641px, m) {
+		height: calc(100vh - 76px - 152px);
+	}
+
+	@include from(m) {
+		height: calc(100vh - 98px - 160px);
+	}
+}
+
+// FIN SECTION
+
+// FOOTER
+.container-screenGame_footer {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	padding-bottom: rem(32px);
+	align-items: center;
+}
+
+.container-spinner {
+	padding-bottom: rem(0px);
+	justify-content: center;
+	height: 140px;
+
+	@include fromTo(641px, m) {
+		height: 152px;
+	}
+
+	@include from(m) {
+		height: 160px;
+	}
+}
+
+.screenGame-content_btnsBottom {
+	margin-top: rem(8px);
+
+	@include from(m) {
+		margin-top: rem(16px);
+	}
+}
+
+.btnsTop_left,
+.btnsTop_right,
+.btnsBottom_left,
+.btnsBottom_right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: rem(50px);
+
+	// Desde 641px hasta 768px
+	@include fromTo(641px, m) {
+		height: rem(56px);
+	}
+
+	// Desde 769px
+	@include from(m) {
+		height: rem(56px);
+	}
+}
+
+.fzSmall-btn,
+.fzSmall-btn-confirm {
+	font-size: rem(12px);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	width: 70%;
+	padding: 0px 2px;
+
+	// Desde 641px hasta 768px
+	@include fromTo(641px, m) {
+		font-size: rem(14px);
+		width: 60%;
+	}
+
+	// Desde 769px hasta 1023px
+	@include fromTo(m, lg) {
+		font-size: rem(16px);
+		width: 50%;
+	}
+
+	// Desde 1024px
+	@include from(lg) {
+		font-size: rem(16px);
+		width: 36%;
+	}
+}
+
+.fzSmall-btn-confirm {
+	font-size: rem(16px);
+}
+
+.btn-confirm-screengame {
+	height: rem(140px);
+
+	@include fromTo(641px, m) {
+		height: rem(152px);
+	}
+
+	@include from(m) {
+		height: rem(160px);
+	}
+}
+
+// FIN FOOTER

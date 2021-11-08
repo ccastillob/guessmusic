@@ -1,0 +1,452 @@
+
+// Estilos para la página de perfil usuario
+
+.container-profilepage {
+	padding-top: rem(44px);
+	padding-bottom: rem(120px);
+
+	@include from(m) {
+		padding-bottom: rem(64px);
+	}
+}
+
+// INICIO SECCION TOP
+.section-top_profileUser {
+	padding-bottom: rem(16px);
+	border-bottom: 1px solid var(--border-color);
+
+}
+
+.profileUser-container_left {
+	display: flex;
+	margin: rem(16px) rem(0px);
+	justify-content: space-between;
+
+	@include from(m) {
+		justify-content: normal;
+	}
+}
+
+.container-left_avatar {
+	display: flex;
+	position: relative;
+	width: rem(84px);
+	height: rem(84px);
+	border-radius: 50%;
+	border: 1px solid var(--content-color);
+
+	@include from(m) {
+		width: rem(152px);
+		height: rem(152px);
+	}
+
+	& > img {
+		border-radius: 50%;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+
+.avatar__editImage {
+	position: absolute;
+	width: rem(20px);
+	height: rem(20px);
+	cursor: pointer;
+	background: var(--primary-color);
+	border: 1px solid var(--content-color);
+	border-radius: 50%;
+	color: var(--bg-container);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	right: rem(4px);
+
+	@include from(m) {
+		width: rem(30px);
+		height: rem(30px);
+	}
+
+	&:hover {
+		background: var(--primary-alt-color);
+	}
+}
+
+.container-left_data {
+
+	@include from(m) {
+		margin-left: rem(32px);
+	}
+}
+
+.data-content__createdAt {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	@include from(m) {
+		height: rem(32px);
+	}
+}
+
+.data-content__friends {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	& > .text_web {
+
+		@include hideTo(m)
+	}
+
+	& > .text_mobile {
+
+		@include hideFrom(m)
+	}
+
+	@include from(m) {
+		height: rem(32px);
+	}
+}
+
+.profileUser-container_right {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: rem(16px);
+
+	@include from(m) {
+		align-items: flex-end;
+	}
+}
+
+// FIN SECCION TOP
+
+// INICIO SECCION BOTTOM
+.section-bottom_profileUser {
+	margin-top: rem(16px);
+}
+
+// ESTADISTICAS
+.section-stadistics {
+	padding: rem(16px);
+}
+
+.stadistics-allItems {
+	flex-direction: column;
+
+
+	@include from(421px) {
+		flex-direction: row;
+	}
+
+}
+
+.item-experience {
+	display: flex;
+	border-radius: var(--border-radius);
+	background: var(--bg-container);
+	border: 1px solid var(--primary-color);
+	padding: rem(16px);
+	grid-column-end: span 2;
+	margin-bottom: rem(16px);
+
+	@include from(421px){
+		grid-column-end: span 1;
+		margin-bottom: rem(0px);
+	}
+}
+
+.item-divition {
+	display: flex;
+	border-radius: var(--border-radius);
+	background: var(--bg-container);
+	border: 1px solid var(--primary-color);
+	padding: rem(16px);
+	grid-column-end: span 2;
+
+	@include from(421px){
+		grid-column-end: span 1;
+	}
+}
+
+// FIN ESTADISTICAS
+
+// AMIGOS
+.section-friends {
+	padding: rem(16px);
+
+	&_mobile {
+		padding: rem(16px);
+
+		// @include hideFrom(m)
+	}
+
+	// @include hideTo(m)
+}
+
+.title-header__friends {
+	padding: rem(8px);
+	background: var(--bg-container);
+	border: 1px solid var(--primary-color);
+	border-top-left-radius: rem(4px);
+	border-top-right-radius: rem(4px);
+	border-bottom: none;
+}
+
+.friends-allItems {
+	border: 1px solid var(--primary-color);
+
+	&:last-child {
+		border-bottom-left-radius: rem(4px);
+		border-bottom-right-radius: rem(4px);
+	}
+}
+
+.container-item_friend {
+	display: flex;
+	background: var(--bg-container);
+	padding: rem(16px);
+	border-top: 1px solid var(--primary-color);
+
+	&__exist {
+		display: flex;
+		background: var(--bg-container);
+		padding: rem(16px);
+		border-top: 1px solid var(--primary-color);
+
+		&:first-child {
+			border-top: none;
+		}
+
+		&:last-child {
+			border-bottom-left-radius: rem(4px);
+			border-bottom-right-radius: rem(4px);
+		}
+	}
+
+	&__empty {
+		display: flex;
+		padding: rem(16px);
+		background: var(--bg-container);
+		border: 1px solid var(--primary-color);
+		justify-content: center;
+
+		&:last-child {
+			border-bottom-left-radius: rem(4px);
+			border-bottom-right-radius: rem(4px);
+		}
+
+	}
+
+	&:first-child {
+		border-top: none;
+		border-bottom-left-radius: rem(4px);
+		border-bottom-right-radius: rem(4px);
+	}
+
+	&:last-child {
+		border-bottom-left-radius: rem(4px);
+		border-bottom-right-radius: rem(4px);
+	}
+}
+
+.group-item_friend {
+	display: flex;
+	flex: 1 1 auto;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.item-friend__profile {
+	display: flex;
+	width: rem(46px);
+	height: rem(46px);
+	border-radius: 50%;
+	border: 1px solid var(--content-color);
+	flex: 0 0 auto;
+
+	@include from(m) {
+		width: rem(51px);
+		height: rem(51px);
+	}
+
+	& > span .avatar_follow,
+	& > img {
+		border-radius: 50%;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+
+.item-friend__data,
+.item-friend__data-exist {
+	margin-right: rem(16px);
+	margin-left: rem(8px);
+
+	& > .data-name {
+		margin-bottom: rem(4px);
+	}
+}
+
+.next-footer__friends {
+	display: flex;
+	padding: rem(16px);
+	background: var(--bg-container);
+	border: 1px solid var(--primary-color);
+	border-bottom-left-radius: rem(4px);
+	border-bottom-right-radius: rem(4px);
+	border-top: none;
+
+	& > h4 {
+		flex: 1 1 auto;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+// FIN AMIGOS
+
+// LOGROS
+.section-achievements {
+	padding: rem(16px);
+
+	&_mobile {
+		padding: rem(16px);
+		margin-top: rem(16px);
+
+		// @include hideFrom(m)
+	}
+
+	// @include hideTo(m)
+}
+
+.achievements-allItems {
+	border: 1px solid var(--primary-color);
+	border-top-left-radius: var(--border-radius);
+	border-top-right-radius: var(--border-radius);
+}
+
+.container-item_achievement {
+	display: flex;
+	padding: rem(16px);
+	background: var(--bg-container);
+	border-top: 1px solid var(--primary-color);
+	height: rem(103px);
+
+	&__complete {
+		display: flex;
+		padding: rem(16px);
+		background: var(--bg-container);
+		align-items: center;
+		border-top: 1px solid var(--primary-color);
+		height: rem(103px);
+
+		&:first-child {
+			border-top-left-radius: rem(4px);
+			border-top-right-radius: rem(4px);
+			border-top: none;
+		}
+
+		@include from(m) {
+			height: rem(109px);
+		}
+	}
+
+
+	&:first-child {
+		border-top-left-radius: rem(4px);
+		border-top-right-radius: rem(4px);
+		border-top: none;
+	}
+
+	@include from(m) {
+		height: rem(109px);
+	}
+}
+
+.item-achievement__data {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	margin-left: rem(8px);
+	overflow: hidden;
+
+	&__complete {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		margin-left: rem(8px);
+		justify-content: center;
+		overflow: hidden;
+
+		& > h4 {
+			margin-bottom: rem(8px);
+		}
+	}
+}
+
+.data_achievement__description {
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	white-space: nowrap;
+
+	& > .text-bold {
+		padding-right: rem(16px);
+	}
+
+	&__complete {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+}
+
+.data_achievement__progress {
+	content: "";
+	position: relative;
+	height: rem(16px);
+	border-radius: rem(8px);
+	background: var(--conversation-color);
+
+	& > .progress__porcentage {
+		content: "";
+		position: absolute;
+		height: rem(16px);
+		top: 0;
+		left: 0;
+		border-radius: rem(8px);
+		background: var(--primary-color);
+
+		@include from(m) {
+			height: rem(16px);
+		}
+	}
+
+	@include from(m) {
+		height: rem(18px);
+	}
+}
+
+.next-footer__achievements {
+	display: flex;
+	padding: rem(16px);
+	background: var(--bg-container);
+	border: 1px solid var(--primary-color);
+	border-bottom-left-radius: rem(4px);
+	border-bottom-right-radius: rem(4px);
+	border-top: none;
+
+	& > h4 {
+		flex: 1 1 auto;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+// FIN LOGROS

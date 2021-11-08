@@ -1,0 +1,391 @@
+
+// Contenedor para los iconos
+
+.container-icon {
+
+	&-add {
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-profile {
+		width: rem(24px);
+		height: rem(24px);
+	}
+
+	&-follow {
+		width: rem(26px);
+		height: rem(26px);
+
+		@include from(m) {
+			width: rem(32px);
+			height: rem(32px);
+		}
+	}
+
+	&-menu {
+		width: rem(32px);
+		height: rem(32px);
+
+		@include from(m) {
+			margin-right: rem(4px);
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-nav {
+		width: rem(36px);
+		height: rem(36px);
+		position: relative;
+	}
+
+	&-logo {
+		margin-right: rem(4px);
+		color: var(--primary-color);
+		width: rem(20px);
+		height: rem(20px);
+	}
+
+	&-arrowBackMenu {
+		width: rem(36px);
+		height: rem(36px);
+
+		@include from(m) {
+			width: rem(44px);
+			height: rem(44px);
+		}
+	}
+
+	&-arrowCategorie {
+		width: rem(16px);
+		height: rem(16px);
+		display: flex;
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-playCategorieCard {
+		width: rem(25px);
+		height: rem(25px);
+		position: absolute;
+		color: var(--bg-container);
+		cursor: pointer;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+
+		@include from(m) {
+			width: rem(28px);
+			height: rem(28px);
+		}
+
+		&:hover {
+			color: var(--bg-body);
+		}
+	}
+
+	&-playSong {
+		width: rem(31px);
+		height: rem(31px);
+		color: var(--bg-container);
+		display: inline-flex;
+		cursor: pointer;
+
+		@include from(m) {
+			width: rem(35px);
+			height: rem(35px);
+		}
+
+		&:hover {
+			color: var(--primary-alt-color);
+		}
+	}
+
+	&-shieldCard {
+		width: rem(19px);
+		height: rem(19px);
+		margin-right: rem(4px);
+		display: inline-flex;
+		cursor: default;
+	}
+
+	&-arrowLeftRanking,
+	&-arrowRightRanking {
+		width: rem(36px);
+		height: rem(36px);
+
+		@include from(m) {
+			width: rem(40px);
+			height: rem(40px);
+		}
+	}
+
+	&-shieldRanking {
+		width: rem(29px);
+		height: rem(29px);
+		margin-right: rem(4px);
+		display: inline-flex;
+		cursor: default;
+
+		@include from(m) {
+			width: rem(32px);
+			height: rem(32px);
+		}
+	}
+
+	&-levelHome {
+		display: inline-flex;
+		width: rem(72px);
+		height: rem(72px);
+	}
+
+	&-blockedHome {
+		display: inline-flex;
+		width: rem(20px);
+		height: rem(20px);
+
+		@include from(m) {
+			width: rem(22px);
+			height: rem(22px);
+		}
+	}
+
+	&-editProfile {
+		display: inline-flex;
+		width: rem(14px);
+		height: rem(14px);
+
+		@include from(m) {
+			width: rem(18px);
+			height: rem(18px);
+		}
+	}
+
+	&-dateProfile {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		margin-right: rem(8px);
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-followProfile {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		margin-right: rem(8px);
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-experienceProfile {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-shieldProfile {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-arrowRightFriend {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-achievementProfile {
+		display: inline-flex;
+		width: rem(51px);
+		height: rem(51px);
+
+		@include from(m) {
+			width: rem(55px);
+			height: rem(55px);
+		}
+	}
+
+	&-arrowRightAchievement {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-searchFriend {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		margin-left: rem(12px);
+
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+	&-shieldConversation {
+		display: inline-flex;
+		width: rem(19px);
+		height: rem(19px);
+
+		@include from(m) {
+			width: rem(21px);
+			height: rem(21px);
+		}
+	}
+
+	&-sendMessage {
+		display: inline-flex;
+		width: rem(31px);
+		height: rem(31px);
+
+		@include from(m) {
+			width: rem(34px);
+			height: rem(34px);
+		}
+	}
+
+	&-logoScreenGame {
+		display: inline-flex;
+		width: rem(120px);
+		height: rem(120px);
+
+		// Desde 641px hasta 768px
+		@include fromTo(641px, m) {
+			width: rem(152px);
+			height: rem(152px);
+		}
+
+		// Desde 769px
+		@include from(lg) {
+			width: rem(180px);
+			height: rem(180px);
+		}
+	}
+
+	&-logoLogin,
+	&-logoRegister {
+		display: inline-flex;
+		width: rem(80px);
+		height: rem(80px);
+
+		// Desde 1024px
+		@include from(lg) {
+			width: rem(100px);
+			height: rem(100px);
+		}
+	}
+
+
+	&-usernameRegister,
+	&-lastnameRegister,
+	&-emailLogin,
+	&-emailRegister {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+		margin-left: rem(12px);
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-passwordLogin,
+	&-passwordRegister,
+	&-repasswordRegister {
+		display: inline-flex;
+		width: rem(23px);
+		height: rem(23px);
+		margin-left: rem(12px);
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(26px);
+			height: rem(26px);
+		}
+	}
+
+	&-eyesLogin,
+	&-eyesRegister {
+		display: inline-flex;
+		width: rem(21px);
+		height: rem(21px);
+		z-index: var(--z-normal);
+		margin-right: rem(12px);
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		// Desde 769px
+		@include from(m) {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
+
+}
+
+.circle_chat,
+.circle_notification {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	background: var(--error-500);
+	color: var(--bg-container);
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	line-height: 15.6;
+	font-weight: normal;
+	padding: 2px 3px;
+}
+
+.svg-icon-achievement {
+  fill: currentcolor;
+}
