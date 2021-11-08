@@ -11,41 +11,19 @@
 	background: var(--bg-container);
 }
 
-.menu-item-profile {
+.menu-item-profile,
+.data-item__userRanking,
+.item-friend__profile {
 	position: relative;
 
-	& > span {
+	& > .lazy-load-image-background {
 
-		// position: absolute;
+		display: inline-flex !important;
 		top: 0;
 		left: 0;
-		width: rem(40px);
-		height: rem(40px);
-
-		@include from(m) {
-			width: rem(48px);
-			height: rem(48px);
-		}
 
 	}
 
-}
-
-.data-item__userRanking {
-	position: relative;
-
-	& > span {
-		// position: absolute;
-		top: 0;
-		left: 0;
-		width: rem(48px);
-		height: rem(48px);
-
-		@include from(m) {
-			width: rem(51px);
-			height: rem(51px);
-		}
-	}
 }
 
 .skeleton-noactions {
