@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconSend = () => {
 	return (
@@ -9,4 +10,4 @@ const IconSend = () => {
 	)
 }
 
-export default IconSend
+export default IconSend;

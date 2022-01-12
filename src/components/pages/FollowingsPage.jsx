@@ -6,14 +6,14 @@ import { clearProfileData, startProfileData, startProfileFollowers, startProfile
 import AllListFollowing from '../molecules/AllListFollowing';
 import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 
-const FollowingsPage = ({match}) => {
+const FollowingsPage = ({ match }) => {
 
 	const dispatch = useDispatch();
 	const { followings } = useSelector(state => state.otherProfile );
 
 	useEffect(() => {
 
-		dispatch( clearProfileData() )
+		dispatch( clearProfileData() );
 		dispatch( startProfileData( match.params.username ) );
 		dispatch( startProfileFollowings( match.params.username ) );
 		dispatch( startProfileFollowers( match.params.username ) );
@@ -28,6 +28,7 @@ const FollowingsPage = ({match}) => {
 			</div>
 		</>
 	)
+
 }
 
 export default FollowingsPage;

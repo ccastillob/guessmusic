@@ -15,22 +15,19 @@ const ChatSectionLeft = () => {
 	const myFriendsChat = () => {
 
 		if( search.length === 0 )
-			return myFriendsInChat
+			return myFriendsInChat;
 
-		const searchName = search.split('')[0].toUpperCase()
-		const restName = search.substr(1)
+		const searchName = search.split('')[0].toUpperCase();
+		const restName = search.substr(1);
 		const nameOfSearch = `${searchName}${restName}`;
+		const filtered = usuariosChat?.filter( user => user.name.includes( nameOfSearch ) );
 
-		// Si hay algo en la caja de busqueda
-		const filtered = usuariosChat?.filter( user => user.name.includes( nameOfSearch ) )
 		return filtered?.filter( user => user.stateSubscription === true );
 
 	}
 
 	const onSearchChange = ({ target }) => {
-
-		setSearch( target.value )
-
+		setSearch( target.value );
 	}
 
 	return (
@@ -86,6 +83,7 @@ const ChatSectionLeft = () => {
 			</div>
 		)
 	)
+
 }
 
 export default ChatSectionLeft;

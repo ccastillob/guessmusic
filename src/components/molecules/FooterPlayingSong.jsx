@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import IconPause from '../icons/IconPause';
 
+import IconPause from '../icons/IconPause';
 import IconPlay from '../icons/IconPlay';
 
 const FooterPlayingSong = ({ songData }) => {
@@ -20,25 +20,25 @@ const FooterPlayingSong = ({ songData }) => {
 	}, [ songData ]);
 
 	const onStart = () => {
-		setPlaying(true)
+		setPlaying(true);
 	};
 
 	const onPause = () => {
-		setPlaying(false)
+		setPlaying(false);
 	}
 
 	const onProgress = data => {
 
-		// data.playedSeconds = numero que se va seguir aumentando(segundos de la cancion)
-		// playedSeconds = segundos donde empieza la cancion
-		setPlayedSeconds(data.playedSeconds)
-		setTotalSeconds(data.loadedSeconds)
+		setPlayedSeconds(data.playedSeconds);
+		setTotalSeconds(data.loadedSeconds);
 
 	}
 
 	const porcentaje = () => {
+
 		let porcen = (playedSeconds/totalSeconds)*100;
 		return porcen;
+
 	}
 
 	return (
@@ -57,6 +57,7 @@ const FooterPlayingSong = ({ songData }) => {
 							<h6 className="section_song title-color text_line-clamp">{ songData?.nameSong }</h6>
 						</div>
 					</div>
+
 					{
 						playing ? (
 							<div onClick={ onPause } className="container-group_icon">
@@ -85,6 +86,7 @@ const FooterPlayingSong = ({ songData }) => {
 			/>
 		</footer>
 	)
+
 }
 
 export default FooterPlayingSong;

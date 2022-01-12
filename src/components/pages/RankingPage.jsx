@@ -15,12 +15,10 @@ const RankingPage = () => {
 	const { uid } = useSelector(state => state.auth);
 	const [ page, setPage ] = useState(0);
 	const { data, totalPages, loading } = useFetchAllUsersRanking( page );
-	const [view, setView] = useState(false)
+	const [view, setView] = useState(false);
 
 	useEffect(() => {
-
-		setView( true )
-
+		setView( true );
 	}, [ data ])
 
 	return (
@@ -32,7 +30,6 @@ const RankingPage = () => {
 					<h1 className="title-color s-center">Lista de clasificación</h1>
 					<h3 className="content-color s-center">Gana experiencia y ocupa el primer lugar en la lista.</h3>
 					<div className="ed-grid s-grid-12">
-
 						{
 								<div className="container-sectionCards_ranking s-order-2 m-order-1">
 									<div className="container-allItemCards_ranking">
@@ -46,7 +43,6 @@ const RankingPage = () => {
 								</div>
 
 						}
-
 						<ItemDivitionRanking />
 					</div>
 				</div>
@@ -58,6 +54,7 @@ const RankingPage = () => {
 		)
 
 	)
+
 }
 
 export default RankingPage;

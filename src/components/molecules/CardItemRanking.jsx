@@ -8,7 +8,6 @@ import { getDivition } from '../../helpers/getDivition';
 import IconShield from '../icons/IconShield';
 
 const CardItemRanking = ({ status, user, position, page }) => {
-
 	return (
 		<Link to={`/profile/${ user.username }`} className={`ed-grid s-grid-7 s-cols-7 m-gap-4 container-card_ranking s-mb-4 s-py-4 ${status}`} >
 			<h4 className="ranking__number content-color s-cols-1">{ (5*page +( position + 1)) }.</h4>

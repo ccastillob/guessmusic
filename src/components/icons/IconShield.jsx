@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconShield = () => {
 	return (
@@ -8,4 +9,4 @@ const IconShield = () => {
 	)
 }
 
-export default IconShield
+export default IconShield;

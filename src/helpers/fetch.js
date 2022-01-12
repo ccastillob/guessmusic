@@ -1,14 +1,10 @@
 
-// Creamos una constante que almacenará el ENDPOINT base de nuestra api
 const baseURL = process.env.REACT_APP_GUESSMUSIC_API_URL;
 
-// Creamos una función que nos retorne una promesa de un fetch donde no necesitaremos el token
 const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
 
-	// Creamos una URL con la base y el endpoint que pasaremos por parametro
 	const url = `${baseURL}/${endpoint}`;
 
-	// Validamos si el metodo es GET
 	if( method === 'GET' ) {
 		return fetch( url );
 	}else {
@@ -23,21 +19,16 @@ const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
 
 }
 
-// Creamos una función que nos retorne una promesa de un fetch donde necesitaremos un token
 const fetchConToken = ( endpoint, data, method = 'GET' ) => {
 
-	// Creamos una URL con la base y el endpoint que pasaremos por parametro
 	const url = `${baseURL}/${endpoint}`;
-
-	// Almacenamos el token si es que existe en una constante
 	const token = localStorage.getItem('token') || '';
 
-	// Validamos si el metodo es GET
 	if( method === 'GET' ) {
 
 		return fetch( url, {
 			headers: {
-				'x-token': token,
+				'x-token': token
 			}
 		});
 
@@ -56,7 +47,6 @@ const fetchConToken = ( endpoint, data, method = 'GET' ) => {
 
 }
 
-// Exportamos ambas funciones
 export {
 	fetchSinToken,
 	fetchConToken,

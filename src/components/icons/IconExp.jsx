@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconExp = () => {
 	return (
@@ -8,4 +9,4 @@ const IconExp = () => {
 	)
 }
 
-export default IconExp
+export default IconExp;

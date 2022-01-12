@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconSearch = () => {
 	return (
@@ -8,5 +9,4 @@ const IconSearch = () => {
 	)
 }
 
-export default IconSearch
-
+export default IconSearch;

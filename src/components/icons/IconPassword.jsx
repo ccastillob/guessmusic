@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconPassword = () => {
 	return (
@@ -8,4 +9,4 @@ const IconPassword = () => {
 	)
 }
 
-export default IconPassword
+export default IconPassword;

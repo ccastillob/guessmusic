@@ -15,11 +15,10 @@ import SkeletonTopProfileFriend from '../skeletons/SkeletonTopProfileFriend';
 
 const SectionTopProfileFriend = () => {
 
-	const { data: profile, followings: profileFollowings, followers: profileFollowers } = useSelector(state => state.otherProfile)
+	const { data: profile, followings: profileFollowings, followers: profileFollowers } = useSelector(state => state.otherProfile);
 	const { socket } = useContext( SocketContext );
-	// Estoy imprimiendo solo los usuarios que tienen true en su estado
 	const { followings: userFollowings } = useSelector(state => state.user );
-	const { uid } = useSelector(state => state.auth)
+	const { uid } = useSelector(state => state.auth);
 	const arrProfileFriendFollowings = profileFollowings?.filter( following => following?.stateSubscription === true );
 	const arrProfileFriendFollowers = profileFollowers?.filter( follower => follower?.stateSubscriber === true );
 
@@ -31,24 +30,25 @@ const SectionTopProfileFriend = () => {
 			confirmButtonColor: '#1739b5',
 			cancelButtonColor: '#dd6482',
 			confirmButtonText: 'Si, enviar.',
-			cancelButtonText: 'No.'
+			cancelButtonText: 'No.',
 		}).then((result) => {
 			if (result.isConfirmed) {
 
 				socket.emit( 'start-following', {
 					userSend,
 					userActive: uid,
-				})
+				});
 
 				Swal.fire({
 					position: 'center',
 					icon: 'success',
 					title: 'Solicitud enviada',
 					showConfirmButton: false,
-					timer: 1500
-				})
+					timer: 1500,
+				});
+
 			}
-		})
+		});
 
 	}
 
@@ -60,24 +60,25 @@ const SectionTopProfileFriend = () => {
 			confirmButtonColor: '#1739b5',
 			cancelButtonColor: '#dd6482',
 			confirmButtonText: 'Si, cancelar.',
-			cancelButtonText: 'No.'
+			cancelButtonText: 'No.',
 		}).then((result) => {
 			if (result.isConfirmed) {
 
 				socket.emit( 'cancel-request', {
 					userSend,
 					userActive: uid,
-				})
+				});
 
 				Swal.fire({
 					position: 'center',
 					icon: 'success',
 					title: 'Solicitud cancelada',
 					showConfirmButton: false,
-					timer: 1500
-				})
+					timer: 1500,
+				});
+
 			}
-		})
+		});
 
 	}
 
@@ -90,38 +91,32 @@ const SectionTopProfileFriend = () => {
 			confirmButtonColor: '#1739b5',
 			cancelButtonColor: '#dd6482',
 			confirmButtonText: 'Si, dejar de seguir.',
-			cancelButtonText: 'No.'
+			cancelButtonText: 'No.',
 		}).then((result) => {
 			if (result.isConfirmed) {
 
 				socket.emit( 'end-following', {
 					userSend,
 					userActive: uid,
-				})
+				});
 
 				Swal.fire({
 					position: 'center',
 					icon: 'success',
 					title: `Dejaste de seguir a ${ profile?.name }`,
 					showConfirmButton: false,
-					timer: 1500
-				})
+					timer: 1500,
+				});
+
 			}
-		})
+		});
 
 	}
 
-	// Voy a buscar si se encuentra en la lista
-	const userIsMyList = userFollowings?.filter( user => user.uid === profile?.uid )
-
-	// Voy a filtrar todos mis amigos de la lista con estado en false(array de usuarios)
+	const userIsMyList = userFollowings?.filter( user => user.uid === profile?.uid );
 	const arrUsersWithStateFalse = userFollowings?.filter( user => user.stateSubscription === false);
-
-	// Vamos a sacar su id de estos usuarios
 	const indexOfUsersWithStateFalse = arrUsersWithStateFalse?.map( user => user.uid );
-
-	// Vamos a validar si un usuario que esta en espera se encuentra en la lista de la otra persona
-	const validUserWaiting = indexOfUsersWithStateFalse?.includes(profile?.uid)
+	const validUserWaiting = indexOfUsersWithStateFalse?.includes(profile?.uid);
 
 	return (
 
@@ -129,9 +124,7 @@ const SectionTopProfileFriend = () => {
 			<div className="section-top_profileUser ed-grid s-grid-12 s-cols-12">
 			<div className="profileUser-container_left s-cols-12 m-cols-8">
 				<div className="container-left_avatar s-order-2 m-order-1">
-
 					<img src={ profile?.imgAvatar } alt="avatarProfile" />
-
 				</div>
 				<div className="container-left_data s-order-1 m-order-2">
 					<h3 className="content-color text-bold s-mb-1 text_line-clamp">{ profile?.name }</h3>
@@ -152,13 +145,11 @@ const SectionTopProfileFriend = () => {
 				</div>
 			</div>
 
-
 			<div className="profileUser-container_right s-cols-12 m-cols-4">
 				{
 
 					(userIsMyList?.length === 0) ? (
 						<FollowButton event={ () => handleFollowing( profile?.uid ) } title="Seguir" icon={<IconAddUserFollow />} otherClass="follow-primary-color"/>
-
 					) : (
 
 						( validUserWaiting ) ? (
@@ -176,6 +167,7 @@ const SectionTopProfileFriend = () => {
 			<SkeletonTopProfileFriend />
 		)
 	)
+
 }
 
 export default SectionTopProfileFriend;

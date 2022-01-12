@@ -1,5 +1,4 @@
 
-// Importamos combineReducers propio de redux
 import { combineReducers } from 'redux';
 import { authReducer } from './authReducer';
 import { categorieReducer } from './categorieReducer';
@@ -9,7 +8,6 @@ import { profileReducer } from './profileReducer';
 import { uiReducer } from './uiReducer';
 import { userReducer } from './userReducer';
 
-// Mediante el combineReducers vamos a establecer todos los reducers para nuestra aplicación y lo exportamos
 export const rootReducers = combineReducers({
 	auth: authReducer,
 	user: userReducer,

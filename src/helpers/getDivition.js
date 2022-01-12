@@ -1,5 +1,4 @@
 
-// Funcion para obtener la división
 export const getDivition = ( score ) => {
 
 	if( score >= 0 && score <= 100 ) {
@@ -17,7 +16,7 @@ export const getDivition = ( score ) => {
 	}else if( score >= 8502 ){
 		return "Divino";
 	}else {
-		return null
+		return null;
 	}
 
 }

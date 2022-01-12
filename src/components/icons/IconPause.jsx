@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconPause = () => {
 	return (
@@ -8,4 +9,4 @@ const IconPause = () => {
 	)
 }
 
-export default IconPause
+export default IconPause;

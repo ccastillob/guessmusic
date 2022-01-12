@@ -7,7 +7,7 @@ import IconRight from '../icons/IconRight';
 
 const ItemViewMoreFriendProfile = ({ isFollowing, totalFollows }) => {
 
-	const { data } = useSelector(state => state.otherProfile)
+	const { data } = useSelector(state => state.otherProfile);
 
 	return (
 

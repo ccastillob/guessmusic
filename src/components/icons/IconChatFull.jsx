@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconChatFull = () => {
 	return (
@@ -10,4 +11,4 @@ const IconChatFull = () => {
 	)
 }
 
-export default IconChatFull
+export default IconChatFull;

@@ -5,15 +5,17 @@ import { NavLink, useHistory } from 'react-router-dom';
 
 import IconLeft from '../icons/IconLeft';
 
-const HeaderMenuSecondary = ({status, active}) => {
+const HeaderMenuSecondary = ({ status, active }) => {
 
 	let history = useHistory();
 	const { data: user } = useSelector(state => state.user);
 
 	const handleGoToBack = (e) => {
+
 		e.preventDefault();
+
 		if( status.includes('chatview')  ) {
-			history.push("/chat")
+			history.push("/chat");
 		}else {
 			history.goBack();
 		}
@@ -42,11 +44,12 @@ const HeaderMenuSecondary = ({status, active}) => {
 			</div>
 		</header>
 	)
+
 }
 
 HeaderMenuSecondary.defaultProps = {
 	status: "",
-	active: ""
+	active: "",
 }
 
 export default HeaderMenuSecondary;

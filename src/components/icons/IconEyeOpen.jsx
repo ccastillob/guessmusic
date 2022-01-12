@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconEyeOpen = () => {
 	return (
@@ -9,4 +10,4 @@ const IconEyeOpen = () => {
 	)
 }
 
-export default IconEyeOpen
+export default IconEyeOpen;

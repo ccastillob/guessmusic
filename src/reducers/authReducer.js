@@ -1,14 +1,11 @@
 
-// Importamos los tipos
 import { types } from "../types/types";
 
-// Inicializamos el estado
 const initialState = {
 	checking: true,
-	logged: false
+	logged: false,
 }
 
-// Exportamos y creamos una función donde estableceremos los casos y retornar un estado
 export const authReducer = ( state = initialState, action ) => {
 
 	switch ( action.type ) {
@@ -16,12 +13,12 @@ export const authReducer = ( state = initialState, action ) => {
 			return {
 				...state,
 				...action.payload,
-				checking: false
+				checking: false,
 			}
 		case types.authCheckingFinish:
 			return {
 				...state,
-				checking: false
+				checking: false,
 			}
 		case types.authLogout:
 			return {
@@ -30,12 +27,12 @@ export const authReducer = ( state = initialState, action ) => {
 		case types.authLogged:
 			return {
 				...state,
-				logged: true
+				logged: true,
 			}
 		case types.authNotLogged:
 			return {
 				...state,
-				logged: false
+				logged: false,
 			}
 		default:
 			return state;

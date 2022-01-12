@@ -26,6 +26,7 @@ const ItemPendingAchievement = ({ achievement, indice, categories }) => {
 			</div>
 		</div>
 	)
+
 }
 
 export default ItemPendingAchievement;

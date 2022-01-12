@@ -13,9 +13,8 @@ import IconButton from './IconButton';
 
 const ItemFollowProfile = ({ friend }) => {
 
-	// Estoy imprimiendo solo los usuarios que tienen true en su estado
 	const { socket } = useContext( SocketContext );
-	const { followings: userFollowings, data } = useSelector(state => state.user );
+	const { followings: userFollowings, data } = useSelector( state => state.user );
 	const { imgAvatar, lastName, name, username, score, uid } = friend;
 
 	const handleUserWaiting = (id) => {
@@ -26,24 +25,27 @@ const ItemFollowProfile = ({ friend }) => {
 			confirmButtonColor: '#1739b5',
 			cancelButtonColor: '#dd6482',
 			confirmButtonText: 'Si, cancelar.',
-			cancelButtonText: 'No.'
+			cancelButtonText: 'No.',
 		}).then((result) => {
+
 			if (result.isConfirmed) {
 
 				socket.emit( 'cancel-request', {
 					userSend: id,
 					userActive: data.uid,
-				})
+				});
 
 				Swal.fire({
 					position: 'center',
 					icon: 'success',
 					title: 'Solicitud cancelada',
 					showConfirmButton: false,
-					timer: 1500
-				})
+					timer: 1500,
+				});
+
 			}
-		})
+
+		});
 
 	}
 
@@ -55,48 +57,36 @@ const ItemFollowProfile = ({ friend }) => {
 			confirmButtonColor: '#1739b5',
 			cancelButtonColor: '#dd6482',
 			confirmButtonText: 'Si, enviar.',
-			cancelButtonText: 'No.'
+			cancelButtonText: 'No.',
 		}).then((result) => {
+
 			if (result.isConfirmed) {
 
 				socket.emit( 'start-following', {
 					userSend: id,
 					userActive: data.uid,
-				})
+				});
 
 				Swal.fire({
 					position: 'center',
 					icon: 'success',
 					title: 'Solicitud enviada',
 					showConfirmButton: false,
-					timer: 1500
-				})
+					timer: 1500,
+				});
+
 			}
-		})
+
+		});
 
 	}
 
-	// TODO: COLOCAR ESTA FUNCIONALIDAD EN UN ARCHIVO APARTE
-
-	// Voy a filtrar todos mis amigos de la lista con estado en false(array de usuarios)
 	const arrUsersWithStateFalse = userFollowings?.filter( user => user.stateSubscription === false);
-
-	// Vamos a sacar su id de estos usuarios
 	const indexOfUsersWithStateFalse = arrUsersWithStateFalse?.map( user => user.uid );
-
-	// Vamos a validar si un usuario que esta en espera se encuentra en la lista de la otra persona
-	const validUserWaiting = indexOfUsersWithStateFalse?.includes(uid)
-
-
-
-	// Necesito una lista de usuario con estado en true
+	const validUserWaiting = indexOfUsersWithStateFalse?.includes(uid);
 	const arrUsersWithStateTrue = userFollowings?.filter( user => user.stateSubscription === true);
-
-	// De esta lista saco solo el ID de cada uno
 	const indexOfUsersWithStateTrue = arrUsersWithStateTrue?.map( user => user.uid );
-
-	// Valido que el usuario ingresado se encuentre en la lista con estado true
-	const validUserTrue = indexOfUsersWithStateTrue?.includes(uid)
+	const validUserTrue = indexOfUsersWithStateTrue?.includes(uid);
 
 	return (
 		<div className="container-item_friend__exist">
@@ -116,8 +106,7 @@ const ItemFollowProfile = ({ friend }) => {
 			</Link>
 
 			{
-				// Valido que el id que se ingresa sea diferente al usuario que esta conectado
-				// Valido que no se encuentre en la lista de usuarios con estado true
+
 				(data.uid !== uid && !validUserTrue ) && (
 
 					( validUserWaiting ) ? (
@@ -132,6 +121,7 @@ const ItemFollowProfile = ({ friend }) => {
 
 		</div>
 	)
+
 }
 
 export default ItemFollowProfile;

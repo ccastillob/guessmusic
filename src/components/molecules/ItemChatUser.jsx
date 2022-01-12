@@ -1,7 +1,6 @@
 
 import React, { useContext } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -26,7 +25,7 @@ const ItemChatUser = ({ friend }) => {
 		dispatch({
 			type: types.activeChat,
 			payload: friend.userFor
-		})
+		});
 
 		dispatch( startProfileFollowings( friend.username ) );
 
@@ -36,17 +35,15 @@ const ItemChatUser = ({ friend }) => {
 		dispatch({
 			type: types.loadingMessages,
 			payload: body.message
-		})
+		});
 
 		scrollToBottom('messages-chat');
 
 		socket.emit( 'load-latest-messages', { uid } );
 
-
 	}
 
 	return (
-
 		<div onClick={ handleView } className={`container-item_userChat ${ (friend.userFor === chatActivo) && "select" }`}>
 			<div className="item-userChat_avatar">
 				<LazyLoadImage
@@ -72,6 +69,7 @@ const ItemChatUser = ({ friend }) => {
 			</div>
 		</div>
 	)
+
 }
 
 export default ItemChatUser;

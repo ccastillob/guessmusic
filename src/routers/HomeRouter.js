@@ -16,7 +16,6 @@ import SelectProfilePage from '../components/pages/SelectProfilePage';
 import ErrorPage from '../components/pages/ErrorPage';
 
 export const HomeRouter = () => {
-
 	return (
 		<Switch>
 			<Route
@@ -80,8 +79,6 @@ export const HomeRouter = () => {
 				component={ HomePage }
 			/>
 			<Redirect to="/" />
-
 		</Switch>
 	)
-
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconNotification = () => {
 	return (
@@ -8,4 +9,4 @@ const IconNotification = () => {
 	)
 }
 
-export default IconNotification
+export default IconNotification;

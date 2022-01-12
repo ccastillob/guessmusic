@@ -12,27 +12,25 @@ import SkeletonChatPage from '../skeletons/SkeletonChatPage';
 
 const ChatPage = () => {
 
-	const dispatch = useDispatch()
-	const { chatActivo, usuariosChat } = useSelector(state => state.chat)
+	const dispatch = useDispatch();
+	const { chatActivo, usuariosChat } = useSelector(state => state.chat);
 
 	useEffect(() => {
 
 		dispatch({
 			type: types.userClearDataProfile
-		})
+		});
 
 		dispatch({
 			type: types.clearActiveChat
-		})
+		});
 
 	}, [dispatch])
 
 	return (
 
 		(usuariosChat === null) ? (
-
 			<SkeletonChatPage />
-
 		) : (
 		<>
 			<HeaderMenu active="chat" status={`chatview ${ !chatActivo && "default" }`} />
@@ -54,8 +52,8 @@ const ChatPage = () => {
 		</>
 		)
 
-
 	)
+
 }
 
 export default ChatPage;

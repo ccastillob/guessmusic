@@ -1,5 +1,4 @@
 
-// Exportamos y creamos los tipos que utilizaremos para mostrar cuando se realiza una acción
 export const types = {
 
 	authCheckingFinish: '[auth] Finish checking login state',

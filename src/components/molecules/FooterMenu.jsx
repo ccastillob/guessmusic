@@ -7,8 +7,7 @@ import IconPlay from '../icons/IconPlay';
 import IconRanking from '../icons/IconRanking';
 // import IconVersus from '../icons/IconVersus';
 
-const FooterMenu = ({active}) => {
-
+const FooterMenu = ({ active }) => {
 	return (
 		<footer className="main-footer s-main-center">
 			{/* <div className="ed-grid s-grid-4 s-gap-1"> */}

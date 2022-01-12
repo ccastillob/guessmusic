@@ -5,7 +5,6 @@ import { myCorrects } from '../../helpers/myCorrects';
 import CounterTimer from '../atoms/CounterTimer';
 import Swal from 'sweetalert2';
 import { ClassicSpinner, WaveSpinner } from 'react-spinners-kit';
-// import map from 'lodash.map';
 
 import PrimaryButton from '../atoms/PrimaryButton';
 import PlayerGame from '../molecules/PlayerGame';
@@ -17,9 +16,7 @@ const ScreenGameClassic = ({ match }) => {
 	const { categories } = useSelector(state => state.categorie);
 	const { uid } = useSelector(state => state.auth);
 	const { idLevel } = match.params;
-	// Indice del nivel que ha seleccionado
 	const indexLevelSong = categories?.findIndex( level => level._id === idLevel );
-
 	const [showCounter, setShowCounter] = useState(false);
 	const [songs, setsongs] = useState([]);
 	const [lista, setLista] = useState(0);
@@ -30,13 +27,15 @@ const ScreenGameClassic = ({ match }) => {
 	const ref = useRef(songs?.length);
 
 	if( songs?.length !== 0 ){
-		ref.current = songs?.length
+		ref.current = songs?.length;
 	}
 
 	useEffect(() => {
-		const user = categories?.find( level => level._id === idLevel )
+
+		const user = categories?.find( level => level._id === idLevel );
 		const data = user?.dataSongs;
-		setsongs(data)
+		setsongs(data);
+
 	}, [ categories, idLevel ])
 
 	const handleNext = async() => {
@@ -47,16 +46,16 @@ const ScreenGameClassic = ({ match }) => {
 				allowOutsideClick: false,
 				didOpen: () => {
 						Swal.showLoading()
-				}
-		})
+				},
+		});
 
-		await findAchievementsAndUpdatedConfirm( cor, songs, indexLevelSong )
-		await searchSongsAndUpdatedLevelsCompletes(indexLevelSong, songs, uid)
-		await activeToLevelNext(indexLevelSong, uid)
+		await findAchievementsAndUpdatedConfirm( cor, songs, indexLevelSong );
+		await searchSongsAndUpdatedLevelsCompletes(indexLevelSong, songs, uid);
+		await activeToLevelNext(indexLevelSong, uid);
 
-		// await dispatch( showAchievements() )
-		Swal.close()
-		setLista(lista+1)
+		Swal.close();
+		setLista(lista+1);
+
 	}
 
 	const handleOption = (e) => {
@@ -64,19 +63,23 @@ const ScreenGameClassic = ({ match }) => {
 		e.preventDefault()
 
 		if(e.target.innerHTML === songs?.[lista]?.nameSong ){
-				const datos = myCorrects(songs?.[lista]?.nameSong)
-				setCor(datos)
-				setEjec(true)
-				setLista(lista+1)
+
+				const datos = myCorrects(songs?.[lista]?.nameSong);
+				setCor(datos);
+				setEjec(true);
+				setLista(lista+1);
+
 		}else{
-				setLista(lista+1)
-				setIncore(true)
+
+				setLista(lista+1);
+				setIncore(true);
+
 		}
+
 	}
 
-	// Si el usuario recarga la página en pleno juego
 	if( songs === undefined ) {
-		window.location.href = "/"
+		window.location.href = "/";
 	}
 
 	return (
@@ -130,7 +133,6 @@ const ScreenGameClassic = ({ match }) => {
 						</div>
 					) : (
 						showCounter ? (
-
 							<div className="container-screenGame_footer ed-grid">
 								<div className="screenGame-content_btnsTop ed-grid s-grid-2">
 									<div className="btnsTop_left">
@@ -149,7 +151,6 @@ const ScreenGameClassic = ({ match }) => {
 									</div>
 								</div>
 							</div>
-
 						) : (
 							<div className="container-screenGame_footer container-spinner ed-grid">
 								<div className="screenGame-content_btnsTop ed-grid s-grid-1">
@@ -158,11 +159,9 @@ const ScreenGameClassic = ({ match }) => {
 									</div>
 								</div>
 							</div>
-
 						)
 					)
 				}
-
 			</div>
 
 		) : (
@@ -170,6 +169,7 @@ const ScreenGameClassic = ({ match }) => {
 		)
 
 	)
+
 }
 
 export default ScreenGameClassic;

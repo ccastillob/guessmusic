@@ -7,7 +7,7 @@ import ItemViewMoreFriendProfile from '../atoms/ItemViewMoreFriendProfile';
 
 const SectionFollowingsProfile = ({ followings }) => {
 
-	const arrTotalMyFollowings = followings?.filter( following => following?.stateSubscription === true )
+	const arrTotalMyFollowings = followings?.filter( following => following?.stateSubscription === true );
 	const arrOnlyThreeProfileFollowings = arrTotalMyFollowings?.slice(0,3);
 
 	return (

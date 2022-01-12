@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconRanking = () => {
 	return (
@@ -11,4 +12,4 @@ const IconRanking = () => {
 	)
 }
 
-export default IconRanking
+export default IconRanking;

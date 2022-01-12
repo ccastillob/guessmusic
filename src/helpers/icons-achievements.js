@@ -2,10 +2,14 @@
 import React, { Fragment } from "react";
 
 class Icon {
+
   constructor(viewBox, svg) {
+
     this.viewBox = viewBox;
     this.svg = <Fragment>{svg}</Fragment>;
+
   }
+
 }
 
 const svgs = {
@@ -107,6 +111,7 @@ const svgs = {
     )
   ),
   default: null
-};
+
+}
 
 export default svgs;

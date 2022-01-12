@@ -22,24 +22,25 @@ const RegisterPage = () => {
 		rLastname: '',
 		rEmail: '',
 		rPassword: '',
-		rRePassword: ''
+		rRePassword: '',
 	});
 
 	const { rFirstname, rLastname, rEmail, rPassword, rRePassword } = formRegisterValues;
-
 	const [ passwordInputType, toggleIcon ] = usePasswordToggle();
 	const [ repasswordInputType, toggleReIcon ] = usePasswordToggle();
 
 	const handleRegister = (e) => {
+
 		e.preventDefault();
-		// TODO: APLICAR FUNCIONALIDAD DE REGISTRO
+
 		if( rPassword !== rRePassword ) {
 
 			return Swal.fire({
 				position: 'center',
 				icon: 'warning',
 				title: "Las contraseñas deben ser iguales",
-			})
+			});
+
 		}
 
 		Swal.fire({
@@ -48,8 +49,8 @@ const RegisterPage = () => {
 			allowOutsideClick: false,
 			didOpen: () => {
 					Swal.showLoading()
-			}
-		})
+			},
+		});
 
 		dispatch( startRegister( rFirstname, rLastname, rEmail, rPassword ) );
 
@@ -151,6 +152,7 @@ const RegisterPage = () => {
 			</form>
 		</div>
 	)
+
 }
 
 export default RegisterPage;

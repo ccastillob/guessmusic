@@ -20,7 +20,8 @@ const App = () => {
 				<AppRouter />
 			</SocketProvider>
 		</Provider>
-  );
+  )
+
 }
 
 export default App;

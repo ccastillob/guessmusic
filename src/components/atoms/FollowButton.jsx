@@ -15,7 +15,7 @@ const FollowButton = ({ otherClass, urlTo, title, icon, event }) => {
 FollowButton.defaultProps = {
 	otherClass: "",
 	urlTo: "/",
-	title: ""
+	title: "",
 }
 
 export default FollowButton;

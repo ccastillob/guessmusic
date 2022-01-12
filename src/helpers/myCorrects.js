@@ -1,10 +1,9 @@
 
-let arr = []
+let arr = [];
 
 export const myCorrects = (name) => {
 
-    arr.push(name)
-
+    arr.push(name);
     return arr;
 
 }

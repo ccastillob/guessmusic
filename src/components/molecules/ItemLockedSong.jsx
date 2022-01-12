@@ -2,7 +2,6 @@
 import React from 'react';
 
 const ItemLockedSong = () => {
-
 	return (
 		<div className="ed-grid s-grid-3 contenedor-item">
 			<div className="img-container s-ratio-16-9 s-mb-2 s-cols-3 s-radius-1">

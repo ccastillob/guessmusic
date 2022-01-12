@@ -1,11 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import PrimaryButton from '../atoms/PrimaryButton'
-import HeaderMenu from '../molecules/HeaderMenu'
+
+import React from 'react';
+import { useSelector } from 'react-redux';
+import PrimaryButton from '../atoms/PrimaryButton';
+import HeaderMenu from '../molecules/HeaderMenu';
 
 const ErrorPage = () => {
 
-	const { data: user } = useSelector(state => state.user)
+	const { data: user } = useSelector(state => state.user);
 
 	return (
 		<>
@@ -19,4 +20,4 @@ const ErrorPage = () => {
 	)
 }
 
-export default ErrorPage
+export default ErrorPage;

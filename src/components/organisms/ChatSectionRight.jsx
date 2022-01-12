@@ -34,6 +34,7 @@ const ChatSectionRight = () => {
 			<SendMessage />
 		</div>
 	)
+
 }
 
 export default ChatSectionRight;

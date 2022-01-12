@@ -29,18 +29,18 @@ const ModalEditProfile = () => {
 
 	const handleInputSave = (e) => {
 
-		e.preventDefault()
+		e.preventDefault();
 
 		if( EName.trim().length < 2 ){
-			return Swal.fire('Error', 'El nombre debe ser mayor a 2 letras', 'info')
+			return Swal.fire('Error', 'El nombre debe ser mayor a 2 letras', 'info');
 		}
 
 		if( ELastName.trim().length < 2 ){
-			return Swal.fire('Error', 'El apellido debe ser mayor a 2 letras', 'info')
+			return Swal.fire('Error', 'El apellido debe ser mayor a 2 letras', 'info');
 		}
 
 		if( EUsername.trim().length < 2 ){
-			return Swal.fire('Error', 'El nick de usuario debe ser mayor a 2 letras', 'info')
+			return Swal.fire('Error', 'El nick de usuario debe ser mayor a 2 letras', 'info');
 		}
 
 		const objectUserDataUpdate = {
@@ -49,19 +49,20 @@ const ModalEditProfile = () => {
 			username: EUsername,
 		}
 
-		// Aqui un dispatch para actualizar los datos del formulario
-		dispatch( updateUserData( user.uid, objectUserDataUpdate, history ) )
+		dispatch( updateUserData( user.uid, objectUserDataUpdate, history ) );
 
 	}
 
 	const handleInputCancel = (e) => {
-		e.preventDefault()
+
+		e.preventDefault();
 		closeEditModal();
+
 	}
 
 
 	const closeEditModal = () => {
-			dispatch( uiCloseEditModal() )
+			dispatch( uiCloseEditModal() );
 	}
 
 	return (
@@ -124,6 +125,7 @@ const ModalEditProfile = () => {
 		</Modal>
 
     )
+
 }
 
-export default ModalEditProfile
+export default ModalEditProfile;

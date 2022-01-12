@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconEmail = () => {
 	return (
@@ -9,4 +10,4 @@ const IconEmail = () => {
 	)
 }
 
-export default IconEmail
+export default IconEmail;

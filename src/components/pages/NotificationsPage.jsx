@@ -17,8 +17,8 @@ const NotificationsPage = () => {
 
 	useEffect(() => {
 
-		dispatch( clearNotifications() )
-		dispatch( loadingNotifications(uid) )
+		dispatch( clearNotifications() );
+		dispatch( loadingNotifications(uid) );
 
 	}, [ dispatch, uid ])
 
@@ -31,7 +31,6 @@ const NotificationsPage = () => {
 				<div className="ed-grid  s-grid-12 container-notificationpage main-container">
 					<div className="container-listRequest">
 						<h2 className="title-color">Solicitudes</h2>
-
 						{
 
 							( notifications.length === 0 ) ? (
@@ -52,7 +51,6 @@ const NotificationsPage = () => {
 							)
 
 						}
-
 					</div>
 				</div>
 			</>
@@ -62,6 +60,7 @@ const NotificationsPage = () => {
 		)
 
 	)
+
 }
 
 export default NotificationsPage;

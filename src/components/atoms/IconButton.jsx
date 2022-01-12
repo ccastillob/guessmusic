@@ -14,7 +14,7 @@ const IconButton = ({ otherClass, urlTo, icon, type, event }) => {
 IconButton.defaultProps = {
 	otherClass: "",
 	urlTo: "/",
-	type: "add"
+	type: "add",
 }
 
 export default IconButton;

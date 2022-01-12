@@ -19,29 +19,31 @@ const ScreenFinishClassic = ({ scoreFinal, co, total }) => {
 
 	const handleBackHome = async(e) => {
 
-		e.preventDefault()
+		e.preventDefault();
 
 		Swal.fire({
 				title: 'Redireccionando al inicio...',
 				text: 'Por favor espere...',
 				allowOutsideClick: false,
 				didOpen: () => {
-						Swal.showLoading()
-				}
-		})
+						Swal.showLoading();
+				},
+		});
 
 		if( co?.length > 0 ){
-				co.splice(0,co?.length)
+				co.splice(0,co?.length);
 		}
 
-		const updScore = await scoreUpdated(scoreFinal, uid)
+		const updScore = await scoreUpdated(scoreFinal, uid);
 
 		if( updScore === undefined ){
-				Swal.close()
-				history.push("/")
+
+				Swal.close();
+				history.push("/");
+
 		}
 
-}
+	}
 
 	return (
 		<div className="ed-container container-allSectionScreenFinish">
@@ -86,6 +88,7 @@ const ScreenFinishClassic = ({ scoreFinal, co, total }) => {
 			</div>
 		</div>
 	)
+
 }
 
 export default ScreenFinishClassic;

@@ -26,7 +26,7 @@ export const useArrowConfig = () => {
           slidesToScroll: 2,
         }
       }
-    ]
+    ],
   };
 
 	return [ settings ];

@@ -15,7 +15,8 @@ const Icon = ({ svg, classes, title }) => {
     >
       {svgRender.svg}
     </svg>
-  );
+  )
+
 };
 
 export default Icon;

@@ -7,14 +7,14 @@ import AllListAchievement from '../molecules/AllListAchievement';
 import HeaderMenuSecondary from '../molecules/HeaderMenuSecondary';
 import SkeletonListAchievementsPage from '../skeletons/SkeletonListAchievementsPage';
 
-const ListAchievementsPage = ({match}) => {
+const ListAchievementsPage = ({ match }) => {
 
 	const dispatch = useDispatch();
 	const { achievements, categories } = useSelector(state => state.otherProfile );
 
 	useEffect(() => {
 
-		dispatch( clearProfileData() )
+		dispatch( clearProfileData() );
 		dispatch( startProfileData( match.params.username ) );
 		dispatch( startProfileAchievements( match.params.username ) );
 		dispatch( startProfileCategories( match.params.username ) );
@@ -33,7 +33,9 @@ const ListAchievementsPage = ({match}) => {
 		) : (
 			<SkeletonListAchievementsPage />
 		)
+
 	)
+
 }
 
 export default ListAchievementsPage;

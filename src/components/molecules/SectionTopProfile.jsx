@@ -25,14 +25,12 @@ const SectionTopProfile = () => {
 	const { followings: profileFollowings } = useSelector(state => state.otherProfile );
 
 	const handleLogout = () => {
-
 		dispatch( startLogout() );
-
 	}
 
 	const handleChangeFile = ({ target }) => {
 
-		const file = target.files[0]
+		const file = target.files[0];
 
 		if( file !== undefined ) {
 
@@ -49,7 +47,6 @@ const SectionTopProfile = () => {
 			const metadata = {
 				contentType: 'image/*'
 			}
-
 			const storageRef = storage.ref(`/profileImages/${ user?.uid }/${ file.name }`);
 			const uploadTask = storageRef.put( file, metadata );
 
@@ -58,22 +55,22 @@ const SectionTopProfile = () => {
 				let percentage = ( snapshot.bytesTransferred / snapshot.totalBytes ) * 100;
 
 				if( percentage < 100 ) {
+
 					Swal.fire({
 						title: 'Subiendo imagen',
 						text: 'Por favor espere...',
 						allowOutsideClick: false,
 						didOpen: () => {
 								Swal.showLoading()
-						}
-					})
+						},
+					});
+
 				}else {
 					Swal.close();
 				}
 
 			}, ( error ) => {
-
 				Swal.fire('Error', error, 'error');
-
 			}, () => {
 
 				uploadTask.snapshot.ref.getDownloadURL().then( url => {
@@ -92,38 +89,36 @@ const SectionTopProfile = () => {
 						icon: 'success',
 						title: 'Imagen subida',
 						showConfirmButton: false,
-						timer: 1500
-					})
+						timer: 1500,
+					});
 
 				})
 
-			})
+			});
 
 		}
 
 	}
 
 	const handleEditProfile = () => {
-
-		dispatch( uiOpenEditModal() )
-
+		dispatch( uiOpenEditModal() );
 	}
 
 	return (
+
 		( profileFollowings === undefined ) ? (
 			<SkeletonTopProfile />
 		) : (
 			<div className="section-top_profileUser ed-grid s-grid-12 s-cols-12">
 				<div className="profileUser-container_left s-cols-12 m-cols-8">
 					<div className="container-left_avatar s-order-2 m-order-1">
-
-								<img src={ user?.imgAvatar } alt={ user?.username } />
-								<label htmlFor="editAvatar" className="avatar__editImage">
-									<i className="container-icon-editProfile">
-										<IconEdit />
-									</i>
-								</label>
-								<input onChange={ handleChangeFile } type="file" accept=".png, .jpg, .jpeg" style={{ display: 'none' }} name="profile" id="editAvatar"></input>
+							<img src={ user?.imgAvatar } alt={ user?.username } />
+							<label htmlFor="editAvatar" className="avatar__editImage">
+								<i className="container-icon-editProfile">
+									<IconEdit />
+								</i>
+							</label>
+							<input onChange={ handleChangeFile } type="file" accept=".png, .jpg, .jpeg" style={{ display: 'none' }} name="profile" id="editAvatar"></input>
 					</div>
 					<div className="container-left_data s-order-1 m-order-2">
 						<h3 className="content-color text-bold s-mb-1 text_line-clamp">{ user?.name }</h3>
@@ -151,7 +146,9 @@ const SectionTopProfile = () => {
 				<ModalEditProfile />
 			</div>
 		)
+
 	)
+
 }
 
 export default SectionTopProfile;

@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconMain = () => {
 	return (
@@ -8,4 +9,4 @@ const IconMain = () => {
 	)
 }
 
-export default IconMain
+export default IconMain;

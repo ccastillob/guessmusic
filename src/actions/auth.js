@@ -1,19 +1,13 @@
 
-// Importamos la libreria para alertas
 import Swal from "sweetalert2";
 
-// Importamos los tipos
 import { types } from "../types/types";
-
-// Importamos las funcionalidades para el fetch
 import { fetchConToken, fetchSinToken } from "../helpers/fetch";
 
-// Exportamos y creamos una acción asincrona para cuando el usuario se logea
-// Esta acción se conectará con otra acción sincrona
 export const startLogin = ( email, password ) => {
 
 	return async( dispatch ) => {
-		const resp = await fetchSinToken( 'auth', { email, password }, 'POST' )
+		const resp = await fetchSinToken( 'auth', { email, password }, 'POST' );
 		const body = await resp.json();
 
 		if( body.ok ) {
@@ -22,9 +16,8 @@ export const startLogin = ( email, password ) => {
 			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
-				uid: body.uid,
-
-			}) )
+				uid: body.uid
+			}) );
 
 			dispatch( logged() );
 
@@ -36,12 +29,10 @@ export const startLogin = ( email, password ) => {
 
 }
 
-// Exportamos y creamos una acción asincrona para cuando el usuario se registra
-// Esta acción se conectará con otra acción sincrona
 export const startRegister = ( name, lastName, email, password ) => {
 
 	return async( dispatch ) => {
-		const resp = await fetchSinToken( 'auth/new', { name, lastName, email, password }, 'POST' )
+		const resp = await fetchSinToken( 'auth/new', { name, lastName, email, password }, 'POST' );
 		const body = await resp.json();
 
 		if( body.ok ) {
@@ -50,8 +41,8 @@ export const startRegister = ( name, lastName, email, password ) => {
 			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
-				uid: body.uid,
-			}) )
+				uid: body.uid
+			}) );
 
 			dispatch( logged() );
 
@@ -75,15 +66,11 @@ export const startRegister = ( name, lastName, email, password ) => {
 
 }
 
-// Exportamos y creamos una acción asincrona para cuando el usuario recarga el navegador
-// Esta acción se conectará con otra acción sincrona
 export const startChecking = () => {
 
 	return async( dispatch ) => {
-
 		const token = localStorage.getItem('token');
 
-		// Validamos la existencia del token
 		if( !token ) {
 
 			dispatch( notLogged() );
@@ -102,7 +89,7 @@ export const startChecking = () => {
 			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
-				uid: body.uid,
+				uid: body.uid
 			}) );
 
 			dispatch( logged() );
@@ -111,14 +98,13 @@ export const startChecking = () => {
 
 			dispatch( checkingFinish() );
 			dispatch( notLogged() );
+
 		}
 
 	}
 
 }
 
-// Exportamos y creamos una acción asincrona para cuando el usuario cierra sesión
-// Esta acción se conectará con otra acción sincrona
 export const startLogout = () => {
 
 	return ( dispatch ) => {
@@ -131,7 +117,7 @@ export const startLogout = () => {
 		dispatch( profileClear() );
 		dispatch( notificationClear() );
 		dispatch( categorieClear() );
-		dispatch( uiInitialState() )
+		dispatch( uiInitialState() );
 
 	}
 

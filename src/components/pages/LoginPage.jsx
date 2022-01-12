@@ -13,11 +13,11 @@ import IconPassword from '../icons/IconPassword';
 
 const LoginPage = () => {
 
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	const [ formLoginValues, handleLoginInputChange ] = useForm({
 		lEmail: '',
-		lPassword: ''
+		lPassword: '',
 	});
 
 	const { lEmail, lPassword } = formLoginValues;
@@ -27,7 +27,7 @@ const LoginPage = () => {
 	const handleLogin = (e) => {
 
 		e.preventDefault();
-		dispatch( startLogin( lEmail, lPassword ) )
+		dispatch( startLogin( lEmail, lPassword ) );
 
 	}
 
@@ -80,6 +80,7 @@ const LoginPage = () => {
 			</form>
 		</div>
 	)
+
 }
 
 export default LoginPage;

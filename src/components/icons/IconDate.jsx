@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconDate = () => {
 	return (
@@ -8,4 +9,4 @@ const IconDate = () => {
 	)
 }
 
-export default IconDate
+export default IconDate;

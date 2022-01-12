@@ -18,8 +18,8 @@ const HomePage = () => {
 
 	useEffect(() => {
 
-		dispatch( loadingCategories(uid) )
-		dispatch( startUserData(uid) )
+		dispatch( loadingCategories(uid) );
+		dispatch( startUserData(uid) );
 
 	}, [ dispatch, uid ])
 
@@ -42,7 +42,6 @@ const HomePage = () => {
 
 							)
 						}
-
 					</div>
 				</div>
 				<FooterMenu active="play" />
@@ -53,6 +52,7 @@ const HomePage = () => {
 		)
 
 	)
+
 }
 
 export default HomePage;

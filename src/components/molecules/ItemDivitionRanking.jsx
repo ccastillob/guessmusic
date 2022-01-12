@@ -4,7 +4,6 @@ import React from 'react';
 import IconShield from '../icons/IconShield';
 
 const ItemDivitionRanking = () => {
-
 	return (
 		<div className="container-listDivition s-order-1 m-order-2">
 			<h2 className="title-color s-mb-4 s-px-4 s-center">Rango de divisiones</h2>
@@ -69,7 +68,6 @@ const ItemDivitionRanking = () => {
 			</div>
 		</div>
 	)
-
 }
 
 export default ItemDivitionRanking;

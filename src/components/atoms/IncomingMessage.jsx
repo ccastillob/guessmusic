@@ -10,6 +10,7 @@ const IncomingMessage = ({ msg }) => {
 			<small className="auxiliary-color">{ getDateMessage( msg?.createdAt ) }</small>
 		</div>
 	)
+
 }
 
 export default IncomingMessage;

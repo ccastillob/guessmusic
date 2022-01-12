@@ -33,7 +33,6 @@ const SectionFollowersProfile = ({ followers }) => {
 							( arrTotalMyFollowers?.length > 3 ) && <ItemViewMoreFriendProfile isFollowing={false} totalFollows={ arrTotalMyFollowers.length } />
 						}
 					</>
-
 				)
 				: (
 					<ItemEmptyFriendProfile text="No tienes seguidores" />
@@ -42,6 +41,7 @@ const SectionFollowersProfile = ({ followers }) => {
 
 		</div>
 	)
+
 }
 
 export default SectionFollowersProfile;

@@ -7,17 +7,23 @@ import IconRight from '../icons/IconRight';
 const ArrowsRanking = ({ totalPages, page, setPage, setView }) => {
 
 	const goToPrevious = () => {
-		setPage( Math.max( 0, page - 1 ) )
+
+		setPage( Math.max( 0, page - 1 ) );
+
 		if( page !== 0 ) {
-			setView(false)
+			setView(false);
 		}
+
 	}
 
 	const goToNext = () => {
-		setPage( Math.min( totalPages - 1, page + 1 ) )
+
+		setPage( Math.min( totalPages - 1, page + 1 ) );
+
 		if( page !== (totalPages - 1) ) {
-			setView(false)
+			setView(false);
 		}
+
 	}
 
 	return (
@@ -38,6 +44,7 @@ const ArrowsRanking = ({ totalPages, page, setPage, setView }) => {
 			</div>
 		</div>
 	)
+
 }
 
 export default ArrowsRanking;

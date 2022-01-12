@@ -1,5 +1,4 @@
 
-// Funcion para obtener la eficiencia
 export const getPerformance = ( songCorrect ) => {
 
 	if( songCorrect >= 0 && songCorrect <= 3 ) {

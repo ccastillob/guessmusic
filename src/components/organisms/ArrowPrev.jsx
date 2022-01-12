@@ -7,7 +7,7 @@ import IconLeft from '../icons/IconLeft';
 const ArrowPrev = ({ onClick, currentSlide }) => {
 
 	const btnLeft = useRef(null);
-	arrowLeftVisible({currentSlide, btnLeft});
+	arrowLeftVisible({ currentSlide, btnLeft });
 
 	return (
 		<div ref={btnLeft} onClick={ onClick } className="carousel-arrow carousel-arrow-left">
@@ -16,6 +16,7 @@ const ArrowPrev = ({ onClick, currentSlide }) => {
 			</i>
 		</div>
 	)
+
 }
 
 export default ArrowPrev;

@@ -16,7 +16,7 @@ GhostButton.defaultProps = {
 	otherClass: "",
 	title: "",
 	urlTo: "/",
-	link: false
+	link: false,
 }
 
 export default GhostButton;

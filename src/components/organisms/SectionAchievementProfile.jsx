@@ -26,15 +26,14 @@ const SectionAchievementProfile = () => {
 					}
 
 				</div>
-
 				<ItemViewMoreAchievement username={ data.username } />
-
 			</div>
 
 		) : (
 			<SkeletonSectionAchievementProfile />
 		)
 	)
+
 }
 
 export default SectionAchievementProfile;

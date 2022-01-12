@@ -11,15 +11,15 @@ export const uiReducer = ( state=initialState, action ) => {
         case types.uiOpenEditModal:
             return {
                 ...state,
-                modalEditOpen: true
+                modalEditOpen: true,
             }
         case types.uiCloseEditModal:
             return {
                 ...state,
-                modalEditOpen: false
+                modalEditOpen: false,
             }
         default:
-            return state
+            return state;
     }
 
 }

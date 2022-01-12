@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconVersus = () => {
 	return (
@@ -8,4 +9,4 @@ const IconVersus = () => {
 	)
 }
 
-export default IconVersus
+export default IconVersus;

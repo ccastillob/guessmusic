@@ -16,16 +16,14 @@ const SectionFriendProfile = () => {
 
 			<div className="section-friends s-cols-12 m-cols-5 m-x-8">
 				<h2 className="title-color s-mb-4">Amigos</h2>
-
 				<SectionFollowingsProfile followings={ followings } />
-
 				<SectionFollowersProfile followers={ followers } />
-
 			</div>
 		) : (
 			<SkeletonSectionFriendProfile />
 		)
 	)
+
 }
 
 export default SectionFriendProfile;

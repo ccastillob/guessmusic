@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconCategories = () => {
 	return (
@@ -11,4 +12,4 @@ const IconCategories = () => {
 	)
 }
 
-export default IconCategories
+export default IconCategories;

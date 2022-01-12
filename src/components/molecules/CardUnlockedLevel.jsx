@@ -22,6 +22,7 @@ const CardUnlockedLevel = ({ levels, index }) => {
 			</div>
 		</Link>
 	)
+
 }
 
 export default CardUnlockedLevel;

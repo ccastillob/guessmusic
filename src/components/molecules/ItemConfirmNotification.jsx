@@ -10,6 +10,7 @@ const ItemConfirmNotification = ({ notification }) => {
 			<h4 className="content-color"><span className="text-bold">{ user.name } { user.lastName }</span> fue añadido a tu lista de seguidores.</h4>
 		</div>
 	)
+
 }
 
 export default ItemConfirmNotification;

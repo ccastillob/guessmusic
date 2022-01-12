@@ -23,18 +23,16 @@ export const AppRouter = () => {
 	const { checking, uid } = useSelector( state => state.auth );
 
 	useEffect(() => {
-
-		dispatch( startChecking() )
-
+		dispatch( startChecking() );
 	}, [dispatch])
 
 	useEffect(() => {
 
 		if( uid ) {
-			dispatch( startUserData(uid) )
-			dispatch( startUserFollowingsByID(uid) )
-			dispatch( startUserFollowersByID(uid) )
-			dispatch( loadingCategories(uid) )
+			dispatch( startUserData(uid) );
+			dispatch( startUserFollowingsByID(uid) );
+			dispatch( startUserFollowersByID(uid) );
+			dispatch( loadingCategories(uid) );
 		}
 
 	}, [dispatch, uid])

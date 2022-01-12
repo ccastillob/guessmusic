@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconNotificationFull = () => {
 	return (
@@ -10,4 +11,4 @@ const IconNotificationFull = () => {
 	)
 }
 
-export default IconNotificationFull
+export default IconNotificationFull;

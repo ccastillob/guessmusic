@@ -1,8 +1,6 @@
 
-// Importamos los tipos
 import { types } from "../types/types";
 
-// Inicializamos el estado
 const initialState = {
 	uid: '',
 	chatActivo: null,
@@ -10,14 +8,13 @@ const initialState = {
 	mensajes: [],
 }
 
-// Exportamos y creamos una función donde estableceremos los casos y retornar un estado
 export const chatReducer = ( state = initialState, action ) => {
 
 	switch ( action.type ) {
 		case types.usersChatSubscriptions:
 			return {
 				...state,
-				usuariosChat: [...action.payload]
+				usuariosChat: [...action.payload],
 			}
 		case types.usersChatSubscriptionsClear:
 			return initialState
@@ -27,13 +24,13 @@ export const chatReducer = ( state = initialState, action ) => {
 			return {
 				...state,
 				chatActivo: action.payload,
-				mensajes: []
+				mensajes: [],
 			}
 		case types.clearActiveChat:
 			return {
 				...state,
 				chatActivo: null,
-				mensajes: []
+				mensajes: [],
 			}
 		case types.newMessage:
 			if( state.chatActivo === action.payload.userOf ||
@@ -41,7 +38,7 @@ export const chatReducer = ( state = initialState, action ) => {
 			){
 				return {
 					...state,
-					mensajes: [ ...state.mensajes, action.payload ]
+					mensajes: [ ...state.mensajes, action.payload ],
 				}
 			}else {
 				return state;
@@ -49,7 +46,7 @@ export const chatReducer = ( state = initialState, action ) => {
 		case types.loadingMessages:
 			return {
 				...state,
-				mensajes: [...action.payload]
+				mensajes: [...action.payload],
 			}
 		default:
 			return state;

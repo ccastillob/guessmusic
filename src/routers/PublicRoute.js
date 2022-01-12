@@ -22,5 +22,5 @@ export const PublicRoute = ({
 
 PublicRoute.propTypes = {
 	isLoggedIn: PropTypes.bool.isRequired,
-	component: PropTypes.func.isRequired
+	component: PropTypes.func.isRequired,
 }

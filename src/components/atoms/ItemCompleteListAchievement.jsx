@@ -4,7 +4,6 @@ import React from 'react';
 import Icon from './Icon';
 
 const ItemCompleteListAchievement = ({ achievement, indice }) => {
-
 	return (
 		<div className="container-item_listAchievement__complete">
 			<i className="container-icon-achievementProfile primary-color">

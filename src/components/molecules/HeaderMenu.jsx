@@ -12,7 +12,7 @@ import IconNotification from '../icons/IconNotification';
 import IconPlay from '../icons/IconPlay';
 import IconRanking from '../icons/IconRanking';
 
-const HeaderMenu = ({status, active}) => {
+const HeaderMenu = ({ status, active }) => {
 
   const { data: user } = useSelector(state => state.user);
 
@@ -77,11 +77,12 @@ const HeaderMenu = ({status, active}) => {
 			</div>
 		</header>
 	)
+
 }
 
 HeaderMenu.defaultProps = {
 	status: "",
-	active: ""
+	active: "",
 }
 
 export default HeaderMenu;

@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
   storageBucket: "appguessmusic.appspot.com",
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_FIREBASE_APPID
+  appId: process.env.REACT_APP_FIREBASE_APPID,
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -16,5 +16,5 @@ const storage = firebase.storage();
 
 export {
 	firebase,
-	storage
+	storage,
 }

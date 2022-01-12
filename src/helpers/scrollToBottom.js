@@ -1,5 +1,5 @@
 
-import { animateScroll } from 'react-scroll'
+import { animateScroll } from 'react-scroll';
 
 export const scrollToBottom = ( id ) => {
 

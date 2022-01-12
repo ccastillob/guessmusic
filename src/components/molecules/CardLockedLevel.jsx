@@ -5,7 +5,6 @@ import IconPassword from '../icons/IconPassword';
 import IconShield from '../icons/IconShield';
 
 const CardLockedLevel = ({ levels, index }) => {
-
 	return (
 		<div className={`ed-grid s-grid-2 m-gap-4 container-card_level blocked s-mb-4`} >
 			<div className="level__content-icon blocked">

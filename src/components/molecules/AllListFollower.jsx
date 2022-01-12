@@ -6,10 +6,10 @@ import ItemEmptyListFollow from '../atoms/ItemEmptyListFollow';
 import ItemFollowProfile from '../atoms/ItemFollowProfile';
 import SkeletonAllListFollow from '../skeletons/SkeletonAllListFollow';
 
-const AllListFollowers = ({followers}) => {
+const AllListFollowers = ({ followers }) => {
 
-	const { data } = useSelector(state => state.user)
-	const { data: profile } = useSelector(state => state.otherProfile)
+	const { data } = useSelector(state => state.user);
+	const { data: profile } = useSelector(state => state.otherProfile);
 	const arrTotalMyFollowers = followers?.filter( follower => follower?.stateSubscriber === true );
 
 	return (
@@ -43,6 +43,7 @@ const AllListFollowers = ({followers}) => {
 		)
 
 	)
+
 }
 
 export default AllListFollowers;

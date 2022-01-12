@@ -8,8 +8,8 @@ import SkeletonAllListFollow from '../skeletons/SkeletonAllListFollow';
 
 const AllListFollowing = ({ followings }) => {
 
-	const { data } = useSelector(state => state.user)
-	const { data: profile } = useSelector(state => state.otherProfile)
+	const { data } = useSelector(state => state.user);
+	const { data: profile } = useSelector(state => state.otherProfile);
 	const arrTotalMyFollowings = followings?.filter( following => following?.stateSubscription === true );
 
 	return (
@@ -44,6 +44,7 @@ const AllListFollowing = ({ followings }) => {
 		)
 
 	)
+
 }
 
 export default AllListFollowing;

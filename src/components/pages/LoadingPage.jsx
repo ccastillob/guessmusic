@@ -13,7 +13,6 @@ const LoadingPage = () => {
 				</section>
 		</main>
 	)
-
 }
 
-export default LoadingPage
+export default LoadingPage;

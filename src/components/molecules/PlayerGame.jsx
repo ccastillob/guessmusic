@@ -1,42 +1,46 @@
 
-import React, { useState } from 'react'
-import ReactPlayer from 'react-player'
+import React, { useState } from 'react';
+import ReactPlayer from 'react-player';
 
 const PlayerGame = ({ songData, idlist, inicie, setShowCounter }) => {
 
-	const [playing, setPlaying] = useState(false)
-    const modo = 12;
-    const referencia = React.createRef()
+	const [playing, setPlaying] = useState(false);
+	const modo = 12;
+	const referencia = React.createRef();
 
-    const onProgress = data => {
-        const hasta = inicie + modo;
-        if(data.playedSeconds > hasta){
-            setShowCounter(false)
-            setPlaying(false)
-        }
-    }
+	const onProgress = data => {
 
-    const musicStart = () => {
-        setPlaying(true)
-    }
+		const hasta = inicie + modo;
 
-    const onBufferEnd = e => {
-        setShowCounter(true)
-    }
+		if(data.playedSeconds > hasta){
+				setShowCounter(false)
+				setPlaying(false)
+		}
 
-    return (
-        <ReactPlayer
-            url= {songData?.[idlist]?.urlSong}
-            className="react-player"
-            width= '0'
-            ref={referencia}
-            height= '0'
-            playing={playing}
-            onProgress={e => onProgress(e) }
-            onReady={() => musicStart() }
-            onBufferEnd={onBufferEnd}
-        />
-    )
+	}
+
+	const musicStart = () => {
+		setPlaying(true);
+	}
+
+	const onBufferEnd = e => {
+		setShowCounter(true);
+	}
+
+	return (
+		<ReactPlayer
+				url= {songData?.[idlist]?.urlSong}
+				className="react-player"
+				width= '0'
+				ref={referencia}
+				height= '0'
+				playing={playing}
+				onProgress={e => onProgress(e) }
+				onReady={() => musicStart() }
+				onBufferEnd={onBufferEnd}
+		/>
+	)
+
 }
 
 export default PlayerGame;

@@ -13,26 +13,26 @@ const SendMessage = () => {
 	const { uid } = useSelector(state => state.auth);
 	const { chatActivo } = useSelector(state => state.chat);
 	const { followings: profileFollowings } = useSelector(state => state.otherProfile);
-
 	const userConversation = profileFollowings?.filter( user => user.uid === uid )[0];
 	const isValidConversation = userConversation?.stateSubscription;
 
 	const onChange = ({ target }) => {
-		setMessage( target.value )
+		setMessage( target.value );
 	}
 
 	const handleSendMessage = e => {
+
 		e.preventDefault();
 
 		if( message.length === 0 ){ return; }
-		setMessage('')
 
-		// Emitimos un evento de sockets para enviar el mensaje
+		setMessage('');
+
 		socket.emit( 'personal-message', {
 			userOf: uid,
 			userFor: chatActivo,
-			userMessage: message
-		})
+			userMessage: message,
+		});
 
 	}
 
@@ -73,6 +73,7 @@ const SendMessage = () => {
 		)
 
 	)
+
 }
 
 export default SendMessage;

@@ -16,9 +16,7 @@ const ItemProfileChatUser = () => {
 	const chat = useSelector(state => state.chat);
 
 	const handleProfile = (username) => {
-
 		history.push(`/profile/${ username }`);
-
 	}
 
 	return (
@@ -40,6 +38,7 @@ const ItemProfileChatUser = () => {
 			<IconButton event={ () => handleProfile(userSelectChat(chat)?.username) } icon={ <IconUser /> } type="profile" />
 		</div>
 	)
+
 }
 
 export default ItemProfileChatUser;

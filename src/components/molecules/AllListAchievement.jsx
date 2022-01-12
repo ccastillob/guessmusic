@@ -11,7 +11,6 @@ const AllListAchievement = ({ achievements, categories }) => {
 	const { data: profile } = useSelector(state => state.otherProfile);
 
 	return (
-
 			<div className="container-listAchievement">
 				<h2 className="title-color">{`Lista de logros ${ profile?.username !== data?.username ? `- ${ profile?.name }` : "" }`}</h2>
 				<div className="listAchievement-allItems">
@@ -22,8 +21,8 @@ const AllListAchievement = ({ achievements, categories }) => {
 					}
 				</div>
 			</div>
-
 	)
+
 }
 
 export default AllListAchievement;

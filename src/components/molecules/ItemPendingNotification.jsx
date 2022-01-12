@@ -15,37 +15,35 @@ const ItemPendingNotification = ({ notification }) => {
 
 	const handleConfirmNotification = ( userSend, userActive ) => {
 
-		// Emito un evento para confirmar la notificación
 		socket.emit( 'confirm-notification', {
 			userSend,
 			userActive,
-		})
+		});
 
 		Swal.fire({
 			position: 'center',
 			icon: 'success',
 			title: `${user.name} fue añadida a tu lista de seguidores`,
 			showConfirmButton: false,
-			timer: 2000
-		})
+			timer: 2000,
+		});
 
 	}
 
 	const handleCancelNotification = ( userSend, userActive ) => {
 
-		// Emito un evento para cancelar la notificación
 		socket.emit( 'cancel-notification', {
 			userSend,
 			userActive,
-		})
+		});
 
 		Swal.fire({
 			position: 'center',
 			icon: 'info',
 			title: `Solicitud cancelada`,
 			showConfirmButton: false,
-			timer: 1500
-		})
+			timer: 1500,
+		});
 
 	}
 
@@ -58,6 +56,7 @@ const ItemPendingNotification = ({ notification }) => {
 			</div>
 		</div>
 	)
+
 }
 
 export default ItemPendingNotification;

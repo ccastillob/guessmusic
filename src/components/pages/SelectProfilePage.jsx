@@ -17,20 +17,18 @@ const SelectProfilePage = ({match}) => {
 
 	useEffect(() => {
 
-			dispatch( clearProfileData() )
+			dispatch( clearProfileData() );
 			dispatch( startProfileData( match.params.username ) );
 			dispatch( startProfileFollowings( match.params.username ) );
 			dispatch( startProfileFollowers( match.params.username ) );
 			dispatch( startProfileAchievements( match.params.username ) );
 			dispatch( startProfileCategories( match.params.username ) );
 
-		}, [ dispatch, match ])
+	}, [ dispatch, match ])
 
 	useEffect(() => {
-
-			dispatch( startUserData(uid) )
-
-		}, [ dispatch, uid ])
+			dispatch( startUserData(uid) );
+	}, [ dispatch, uid ])
 
 	return (
 		<>
@@ -51,6 +49,7 @@ const SelectProfilePage = ({match}) => {
 			}
 		</>
 	)
+
 }
 
 export default SelectProfilePage;

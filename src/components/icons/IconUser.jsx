@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 const IconUser = () => {
 	return (
@@ -9,4 +10,4 @@ const IconUser = () => {
 	)
 }
 
-export default IconUser
+export default IconUser;
