@@ -46,12 +46,6 @@ const HeaderMenu = ({ status, active }) => {
 								</i>
 								<h4 className={`${active === "categories" && "active"} content-color`}>Categorias</h4>
 							</NavLink>
-							{/* <NavLink activeClassName="" to="/" className="menu-list">
-								<i className={`${active === "battle" && "active"} container-icon-menu content-color`}>
-									<IconVersus />
-								</i>
-								<h4 className={`${active === "battle" && "active"} content-color`}>Batalla</h4>
-							</NavLink> */}
 						</div>
 					</div>
 					<div className="s-to-right s-cross-center">

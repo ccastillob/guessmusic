@@ -11,9 +11,8 @@ export const startLogin = ( email, password ) => {
 		const body = await resp.json();
 
 		if( body.ok ) {
+
 			localStorage.setItem('token', body.token );
-			// localStorage.setItem('access', body.accessToken );
-			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
 				uid: body.uid
@@ -36,9 +35,8 @@ export const startRegister = ( name, lastName, email, password ) => {
 		const body = await resp.json();
 
 		if( body.ok ) {
+
 			localStorage.setItem('token', body.token );
-			// localStorage.setItem('access', body.accessToken );
-			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
 				uid: body.uid
@@ -85,8 +83,6 @@ export const startChecking = () => {
 		if( body.ok ) {
 
 			localStorage.setItem( 'token', body.token );
-			// localStorage.setItem('access', body.accessToken );
-			// localStorage.setItem('refresh', body.refreshToken );
 
 			dispatch( login({
 				uid: body.uid

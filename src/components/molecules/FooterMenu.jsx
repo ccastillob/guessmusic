@@ -5,12 +5,10 @@ import { NavLink } from 'react-router-dom';
 import IconCategories from '../icons/IconCategories';
 import IconPlay from '../icons/IconPlay';
 import IconRanking from '../icons/IconRanking';
-// import IconVersus from '../icons/IconVersus';
 
 const FooterMenu = ({ active }) => {
 	return (
 		<footer className="main-footer s-main-center">
-			{/* <div className="ed-grid s-grid-4 s-gap-1"> */}
 			<div className="ed-grid s-grid-3 s-gap-1">
 				<NavLink to="/" className={`footer-item s-main-center s-cross-center `}>
 					<i className={`${active === "play" && "active"} container-icon-menu content-color`}>
@@ -30,12 +28,6 @@ const FooterMenu = ({ active }) => {
 					</i>
 					<small className={`${active === "categories" && "active"} text-footer-menu content-color`}>Categorias</small>
 				</NavLink>
-				{/* <NavLink to="/" className={`footer-item s-main-center s-cross-center `}>
-					<i className={`${active === "battle" && "active"} container-icon-menu content-color`}>
-						<IconVersus />
-					</i>
-					<small className={`${active === "battle" && "active"} text-footer-menu content-color`}>Batalla</small>
-				</NavLink> */}
 			</div>
 		</footer>
 	)

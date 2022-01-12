@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 import { getPerformance } from '../../helpers/getPerformance';
 import { scoreUpdated } from '../../helpers/scoreUpdated';
 
-// import GhostButton from '../atoms/GhostButton';
 import PrimaryButton from '../atoms/PrimaryButton';
 
 const ScreenFinishClassic = ({ scoreFinal, co, total }) => {
@@ -78,9 +77,6 @@ const ScreenFinishClassic = ({ scoreFinal, co, total }) => {
 			</div>
 			<div className="container-screenFinish_footer ed-grid">
 				<div className="screenFinish-content_buttons ed-grid s-grid-1">
-					{/* <div className="content-button__reset">
-						<GhostButton urlTo={`/playing/${ idLevel }/classic`} title={`Reinténtalo`} otherClass="ghost-primary900-color s-center" />
-					</div> */}
 					<div className="content-button__continue">
 						<PrimaryButton event={ handleBackHome } title="Continuar" otherClass="s-center" />
 					</div>
