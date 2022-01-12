@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Social Music
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositorio contiene la parte Front-end de la aplicación GuessMusic/Social Music.
 
-## Available Scripts
+![](https://raw.githubusercontent.com/ccastillob/portfolio/dev/public/assets/guessmusicImage2.png)
 
-In the project directory, you can run:
+## Descripción
 
-### `yarn start`
+Una aplicación de entretenimiento la cual tiene por objetivo adivinar la canción en un determinado tiempo, para asi poder acumular puntos y posicionarte en el ranking.\
+Cuando termines una ronda podrás escuchar las canciones que hayas acertado, de este modo conocerás más al detalle la melodía de tu canción.\
+Contiene una sección de solicitudes para que así pueda avisarte cuando un usuario te quiere agregar a su lista de amigos, en este punto tú tomarás la decisión si agregarlo a tu lista o cancelar dicha solicitud.\
+Finalmente incluye un chat donde tendrás la posibilidad de agregar/eliminar un usuario para poder entablar una conversación o visualizar sus logros.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tecnologías/Herramientas utilizadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* React
+* Socket.io
+* Redux
+* Node.js
+* Express
+* MongoDB
+* Firebase
+* Sass
+* Figma
 
-### `yarn test`
+## Secciones
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Inicio
+* Clasificación
+* Categorias
+* Solicitudes
+* Chat
+* Avatar de usuario
+* Logros
 
-### `yarn build`
+## Prototipo en Figma
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[ Ver prototipo ](https://www.figma.com/proto/xsV0j0oaqa8QI8wopG9s7Y/GuessMusic?node-id=2103%3A8178&scaling=scale-down&page-id=2103%3A8177)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo de la aplicación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Te invito a probar la aplicación, ganar puntos y ser el primer en el ranking.
 
-### `yarn eject`
+[ Ver demo ](https://app-guessmusic.herokuapp.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
